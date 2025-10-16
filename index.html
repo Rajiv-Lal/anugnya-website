@@ -2018,7 +2018,7 @@
                 
                 <div>
                     <h4>Contact</h4>
-                    <p>Email: care@anugnyaholistic.com</p>
+                    <p>Email: care@anugnyaholisticcare.com</p>
                     <p>Phone: +918106248800</p>
                 </div>
                 
@@ -2072,7 +2072,7 @@
             },
             'psychotherapy': {
                 title: 'Energy Psychotherapy',
-                image: 'images/_energy-psychotherapy.png',
+                image: 'images/energy-psychotherapy.png',
                 points: [
                     'Overcome fear, anxiety, and loneliness',
                     'Build mental and emotional resilience',
@@ -2097,7 +2097,10 @@
                     'Natural, safe, and effective',
                     'Proprietary formulations by Sangeeta Bhalla'
                 ],
-                showBookButton: true
+                showBookButton: false,
+                showQRCode: true,
+                qrCodeImage: 'images/qr-products.png',
+                qrCodeText: 'Purchase Our AYUSH Certified Aromatherapy Products via WhatsApp'
             },
             'restorative-support': {
                 title: 'Restorative Healing Retreat',
@@ -2482,7 +2485,17 @@
             `;
             
             let actionHTML = '';
-            if (service.showBookButton) {
+            if (service.showQRCode) {
+                actionHTML = `
+                    <div style="margin-top: 40px; text-align: center;">
+                        <h4 style="color: #4C22A6; margin-bottom: 20px;">${service.qrCodeText}</h4>
+                        <div style="display: inline-block; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(76, 34, 166, 0.15);">
+                            <img src="${service.qrCodeImage}" alt="QR Code for Products" style="width: 250px; height: 250px; display: block;">
+                        </div>
+                        <p style="margin-top: 15px; color: #1B0564; font-size: 14px;">Use your phone camera to scan the QR code</p>
+                    </div>
+                `;
+            } else if (service.showBookButton) {
                 actionHTML = `
                     <div style="margin-top: 30px; text-align: center;">
                         <button class="btn btn-secondary" onclick="showSection('booking')">Book This Service</button>
@@ -2752,7 +2765,7 @@
                 alert('Thank you for contacting us! We will respond within 24 hours.');
                 form.reset();
             } else {
-                alert('There was an error submitting your message. Please try again or contact us directly at care@anugnyaholistic.com');
+                alert('There was an error submitting your message. Please try again or contact us directly at care@anugnyaholisticcare.com');
             }
         }
 

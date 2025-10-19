@@ -221,13 +221,10 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(76, 34, 166, 0.1);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             line-height: 1.8;
             color: #1B0564;
-        }
-
-        .about-intro p {
-            margin-bottom: 15px;
+            font-size: 16px;
         }
 
         .founders-grid {
@@ -290,7 +287,7 @@
         }
 
         .credentials li:before {
-            content: 'âœ"';
+            content: '✓';
             position: absolute;
             left: 0;
             color: #4C22A6;
@@ -475,7 +472,7 @@
         }
 
         .service-details li:before {
-            content: 'âœ"';
+            content: '✓';
             position: absolute;
             left: 0;
             color: #4C22A6;
@@ -939,7 +936,7 @@
 
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -1180,15 +1177,8 @@
             <button class="back-btn" onclick="showSection('landing')">← Back to Home</button>
             <h2>About Us - By Cancer Survivors, For Cancer Survivors</h2>
             
-            <!-- NEW INTRO TEXT (TASK 1) -->
             <div class="about-intro">
-                <p>Sangeeta and Viiveck found common ground through a shared belief: Cancer treatment should be holistic, treating an individual at all levels of being- physical, emotional and spiritual. Energy healing transformed Sangeeta's recovery post radical surgery and her subsequent deep study and practice for over 10 years has given her the tools to heal herself and others. She is now on a mission to make these teachings and experiences accessible to all who need it.</p>
-                
-                <p>We provide holistic complementary support rooted in ancient wisdom, through remote energy healing and aromatherapy, to work alongside your primary medical treatments (surgery, chemotherapy, radiation) among other supportive practices.</p>
-                
-                <p>We are also acutely aware of the impact of caring for a loved one and the need for caregiver support.</p>
-                
-                <p>Wherever you are on your cancer journey-- from diagnosis to remission-- we are committed to supporting you.</p>
+                <p>Sangeeta and Viiveck found common ground through a shared belief: Cancer treatment should be holistic, treating an individual at all levels of being— physical, emotional and spiritual. Energy healing transformed Sangeeta's recovery post radical surgery and her subsequent deep study and practice for over 10 years has given her the tools to heal herself and others. She is now on a mission to make these teachings and experiences accessible to all who need it. We provide holistic complementary support rooted in ancient wisdom, through remote energy healing and aromatherapy, to work alongside your primary medical treatments (surgery, chemotherapy, radiation) among other supportive practices. We are also acutely aware of the impact of caring for a loved one and the need for caregiver support. Wherever you are on your cancer journey— from diagnosis to remission— we are committed to supporting you.</p>
             </div>
             
             <div class="founders-grid">
@@ -1914,7 +1904,7 @@
                 </form>
             </div>
 
-            <!-- Caregiver Resources - Service Options -->
+            <!-- Caregiver Resources Section -->
             <div id="caregiver-resources-section" class="assessment-form">
                 <button class="back-btn" onclick="resetBooking()">← Start Over</button>
                 <h3 style="color: #4C22A6; margin-bottom: 20px;">Caregiver Support Options</h3>
@@ -2076,21 +2066,18 @@
         // CONFIGURATION
         // ==================================================
         
-        // Google Apps Script Web App URL - Integrated and Ready!
+        // Google Apps Script Web App URL
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwqQsPq-7yDEww-D14LCb1g4k-vOauWjfLVLllQdSRVFweiQqM4EI3Nam2ew97Wsdf5/exec';
         
-        // Service Details Data
+        // Service Details Data - UPDATED WITH PDF CONTENT
         const serviceDetails = {
             'energy-healing': {
                 title: 'Therapeutic Energy Healing',
                 image: 'images/therapeutic-energy-healing.png',
                 points: [
                     'Complementary protocol driven system that works with allopathic medicine and speeds up the body\'s self healing mechanism many fold',
-                    'Manage the impact of chemotherapy and radiation on the body',
-                    'Improve immunity and maintain hemoglobin levels and overall health',
-                    'Remote healing makes it easier for patients as healing happens wherever they might be',
-                    'Neither the healer nor the patient needs to be in the same physical space',
-                    'Ensure continuity of treatment during your cancer journey'
+                    'Manage the impact of chemotherapy and radiation on the body, improve immunity, maintain hemoglobin levels and overall health',
+                    'Remote healing makes it easier for the patients as the healing happens wherever they might be. Neither the healer nor the patient needs to be in the same physical space'
                 ],
                 showBookButton: true
             },
@@ -2100,10 +2087,7 @@
                 points: [
                     'Maintain your emotional and mental well being in the long, lonely and painful cancer journey',
                     'Caregivers can have more energy to manage the mental and emotional challenges of being the primary care giver',
-                    'Build your reserves of patience and strength to manage this long and difficult journey',
-                    'Learn and practice guided meditations',
-                    'Develop emotional and spiritual resilience',
-                    'Navigate the psychological impact of cancer with expert support'
+                    'Build your reserves of patience and strength to manage this long and difficult journey by learning & practicing guided meditations'
                 ],
                 showBookButton: true
             },
@@ -2111,12 +2095,9 @@
                 title: 'Energy Aromatherapy',
                 image: 'images/energy-aromatherapy.png',
                 points: [
-                    'AYUSH certified essential oil blends for pain relief, jitteriness and fatigue',
-                    'Gentle skin and hair care during treatment',
+                    'Ayush certified essential oil blends for pain relief, jitteriness, fatigue, gentle skin and hair care',
                     'Topical oil to improve the immune response of the body',
-                    'Diffusing oils to maintain the peace, positivity and abundance of the surroundings',
-                    'Natural, safe, and effective relief from treatment side effects',
-                    'Proprietary formulations by Sangeeta Bhalla'
+                    'Diffusing oils to maintain the peace, positivity and abundance of the surroundings'
                 ],
                 showBookButton: true
             },
@@ -2126,36 +2107,27 @@
                 points: [
                     'A safe space to discuss the fear and vulnerability of being a cancer patient',
                     'Deep practice of healing methods, meditation and wellness techniques to face the difficult emotions caused by cancer',
-                    'Brainstorming, identifying and charting the journey ahead for a purpose filled life',
-                    'Serene natural environment for complete restoration and healing',
-                    'Guided healing sessions and group experiences',
-                    'Return home refreshed, renewed and with renewed purpose'
+                    'Brainstorming, Identifying and Charting the journey ahead for a purpose filled life'
                 ],
                 showBookButton: true
             },
             'community-support': {
-                title: 'Your Companion on The Cancer Journey',
+                title: 'Community Support & Guidance',
                 image: 'images/community-support-guidance.png',
                 points: [
                     'Understand the practical steps to meet the day to day challenges of dealing with cancer',
-                    'Ask personal questions and be inspired by survivors',
-                    'Find tips and tools to develop habits that support you in your cancer treatment and recovery',
-                    'A community of cancer patients, survivors and caregivers',
-                    'Help others with your compassion, wisdom and experience',
-                    'Connect with fellow cancer warriors on this shared journey'
+                    'Ask personal questions, be inspired by survivors, find tips and tools, develop the habits that will support you in your cancer treatment and recovery',
+                    'Help others with your compassion, wisdom and experience'
                 ],
                 showBookButton: true
             },
             'self-empowerment': {
-                title: 'Self-Empowerment: Heal Yourself',
+                title: 'Self-Empowerment',
                 image: 'images/self-empowerment.png',
                 points: [
-                    'Learn the theory and practices of healing through a laddered approach',
-                    'Move towards healing and spiritual growth at your own pace',
-                    'Understand the importance of energy hygiene and how to keep your energy healthy and balanced',
-                    'Learn to maintain your energy for lasting wellbeing',
-                    'Become a healer and help others',
-                    'Earn good karma while supporting your own and others\' healing journeys'
+                    'Learn the theory and practices of healing, move on a laddered approach to healing and spiritual growth',
+                    'Understand the importance of energy hygiene (keeping your energy healthy and balanced) and how to maintain it',
+                    'Become a healer, help others and earn good karma'
                 ],
                 showBookButton: true
             }
@@ -2256,4 +2228,538 @@
             try {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ...formData,
+                        formType: formType
+                    })
+                });
+                
+                return { success: true };
+            } catch (error) {
+                console.error('Error sending to Google Sheets:', error);
+                return { success: false, error: error.message };
+            }
+        }
+
+        // ==================================================
+        // RESOURCES LOADING FROM JSON
+        // ==================================================
+
+        async function loadResourcesFromSheet() {
+            try {
+                const response = await fetch('data/anugnya-resources.json');
+                if (!response.ok) throw new Error('Failed to load resources');
+                
+                const data = await response.json();
+                const resources = data.resources.filter(r => r.published);
+                
+                // Separate by type
+                const youtubeResources = resources.filter(r => r.type === 'YouTube');
+                const substackResources = resources.filter(r => r.type === 'Substack');
+                
+                // Display YouTube resources
+                displayResources(youtubeResources, 'youtube-resources', 'YouTube');
+                
+                // Display Substack resources
+                displayResources(substackResources, 'substack-resources', 'Substack');
+                
+            } catch (error) {
+                console.error('Error loading resources:', error);
+                document.getElementById('youtube-resources').innerHTML = '<div class="error-message">Unable to load YouTube resources. Please try again later.</div>';
+                document.getElementById('substack-resources').innerHTML = '<div class="error-message">Unable to load Substack articles. Please try again later.</div>';
+            }
+        }
+
+        function displayResources(resources, containerId, type) {
+            const container = document.getElementById(containerId);
+            
+            if (resources.length === 0) {
+                container.innerHTML = `<div class="loading-message">No ${type} resources available at this time.</div>`;
+                return;
+            }
+            
+            const icon = type === 'YouTube' ? '▶' : '📄';
+            
+            container.innerHTML = resources.map(resource => `
+                <div class="resource-card" onclick='openResourceModal(${JSON.stringify(resource).replace(/'/g, "&#39;")})'>
+                    <div class="resource-thumbnail">${icon}</div>
+                    <div class="resource-content">
+                        <span class="resource-type-badge">${type}</span>
+                        <h4>${resource.title}</h4>
+                        <p>${resource.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ==================================================
+        // RESOURCE MODAL FUNCTIONS
+        // ==================================================
+
+        function openResourceModal(resource) {
+            const modal = document.getElementById('resource-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            
+            modalTitle.textContent = resource.title;
+            
+            if (resource.type === 'YouTube') {
+                // Extract YouTube video ID
+                const videoId = extractYouTubeId(resource.url);
+                modalBody.innerHTML = `
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="substack-preview">
+                        <p><strong>About this video:</strong></p>
+                        <p>${resource.description}</p>
+                    </div>
+                `;
+            } else {
+                // Substack article
+                modalBody.innerHTML = `
+                    <div class="substack-preview">
+                        <p>${resource.description}</p>
+                        <a href="${resource.url}" target="_blank" class="substack-link">Read Full Article on Substack →</a>
+                    </div>
+                `;
+            }
+            
+            modal.classList.add('active');
+        }
+
+        function closeResourceModal() {
+            const modal = document.getElementById('resource-modal');
+            modal.classList.remove('active');
+            // Stop any playing videos
+            document.getElementById('modal-body').innerHTML = '';
+        }
+
+        function extractYouTubeId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('resource-modal');
+            if (event.target === modal) {
+                closeResourceModal();
+            }
+        }
+
+        // ==================================================
+        // CALENDLY INTEGRATION
+        // ==================================================
+
+        function openCalendly(prefillData = {}) {
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/anugnyaholisticcare/welcome',
+                prefill: prefillData,
+                utm: {}
+            });
+            return false;
+        }
+
+        async function submitBookingWithCalendly(event, pathType) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Convert FormData to object
+            const allData = {};
+            for (let [key, value] of formData.entries()) {
+                if (key === 'symptoms') {
+                    // Handle multiple checkboxes
+                    if (!allData.symptoms) allData.symptoms = [];
+                    allData.symptoms.push(value);
+                } else {
+                    allData[key] = value;
+                }
+            }
+            
+            // Send to Google Sheets
+            await sendToGoogleSheets(allData, pathType);
+            
+            // Prepare Calendly prefill data
+            const customAnswers = { a1: pathType };
+            let answerIndex = 2;
+            
+            for (let [key, value] of Object.entries(allData)) {
+                if (key !== 'name' && key !== 'email' && key !== 'phone' && key !== 'disclaimer-consent' && value) {
+                    const displayValue = Array.isArray(value) ? value.join(', ') : value;
+                    customAnswers[`a${answerIndex}`] = `${key}: ${displayValue}`;
+                    answerIndex++;
+                    if (answerIndex > 10) break;
+                }
+            }
+            
+            const prefillData = {
+                name: formData.get('name') || '',
+                email: formData.get('email') || '',
+                customAnswers: customAnswers
+            };
+            
+            // Open Calendly
+            openCalendly(prefillData);
+        }
+
+        function proceedToCalendly(pathType) {
+            openCalendly({ customAnswers: { a1: pathType } });
+        }
+
+        // ==================================================
+        // NAVIGATION FUNCTIONS
+        // ==================================================
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            if (sectionId === 'booking') {
+                resetBooking();
+            }
+            
+            if (sectionId === 'resources') {
+                loadResourcesFromSheet();
+            }
+            
+            closeMobileNav();
+        }
+
+        function toggleMobileNav() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
+
+        function closeMobileNav() {
+            document.getElementById('mainNav').classList.remove('active');
+        }
+
+        // ==================================================
+        // SERVICE FUNCTIONS
+        // ==================================================
+
+        function showServiceDetail(serviceId) {
+            const service = serviceDetails[serviceId];
+            if (!service) return;
+            
+            const container = document.getElementById('service-details-container');
+            
+            const disclaimerHTML = `
+                <div class="results-disclaimer">
+                    <strong>Individual Results May Vary:</strong> Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors including condition severity, adherence to protocols, and overall health status.
+                </div>
+            `;
+            
+            let actionHTML = '';
+            if (service.showQRCode) {
+                actionHTML = `
+                    <div style="margin-top: 40px; text-align: center;">
+                        <h4 style="color: #4C22A6; margin-bottom: 20px;">${service.qrCodeText}</h4>
+                        <div style="display: inline-block; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(76, 34, 166, 0.15);">
+                            <img src="${service.qrCodeImage}" alt="QR Code for Products" style="width: 250px; height: 250px; display: block;">
+                        </div>
+                        <p style="margin-top: 15px; color: #1B0564; font-size: 14px;">Use your phone camera to scan the QR code</p>
+                    </div>
+                `;
+            } else if (service.showBookButton) {
+                actionHTML = `
+                    <div style="margin-top: 30px; text-align: center;">
+                        <button class="btn btn-secondary" onclick="showSection('booking')">Book This Service</button>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = `
+                <div class="service-details active">
+                    <div class="service-hero">
+                        <img src="${service.image}" alt="${service.title}" onerror="this.parentElement.innerHTML='<div style=\\'padding:100px; text-align:center; color:#1B0564;\\'>${service.title}</div>'">
+                    </div>
+                    <div class="service-content">
+                        <button class="back-btn" onclick="closeServiceDetail()">← Back to Services</button>
+                        <h3>${service.title}</h3>
+                        ${disclaimerHTML}
+                        <ul>
+                            ${service.points.map(point => `<li>${point}</li>`).join('')}
+                        </ul>
+                        ${actionHTML}
+                    </div>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        function closeServiceDetail() {
+            document.getElementById('service-details-container').innerHTML = '';
+        }
+
+        // ==================================================
+        // BOOKING FUNCTIONS
+        // ==================================================
+
+        function selectCustomerType(type) {
+            document.getElementById('customer-selection').style.display = 'none';
+            
+            if (type === 'treatment') {
+                document.getElementById('treatment-assessment').classList.add('active');
+            } else if (type === 'recovery') {
+                document.getElementById('recovery-assessment').classList.add('active');
+            } else if (type === 'caregiver') {
+                document.getElementById('caregiver-assessment').classList.add('active');
+            }
+        }
+
+        // Treatment Path Functions
+        function showTreatmentPausedForm() {
+            document.getElementById('treatment-assessment').classList.remove('active');
+            document.getElementById('treatment-paused-form').classList.add('active');
+        }
+
+        function showActiveTreatmentForm() {
+            document.getElementById('treatment-assessment').classList.remove('active');
+            document.getElementById('active-treatment-form').classList.add('active');
+        }
+
+        function backToTreatmentAssessment() {
+            document.getElementById('treatment-paused-form').classList.remove('active');
+            document.getElementById('active-treatment-form').classList.remove('active');
+            document.getElementById('treatment-assessment').classList.add('active');
+        }
+
+        async function submitActiveTreatmentForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Convert FormData to object
+            const allData = {};
+            for (let [key, value] of formData.entries()) {
+                if (key === 'symptoms') {
+                    if (!allData.symptoms) allData.symptoms = [];
+                    allData.symptoms.push(value);
+                } else {
+                    allData[key] = value;
+                }
+            }
+            
+            // Send to Google Sheets
+            await sendToGoogleSheets(allData, 'active-treatment');
+            
+            document.getElementById('active-treatment-form').classList.remove('active');
+            document.getElementById('treatment-recommendations').classList.add('active');
+        }
+
+        function backToActiveTreatment() {
+            document.getElementById('treatment-recommendations').classList.remove('active');
+            document.getElementById('active-treatment-form').classList.add('active');
+        }
+
+        // Recovery Path Functions
+        function showRecoveryServiceInfo(serviceId) {
+            const service = recoveryServiceInfo[serviceId];
+            const contentDiv = document.getElementById('recovery-service-content');
+            
+            contentDiv.innerHTML = `
+                <h3 style="color: #4C22A6; margin-bottom: 20px;">${service.title}</h3>
+                <p style="margin-bottom: 30px; color: #1B0564; font-size: 18px;">${service.description}</p>
+                
+                <div class="results-disclaimer">
+                    <strong>Individual Results May Vary:</strong> Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors.
+                </div>
+                
+                <div class="case-study">
+                    <h4>What You'll Experience</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        ${service.benefits.map(benefit => `
+                            <li style="padding: 12px 0; border-bottom: 1px solid #E8D4D1;">✓ ${benefit}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-secondary" onclick="showRecoveryRegistration('${serviceId}')" style="padding: 18px 40px;">Register for This Service</button>
+                </div>
+            `;
+            
+            document.getElementById('recovery-assessment').classList.remove('active');
+            document.getElementById('recovery-service-info').classList.add('active');
+        }
+
+        function showRecoveryRegistration(serviceId) {
+            const service = recoveryServiceInfo[serviceId];
+            document.getElementById('recovery-registration-title').textContent = `Register: ${service.title}`;
+            
+            // Store service ID for form submission
+            const form = document.querySelector('#recovery-registration form');
+            if (form) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'serviceSelected';
+                input.value = serviceId;
+                form.appendChild(input);
+            }
+            
+            document.getElementById('recovery-assessment').classList.remove('active');
+            document.getElementById('recovery-service-info').classList.remove('active');
+            document.getElementById('recovery-registration').classList.add('active');
+        }
+
+        function backToRecoveryOptions() {
+            document.getElementById('recovery-service-info').classList.remove('active');
+            document.getElementById('recovery-registration').classList.remove('active');
+            document.getElementById('recovery-assessment').classList.add('active');
+        }
+
+        // Caregiver Service Functions
+        function showCaregiverServiceInfo(serviceId) {
+            const service = caregiverServiceInfo[serviceId];
+            const contentDiv = document.getElementById('caregiver-service-content');
+            
+            contentDiv.innerHTML = `
+                <h3 style="color: #4C22A6; margin-bottom: 20px;">${service.title}</h3>
+                <p style="margin-bottom: 30px; color: #1B0564; font-size: 18px;">${service.description}</p>
+                
+                <div class="results-disclaimer">
+                    <strong>Individual Results May Vary:</strong> Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors.
+                </div>
+                
+                <div class="case-study">
+                    <h4>What You'll Experience</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        ${service.benefits.map(benefit => `
+                            <li style="padding: 12px 0; border-bottom: 1px solid #E8D4D1;">✓ ${benefit}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-secondary" onclick="showCaregiverRegistration('${serviceId}')" style="padding: 18px 40px;">Register for This Service</button>
+                </div>
+            `;
+            
+            document.getElementById('caregiver-resources-section').classList.remove('active');
+            document.getElementById('caregiver-service-info').classList.add('active');
+        }
+
+        function showCaregiverRegistration(serviceId) {
+            const service = caregiverServiceInfo[serviceId];
+            document.getElementById('caregiver-registration-title').textContent = `Register: ${service.title}`;
+            
+            // Store service ID for form submission
+            const form = document.querySelector('#caregiver-registration form');
+            if (form) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'serviceSelected';
+                input.value = serviceId;
+                form.appendChild(input);
+            }
+            
+            document.getElementById('caregiver-resources-section').classList.remove('active');
+            document.getElementById('caregiver-service-info').classList.remove('active');
+            document.getElementById('caregiver-registration').classList.add('active');
+        }
+
+        function backToCaregiverOptions() {
+            document.getElementById('caregiver-service-info').classList.remove('active');
+            document.getElementById('caregiver-registration').classList.remove('active');
+            document.getElementById('caregiver-resources-section').classList.add('active');
+        }
+
+        // Caregiver Path Functions
+        async function submitCaregiverAssessment(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Convert FormData to object
+            const allData = {};
+            for (let [key, value] of formData.entries()) {
+                allData[key] = value;
+            }
+            
+            const scores = [
+                parseInt(allData.tiredness),
+                parseInt(allData.exhaustion),
+                parseInt(allData.anxiety),
+                parseInt(allData.overwhelmed),
+                parseInt(allData.sadness)
+            ];
+            
+            const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+            
+            document.getElementById('caregiver-assessment').classList.remove('active');
+            
+            if (avgScore >= 3.5) {
+                document.getElementById('caregiver-consultation').classList.add('active');
+            } else {
+                document.getElementById('caregiver-resources-section').classList.add('active');
+            }
+        }
+
+        // Reset Booking
+        function resetBooking() {
+            document.getElementById('customer-selection').style.display = 'grid';
+            
+            document.querySelectorAll('.assessment-form').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+            document.getElementById('success-message').style.display = 'none';
+            
+            document.querySelectorAll('form').forEach(form => form.reset());
+        }
+
+        // Contact Form
+        async function handleContactSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Convert FormData to object
+            const allData = {};
+            for (let [key, value] of formData.entries()) {
+                allData[key] = value;
+            }
+            
+            // Send to Google Sheets
+            const result = await sendToGoogleSheets(allData, 'contact');
+            
+            if (result.success) {
+                alert('Thank you for contacting us! We will respond within 24 hours.');
+                form.reset();
+            } else {
+                alert('There was an error submitting your message. Please try again or contact us directly at care@anugnyaholisticcare.com');
+            }
+        }
+
+        // ==================================================
+        // INITIALIZATION
+        // ==================================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('landing');
+        });
+    </script>
+</body>
+</html>

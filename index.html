@@ -2287,7 +2287,8 @@
             container.innerHTML = resources.map(resource => `
                 <div class="resource-card" onclick='openResourceModal(${JSON.stringify(resource).replace(/'/g, "&#39;")})'>
                     <div class="resource-thumbnail">
-                        <img src="${resource.thumbnail}" alt="${resource.title}" onerror="this.parentElement.innerHTML='${icon}'">
+                        ${resource.thumbnail ? `<img src="${resource.thumbnail}" alt="${resource.title}" onerror="this.style.display='none'; this.parentElement.style.display='flex'; this.parentElement.style.alignItems='center'; this.parentElement.style.justifyContent='center';" onload="this.style.display='block';">` : ''}
+                        <div style="font-size: 48px; color: #1B0564;">${icon}</div>
                     </div>
                     <div class="resource-content">
                         <span class="resource-type-badge">${type}</span>

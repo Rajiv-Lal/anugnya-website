@@ -9,6 +9,7 @@
       gtag('js', new Date());
       gtag('config', 'G-5EM10412DY');
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -28,6 +29,41 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     
     <style>
+        /* ===== CALENDLY LOADING SPINNER ===== */
+        .calendly-loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffffff;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .calendly-loading-overlay .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4C22A6;
+            border-radius: 50%;
+            animation: calendly-spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes calendly-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .calendly-loading-overlay p {
+            color: #4C22A6;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+        }
+        /* ===== END CALENDLY LOADING SPINNER ===== */
+
         .booking-hero {
             background: var(--beige);
             padding: 120px 0 40px;
@@ -460,7 +496,7 @@
                     <form onsubmit="submitWithCalendly(event, 'treatment-paused')">
                         <div class="form-group">
                             <label>Reason for treatment pause *</label>
-                            <select required name="pause-reason">
+                            <select required name="pauseReason">
                                 <option value="">Select...</option>
                                 <option value="Severe side effects">Severe side effects</option>
                                 <option value="Medical complications">Medical complications</option>
@@ -472,7 +508,7 @@
                         
                         <div class="form-group">
                             <label>How long has treatment been paused? *</label>
-                            <select required name="pause-duration">
+                            <select required name="pauseDuration">
                                 <option value="">Select...</option>
                                 <option value="Less than a week">Less than a week</option>
                                 <option value="1-2 weeks">1-2 weeks</option>
@@ -516,7 +552,7 @@
                     <form onsubmit="submitWithCalendly(event, 'active-treatment')">
                         <div class="form-group">
                             <label>Current Treatment Type *</label>
-                            <select required name="treatment-type">
+                            <select required name="treatmentType">
                                 <option value="">Select...</option>
                                 <option value="Chemotherapy">Chemotherapy</option>
                                 <option value="Radiation">Radiation</option>
@@ -662,7 +698,7 @@
                     <h3 id="recovery-form-title" style="color: var(--primary-purple); margin-bottom: 20px;">Complete Your Registration</h3>
                     
                     <form onsubmit="submitWithCalendly(event, 'recovery')">
-                        <input type="hidden" name="service-selected" id="recovery-service-selected" value="">
+                        <input type="hidden" name="serviceSelected" id="recovery-service-selected" value="">
                         
                         <div class="form-group">
                             <label>Full Name *</label>
@@ -681,7 +717,7 @@
                         
                         <div class="form-group">
                             <label>Tell us about your recovery journey</label>
-                            <textarea rows="3" name="journey-notes" placeholder="What are your wellness goals?"></textarea>
+                            <textarea rows="3" name="journey" placeholder="What are your wellness goals?"></textarea>
                         </div>
                         
                         <div class="disclaimer-checkbox">
@@ -840,7 +876,7 @@
                         
                         <div class="form-group">
                             <label>Who are you caring for?</label>
-                            <select name="caring-for">
+                            <select name="caringFor">
                                 <option value="">Select...</option>
                                 <option value="Spouse/Partner">Spouse/Partner</option>
                                 <option value="Parent">Parent</option>
@@ -936,6 +972,8 @@
         // Select customer type
         function selectCustomerType(type) {
             document.getElementById('customer-selection').style.display = 'none';
+            // GA4 tracking
+            gtag('event', 'booking_path_select', { path_type: type });
             
             if (type === 'treatment') {
                 document.getElementById('treatment-assessment').classList.add('active');
@@ -960,11 +998,15 @@
         // Treatment path functions
         function showTreatmentPausedForm() {
             document.getElementById('treatment-assessment').classList.remove('active');
+            // GA4 tracking
+            gtag('event', 'treatment_assessment', { status: 'paused' });
             document.getElementById('treatment-paused-form').classList.add('active');
         }
         
         function showActiveTreatmentForm() {
             document.getElementById('treatment-assessment').classList.remove('active');
+            // GA4 tracking
+            gtag('event', 'treatment_assessment', { status: 'active' });
             document.getElementById('active-treatment-form').classList.add('active');
         }
         
@@ -996,6 +1038,8 @@
                 'empowerment': 'Self-Empowerment'
             };
             
+            // GA4 tracking
+            gtag('event', 'recovery_service_select', { service: service });
             document.getElementById('recovery-service-selected').value = service;
             document.getElementById('recovery-form-title').textContent = 'Register: ' + serviceTitles[service];
             document.getElementById('recovery-assessment').classList.remove('active');
@@ -1013,6 +1057,8 @@
         
         function submitWithCalendly(event, formType) {
             event.preventDefault();
+            // GA4 tracking - form submit
+            gtag('event', 'booking_form_submit', { path_type: formType });
             
             const form = event.target;
             const formData = new FormData(form);
@@ -1026,28 +1072,28 @@
             let context = '';
             
             if (formType === 'treatment-paused') {
-                const pauseReason = formData.get('pause-reason') || '';
-                const pauseDuration = formData.get('pause-duration') || '';
+                const pauseReason = formData.get('pauseReason') || '';
+                const pauseDuration = formData.get('pauseDuration') || '';
                 context = 'Treatment Status: PAUSED';
                 if (pauseReason) context += '\nReason: ' + pauseReason;
                 if (pauseDuration) context += '\nDuration: ' + pauseDuration;
                 
             } else if (formType === 'active-treatment') {
-                const treatmentType = formData.get('treatment-type') || '';
+                const treatmentType = formData.get('treatmentType') || '';
                 const symptoms = formData.getAll('symptoms');
                 context = 'Treatment Status: ACTIVE';
                 if (treatmentType) context += '\nTreatment Type: ' + treatmentType;
                 if (symptoms.length > 0) context += '\nSymptoms: ' + symptoms.join(', ');
                 
             } else if (formType === 'recovery') {
-                const serviceSelected = formData.get('service-selected') || '';
-                const journeyNotes = formData.get('journey-notes') || '';
+                const serviceSelected = formData.get('serviceSelected') || '';
+                const journeyNotes = formData.get('journey') || '';
                 context = 'Path: Recovery';
                 if (serviceSelected) context += '\nService: ' + serviceSelected;
                 if (journeyNotes) context += '\nJourney notes: ' + journeyNotes;
                 
             } else if (formType === 'caregiver') {
-                const caringFor = formData.get('caring-for') || '';
+                const caringFor = formData.get('caringFor') || '';
                 const tiredness = formData.get('tiredness') || '';
                 const exhaustion = formData.get('exhaustion') || '';
                 const anxiety = formData.get('anxiety') || '';
@@ -1064,10 +1110,59 @@
                 context += '\n- Sadness: ' + sadness;
             }
             
-            // TODO: Store form data (name, email, phone, formType, context) to Google Sheets here
+
+            // Build sheet data with all form fields
+            let sheetData = {
+                name: name,
+                email: email,
+                phone: phone,
+                formType: formType,
+                timestamp: new Date().toISOString()
+            };
+
+            // Add form-specific fields
+            if (formType === 'treatment-paused') {
+                sheetData.pauseReason = formData.get('pauseReason') || '';
+                sheetData.pauseDuration = formData.get('pauseDuration') || '';
+            } else if (formType === 'active-treatment') {
+                sheetData.treatmentType = formData.get('treatmentType') || '';
+                sheetData.symptoms = formData.getAll('symptoms').join(', ');
+            } else if (formType === 'recovery') {
+                sheetData.serviceSelected = formData.get('serviceSelected') || '';
+                sheetData.journey = formData.get('journey') || '';
+            } else if (formType === 'caregiver') {
+                sheetData.caringFor = formData.get('caringFor') || '';
+                sheetData.tiredness = formData.get('tiredness') || '';
+                sheetData.exhaustion = formData.get('exhaustion') || '';
+                sheetData.anxiety = formData.get('anxiety') || '';
+                sheetData.overwhelmed = formData.get('overwhelmed') || '';
+                sheetData.sadness = formData.get('sadness') || '';
+            }
+
+            // Send to Google Sheets
+            if (typeof CONFIG !== 'undefined' && CONFIG.googleScriptUrl) {
+                console.log('Sending to Google Sheets:', sheetData);
+                fetch(CONFIG.googleScriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(sheetData)
+                }).catch(err => console.error('Google Sheets error:', err));
+            } else {
+                console.error('CONFIG not defined - cannot send to Google Sheets');
+            }
+            
+            // Show loading spinner and open Calendly
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'calendly-loading-overlay';
+            loadingDiv.className = 'calendly-loading-overlay';
+            loadingDiv.innerHTML = '<div class="spinner"></div><p>Loading booking calendar...</p>';
+            document.body.appendChild(loadingDiv);
             
             // Open Calendly with prefilled data
             if (typeof Calendly !== 'undefined') {
+                // GA4 tracking - calendly open
+                gtag('event', 'calendly_open', { path_type: formType });
                 Calendly.initPopupWidget({
                     url: CALENDLY_URL,
                     prefill: {
@@ -1078,8 +1173,11 @@
                         }
                     }
                 });
+                // Remove loading after Calendly appears
+                setTimeout(function() { var o = document.getElementById("calendly-loading-overlay"); if(o) o.remove(); }, 1500);
             } else {
                 window.open(CALENDLY_URL, '_blank');
+                var o = document.getElementById("calendly-loading-overlay"); if(o) o.remove();
             }
             
             return false;

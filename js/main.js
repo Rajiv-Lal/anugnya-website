@@ -13,7 +13,6 @@ const CONFIG = {
     googleScriptUrl: 'https://script.google.com/macros/s/AKfycbwqQsPq-7yDEww-D14LCb1g4k-vOauWjfLVLllQdSRVFweiQqM4EI3Nam2ew97Wsdf5/exec',
     calendlyUrl: 'https://calendly.com/anugnyaholisticcare/welcome'
 };
-
 // ==================================================
 // MOBILE NAVIGATION
 // ==================================================

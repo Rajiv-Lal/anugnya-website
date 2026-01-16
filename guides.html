@@ -11,20 +11,384 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Healing stories, insights, and guidance from cancer survivors. Articles on energy healing, aromatherapy, caregiver support, and recovery journeys.">
-    <meta name="keywords" content="cancer recovery stories, healing journey, energy healing, aromatherapy cancer, caregiver support, cancer survivor stories">
-    <title>Guides - Healing Stories & Insights | Anugnya Holistic Care</title>
     
-    <meta property="og:title" content="Guides - Healing Stories & Insights | Anugnya Holistic Care">
-    <meta property="og:description" content="Healing stories, insights, and guidance from cancer survivors.">
+    <meta name="description" content="Healing stories, guided meditations, and insights from cancer survivors and caregivers. Watch videos and read articles from people who understand your journey.">
+    <meta name="keywords" content="cancer survivor stories, healing meditation, caregiver support, cancer recovery stories, energy healing videos">
+    <title>Healing Stories & Insights | Guides | Anugnya Holistic Care</title>
+    
+    <meta property="og:title" content="Healing Stories & Insights | Anugnya Holistic Care">
+    <meta property="og:description" content="Stories and insights from cancer survivors who have been where you are.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anugnyaholisticcare.com/guides.html">
     
     <link rel="icon" type="image/png" href="images/anugnya-logo.png">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/blog.css">
+    
+    <style>
+        /* Page Hero - matches Services page */
+        .page-hero {
+            background: var(--beige);
+            padding: 100px 0 40px;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            color: var(--primary-purple);
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        .page-hero .subtitle {
+            color: var(--dark-purple);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Boxes */
+        .category-section {
+            padding: 30px 0;
+            background: var(--beige);
+        }
+        
+        .category-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .category-box {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(76, 34, 166, 0.1);
+            transition: all 0.3s;
+            text-decoration: none;
+            border: 2px solid transparent;
+        }
+        
+        .category-box:hover {
+            border-color: var(--primary-purple);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(76, 34, 166, 0.15);
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: var(--light-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary-purple);
+        }
+        
+        .category-box h3 {
+            color: var(--primary-purple);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .category-box p {
+            color: var(--dark-purple);
+            font-size: 14px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 50px 0;
+        }
+        
+        .content-section.alt-bg {
+            background: #f9f5f2;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .section-header h2 {
+            color: var(--primary-purple);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .section-header p {
+            color: var(--dark-purple);
+            font-size: 16px;
+        }
+
+        /* Article Cards */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(76, 34, 166, 0.08);
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(76, 34, 166, 0.15);
+        }
+        
+        .article-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: var(--light-beige);
+        }
+        
+        .article-card-content {
+            padding: 20px;
+        }
+        
+        .article-card-category {
+            display: inline-block;
+            background: var(--light-purple);
+            color: var(--primary-purple);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .article-card h3 {
+            color: var(--dark-purple);
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        .article-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .article-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #888;
+        }
+        
+        .article-card-meta img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Video Cards */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(76, 34, 166, 0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(76, 34, 166, 0.15);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 160px;
+            background: var(--light-beige);
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(76, 34, 166, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .play-button svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            margin-left: 3px;
+        }
+        
+        .video-card:hover .play-button {
+            background: var(--primary-purple);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-card-content {
+            padding: 15px 20px;
+        }
+        
+        .video-card h3 {
+            color: var(--dark-purple);
+            font-size: 15px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        
+        .video-duration {
+            color: #888;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .video-modal.active {
+            display: flex;
+        }
+        
+        .video-modal-content {
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .video-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .video-modal iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Footer Disclaimers */
+        .footer-disclaimers {
+            margin-top: 30px;
+        }
+        
+        .footer-disclaimer-box {
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-disclaimer-box.medical {
+            background: rgba(255, 193, 7, 0.15);
+            border-left: 4px solid #ffc107;
+        }
+        
+        .footer-disclaimer-box.emergency {
+            background: rgba(255, 68, 68, 0.15);
+            border-left: 4px solid #ff4444;
+        }
+        
+        .footer-disclaimer-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .footer-disclaimer-box.emergency h4 {
+            color: #cc0000;
+        }
+        
+        .footer-disclaimer-box p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .category-boxes {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+            
+            .page-hero h1 {
+                font-size: 28px;
+            }
+            
+            .articles-grid,
+            .videos-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -32,7 +396,9 @@
                     <img src="images/anugnya-logo.png" alt="Anugnya Holistic Care">
                 </a>
                 <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
                 <nav class="nav" id="mainNav">
                     <a href="index.html">Home</a>
@@ -47,163 +413,192 @@
     </header>
 
     <main>
-        <section class="blog-header">
-            <h1>Healing Stories & Guides</h1>
-            <p class="subtitle">Insights from cancer survivors and caregivers. Real stories, practical wisdom, and guidance for your healing journey.</p>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Healing Stories & Insights</h1>
+                <p class="subtitle">From survivors who have been where you are</p>
+            </div>
         </section>
 
-        <!-- Video Stories Section -->
-        <section class="video-section">
+        <!-- Category Boxes -->
+        <section class="category-section">
             <div class="container">
-                <h3>Video Stories</h3>
-                <p>Watch inspiring journeys from our community</p>
-                <div class="video-grid">
-                    <div class="video-card" onclick="openVideoModal('gOhj9zPp_aQ', 'Cancer Treatment Side Effects: Remote Energy Healing')">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/gOhj9zPp_aQ/maxresdefault.jpg" alt="Remote Energy Healing" onerror="this.src='images/thumbnail-video.png'">
-                            <div class="video-play-btn"></div>
-                            <span class="video-duration">2:21</span>
+                <div class="category-boxes">
+                    <a href="#videos" class="category-box">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="video-content">
-                            <h4>Remote Energy Healing: The Support I Found After Cancer Treatment</h4>
-                            <p>Discover how remote energy healing provides support during and after cancer treatment.</p>
-                            <a href="https://www.youtube.com/watch?v=gOhj9zPp_aQ" class="video-youtube-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube →</a>
+                        <h3>Watch Our Videos</h3>
+                        <p>5 videos</p>
+                    </a>
+                    <a href="#stories" class="category-box">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
                         </div>
-                    </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('ZD-BR9BPqhM', 'From Patient to Healer')">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/ZD-BR9BPqhM/maxresdefault.jpg" alt="From Patient to Healer" onerror="this.src='images/thumbnail-video.png'">
-                            <div class="video-play-btn"></div>
-                            <span class="video-duration">4:52</span>
-                        </div>
-                        <div class="video-content">
-                            <h4>A Cancer Survivor's Journey: Learning to Heal Others</h4>
-                            <p>From patient to healer - one survivor's transformative journey.</p>
-                            <a href="https://www.youtube.com/watch?v=ZD-BR9BPqhM" class="video-youtube-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube →</a>
-                        </div>
-                    </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('T4UQtmLLQic', 'Caregivers & Friends Who Opened Their Hearts')">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/T4UQtmLLQic/maxresdefault.jpg" alt="Caregivers & Friends" onerror="this.src='images/thumbnail-video.png'">
-                            <div class="video-play-btn"></div>
-                            <span class="video-duration">4:18</span>
-                        </div>
-                        <div class="video-content">
-                            <h4>Cancer, Loss, and New Beginnings</h4>
-                            <p>Finding hope and purpose after loss.</p>
-                            <a href="https://www.youtube.com/watch?v=T4UQtmLLQic" class="video-youtube-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube →</a>
-                        </div>
-                    </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('SKkE8w0bYZU', 'Cancer Recovery as a Couple')">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/SKkE8w0bYZU/maxresdefault.jpg" alt="Cancer Recovery as a Couple" onerror="this.src='images/thumbnail-video.png'">
-                            <div class="video-play-btn"></div>
-                            <span class="video-duration">4:35</span>
-                        </div>
-                        <div class="video-content">
-                            <h4>Navigating Cancer as a Couple</h4>
-                            <p>How Sangeeta and Rajiv learned to cultivate acceptance and introspection.</p>
-                            <a href="https://www.youtube.com/watch?v=SKkE8w0bYZU" class="video-youtube-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube →</a>
-                        </div>
-                    </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('QlfABw0jdUk', 'What Is Energy Healing')">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/QlfABw0jdUk/maxresdefault.jpg" alt="What Is Energy Healing" onerror="this.src='images/thumbnail-video.png'">
-                            <div class="video-play-btn"></div>
-                            <span class="video-duration">1:06</span>
-                        </div>
-                        <div class="video-content">
-                            <h4>Learning Energy Healing: From Basic Techniques to Psychotherapy</h4>
-                            <p>An introduction to the journey of learning energy healing.</p>
-                            <a href="https://www.youtube.com/watch?v=QlfABw0jdUk" class="video-youtube-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube →</a>
-                        </div>
-                    </div>
+                        <h3>Read Our Stories</h3>
+                        <p>4 articles</p>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Written Guides Section -->
-        <section class="articles-section">
+        <!-- Articles Section -->
+        <section id="stories" class="content-section">
             <div class="container">
-                <h3>Written Guides</h3>
-                <p>In-depth articles from survivors and caregivers</p>
-                <div class="blog-grid">
+                <div class="section-header">
+                    <h2>Read Our Stories</h2>
+                    <p>In-depth articles from survivors and caregivers</p>
+                </div>
+                
+                <div class="articles-grid">
                     <a href="guides/essential-oil-remedy.html" class="article-card">
-                        <img src="images/thumbnail-1.png" alt="Essential Oil Remedy" class="article-card-image">
+                        <img src="images/thumbnail-1.png" alt="Essential Oil Remedy">
                         <div class="article-card-content">
                             <span class="article-card-category">Aromatherapy</span>
-                            <h2 class="article-card-title">Essential Oil Remedy: Anugnya's Answer to Radiation and Chemo Side Effects</h2>
-                            <p class="article-card-excerpt">Chief Healing Officer Sangeeta Bhalla explains how proprietary essential oil blends help maintain patients' physical, energy and emotional strength during cancer treatment.</p>
+                            <h3>Essential Oil Remedy: Anugnya's Answer to Radiation and Chemo Side Effects</h3>
+                            <p>How proprietary essential oil blends help maintain patients' physical, energy and emotional strength during treatment.</p>
                             <div class="article-card-meta">
-                                <div class="article-card-author">
-                                    <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
-                                    <span>Sangeeta Bhalla</span>
-                                </div>
-                                <span class="article-card-reading-time">8 min read</span>
+                                <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
+                                <span>Sangeeta Bhalla</span>
                             </div>
                         </div>
                     </a>
                     
                     <a href="guides/caregivers-journey.html" class="article-card">
-                        <img src="images/thumbnail-2.png" alt="Caregiver's Journey" class="article-card-image">
+                        <img src="images/thumbnail-2.png" alt="Caregiver's Journey">
                         <div class="article-card-content">
                             <span class="article-card-category">Caregiver Stories</span>
-                            <h2 class="article-card-title">Viiveck Verma: A Caregiver's Journey (The Caregiver Needs Care Too)</h2>
-                            <p class="article-card-excerpt">Viiveck took care of Prernaa, his wife, through an 11-year journey with 9 reappearances of cancer. For both, it is a profile in courage.</p>
+                            <h3>Viiveck Verma: A Caregiver's Journey (The Caregiver Needs Care Too)</h3>
+                            <p>Viiveck took care of Prernaa through an 11-year journey with 9 reappearances of cancer. A profile in courage.</p>
                             <div class="article-card-meta">
-                                <div class="article-card-author">
-                                    <img src="images/viiveck-verma.png" alt="Viiveck Verma">
-                                    <span>Viiveck Verma</span>
-                                </div>
-                                <span class="article-card-reading-time">10 min read</span>
+                                <img src="images/viiveck-verma.png" alt="Viiveck Verma">
+                                <span>Viiveck Verma</span>
                             </div>
                         </div>
                     </a>
                     
                     <a href="guides/sangeeta-cancer-recovery.html" class="article-card">
-                        <img src="images/thumbnail-3.png" alt="Sangeeta's Recovery" class="article-card-image">
+                        <img src="images/thumbnail-3.png" alt="Sangeeta's Recovery">
                         <div class="article-card-content">
                             <span class="article-card-category">Survivor Stories</span>
-                            <h2 class="article-card-title">Sangeeta's Cancer Recovery Journey: From Patient to Healer</h2>
-                            <p class="article-card-excerpt">We explore Sangeeta's 10-year journey following her cancer diagnosis and her transition from patient to healer.</p>
+                            <h3>Sangeeta's Cancer Recovery Journey: From Patient to Healer to Entrepreneur</h3>
+                            <p>A 10-year journey following cancer diagnosis, transition from patient to healer, and establishment of Anugnya.</p>
                             <div class="article-card-meta">
-                                <div class="article-card-author">
-                                    <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
-                                    <span>Sangeeta Bhalla</span>
-                                </div>
-                                <span class="article-card-reading-time">12 min read</span>
+                                <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
+                                <span>Sangeeta Bhalla</span>
                             </div>
                         </div>
                     </a>
                     
                     <a href="guides/neerad-journey.html" class="article-card">
-                        <img src="images/thumbnail-4.png" alt="Neerad's Journey" class="article-card-image">
+                        <img src="images/thumbnail-4.png" alt="Neerad's Journey">
                         <div class="article-card-content">
                             <span class="article-card-category">Survivor Stories</span>
-                            <h2 class="article-card-title">Neerad's Journey Through Cancer: Brave, Honest, Resilient</h2>
-                            <p class="article-card-excerpt">Neerad emerged from his bout with Leukemia braver, better, and stronger. His story of taking care of the guest, cancer, and then letting it go.</p>
+                            <h3>Neerad's Journey Through Cancer: Brave, Honest, Resilient</h3>
+                            <p>Neerad emerged from his bout with Leukemia braver and stronger. His story of taking care of the guest, then letting it go.</p>
                             <div class="article-card-meta">
-                                <div class="article-card-author">
-                                    <img src="images/anugnya-logo.png" alt="Neerad">
-                                    <span>Neerad</span>
-                                </div>
-                                <span class="article-card-reading-time">10 min read</span>
+                                <img src="images/anugnya-logo.png" alt="Anugnya">
+                                <span>Anugnya Team</span>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="content-section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Watch Our Videos</h2>
+                    <p>Guided meditations and healing insights</p>
+                </div>
+                
+                <div class="videos-grid">
+                    <div class="video-card" onclick="openVideoModal('gOhj9zPp_aQ')">
+                        <div class="video-thumbnail">
+                            <img src="images/thumbnail-5.png" alt="Remote Energy Healing">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <h3>Remote Energy Healing: The Support I Found After Cancer Treatment</h3>
+                            <span class="video-duration">▶ 2:21</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideoModal('ZD-BR9BPqhM')">
+                        <div class="video-thumbnail">
+                            <img src="images/thumbnail-6.png" alt="Cancer Survivor's Journey">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <h3>A Cancer Survivor's Journey: Learning to Heal Others</h3>
+                            <span class="video-duration">▶ 4:52</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideoModal('T4UQtmLLQic')">
+                        <div class="video-thumbnail">
+                            <img src="images/thumbnail-7.png" alt="Cancer Loss and New Beginnings">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <h3>Cancer, Loss, and New Beginnings: When Friends Become Your Foundation</h3>
+                            <span class="video-duration">▶ 4:18</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideoModal('SKkE8w0bYZU')">
+                        <div class="video-thumbnail">
+                            <img src="images/thumbnail-8.png" alt="Navigating Cancer as a Couple">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <h3>Navigating Cancer as a Couple: Finding Patience, Acceptance, and Grace</h3>
+                            <span class="video-duration">▶ 4:35</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideoModal('QlfABw0jdUk')">
+                        <div class="video-thumbnail">
+                            <img src="images/thumbnail-9.png" alt="Learning Energy Healing">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <h3>Learning Energy Healing: From Basic Techniques to Psychotherapy</h3>
+                            <span class="video-duration">▶ 1:06</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+        <div class="video-modal-content" onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+            <iframe id="videoFrame" src="" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
     <a href="https://wa.me/918106248800?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20cancer%20support%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -243,11 +638,37 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Anugnya Holistic Care. All rights reserved.</p>
+                <p>© 2025 Anugnya Holistic Care. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Main JS -->
     <script src="js/main.js"></script>
+    
+    <script>
+        // Video Modal
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            frame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeVideoModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            frame.src = '';
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+    </script>
 </body>
 </html>

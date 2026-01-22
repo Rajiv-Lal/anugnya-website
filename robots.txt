@@ -1,0 +1,8 @@
+# Robots.txt for Anugnya Holistic Care
+# https://anugnyaholisticcare.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://anugnyaholisticcare.com/sitemap.xml

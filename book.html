@@ -811,8 +811,7 @@
             if (typeof CONFIG !== 'undefined' && CONFIG.googleScriptUrl) {
                 fetch(CONFIG.googleScriptUrl, {
                     method: 'POST', mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, phone: formData.get('phone'), formType, timestamp: new Date().toISOString() })
+                    body: new URLSearchParams({ name, email, phone: formData.get('phone') || '', formType, timestamp: new Date().toISOString() })
                 }).catch(err => console.error('Sheets error:', err));
             }
 

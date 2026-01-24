@@ -1129,21 +1129,29 @@ a {
         flex-direction: row;
         padding: 0;
         box-shadow: none;
-        gap: 8px;
+        gap: 4px;
         display: flex;
         overflow: visible;
     }
 
     .nav a {
-        padding: 8px 10px;
+        padding: 6px 8px;
         white-space: nowrap;
         flex-shrink: 0;
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .nav a[href="faq.html"],
+    .nav a[href="guides.html"] {
+        white-space: normal;
+        text-align: left;
+        max-width: 70px;
+        line-height: 1.2;
     }
 
     .nav .nav-cta {
         margin-top: 0;
-        padding: 10px 20px;
+        padding: 8px 15px;
     }
 
     /* Hero Desktop */

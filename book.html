@@ -798,7 +798,7 @@
             const name = formData.get('name') || '';
             const email = formData.get('email') || '';
 
-            gtag('event', 'form_submit', { 'event_category': 'booking', 'path_type': formType });
+            if (typeof gtag !== 'undefined') gtag('event', 'form_submit', { 'event_category': 'booking', 'path_type': formType });
 
             let context = 'Path: ' + formType;
             if (formType === 'treatment') {
@@ -820,7 +820,7 @@
             loadingDiv.innerHTML = '<div class="spinner"></div><p>Loading booking calendar...</p>';
             document.body.appendChild(loadingDiv);
 
-            gtag('event', 'calendly_open', { 'event_category': 'booking', 'path_type': formType });
+            if (typeof gtag !== 'undefined') gtag('event', 'calendly_open', { 'event_category': 'booking', 'path_type': formType });
 
             if (typeof Calendly !== 'undefined') {
                 Calendly.initPopupWidget({ url: CALENDLY_URL, prefill: { name, email, customAnswers: { a1: context } } });

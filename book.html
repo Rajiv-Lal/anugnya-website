@@ -798,7 +798,7 @@
             const name = formData.get('name') || '';
             const email = formData.get('email') || '';
 
-            if (typeof gtag !== 'undefined') gtag('event', 'form_submit', { 'event_category': 'booking', 'path_type': formType });
+            gtag('event', 'form_submit', { 'event_category': 'booking', 'path_type': formType });
 
             let context = 'Path: ' + formType;
             if (formType === 'treatment') {
@@ -811,7 +811,8 @@
             if (typeof CONFIG !== 'undefined' && CONFIG.googleScriptUrl) {
                 fetch(CONFIG.googleScriptUrl, {
                     method: 'POST', mode: 'no-cors',
-                    body: new URLSearchParams({ name, email, phone: formData.get('phone') || '', formType, timestamp: new Date().toISOString() })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, phone: formData.get('phone'), formType, timestamp: new Date().toISOString() })
                 }).catch(err => console.error('Sheets error:', err));
             }
 
@@ -820,7 +821,7 @@
             loadingDiv.innerHTML = '<div class="spinner"></div><p>Loading booking calendar...</p>';
             document.body.appendChild(loadingDiv);
 
-            if (typeof gtag !== 'undefined') gtag('event', 'calendly_open', { 'event_category': 'booking', 'path_type': formType });
+            gtag('event', 'calendly_open', { 'event_category': 'booking', 'path_type': formType });
 
             if (typeof Calendly !== 'undefined') {
                 Calendly.initPopupWidget({ url: CALENDLY_URL, prefill: { name, email, customAnswers: { a1: context } } });

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Struggling with chemo side effects? Remote support from cancer survivors - anywhere in the world. Manage fatigue, nausea, and stay strong during treatment.">
+    <meta name="keywords" content="chemo side effects, chemotherapy fatigue, nausea during chemo, cancer survivor support, energy healing, remote healing, holistic cancer care">
+    <title>Struggling with Chemo Side Effects? | Anugnya Holistic Care</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Struggling with Chemo Side Effects? Remote Support from Survivors">
+    <meta property="og:description" content="Remote support from cancer survivors - anywhere in the world. Manage fatigue, nausea, and stay strong during treatment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anugnyaholisticcare.com/welcome.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://anugnyaholisticcare.com/welcome.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/anugnya-logo.png">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EM10412DY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5EM10412DY');
+    </script>
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Page-Specific Styles -->
+    <style>
+        /* Welcome Page - Tight Above Fold */
+        .welcome-hero {
+            background: linear-gradient(135deg, var(--beige) 0%, var(--light-purple) 100%);
+            padding: 20px 0 40px;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+        }
+        
+        .welcome-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem-headline {
+            font-size: 26px;
+            color: var(--primary-purple);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        
+        .remote-tagline {
+            font-size: 15px;
+            color: var(--dark-purple);
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        /* Benefits with Hand Icons */
+        .benefits-list-welcome {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 25px;
+            max-width: 320px;
+            text-align: left;
+        }
+        
+        .benefits-list-welcome li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            font-size: 15px;
+            color: var(--dark-purple);
+        }
+        
+        .hand-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+        
+        /* Primary CTA - Chat with Sangeeta */
+        .primary-cta-box {
+            background: var(--whatsapp-green);
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .primary-cta-box:hover {
+            background: var(--whatsapp-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .cta-main-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .cta-main-text svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .cta-credentials {
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+        }
+        
+        /* Secondary link */
+        .secondary-link {
+            font-size: 14px;
+            color: var(--primary-purple);
+            text-decoration: underline;
+        }
+        
+        .secondary-link:hover {
+            color: var(--dark-purple);
+        }
+        
+        /* Below Fold Content */
+        .below-fold {
+            background: var(--white);
+            padding: 40px 0;
+        }
+        
+        .below-fold-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Video Section */
+        .video-section {
+            margin-bottom: 30px;
+        }
+        
+        .video-section h3 {
+            font-size: 18px;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            background: linear-gradient(135deg, var(--light-purple) 0%, var(--beige) 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .video-thumbnail:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--dark-purple);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: var(--primary-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .play-button svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--white);
+            margin-left: 5px;
+        }
+        
+        /* Doctor Endorsement */
+        .doctor-endorsement {
+            background: linear-gradient(135deg, var(--beige) 0%, var(--light-purple) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-purple);
+            margin-bottom: 25px;
+        }
+        
+        .doctor-quote {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--dark-purple);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .doctor-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .doctor-name {
+            font-size: 13px;
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+        
+        .doctor-link {
+            font-size: 12px;
+            color: var(--primary-purple);
+            text-decoration: underline;
+        }
+        
+        /* Final CTA */
+        .final-cta-section {
+            text-align: center;
+            padding: 25px;
+            background: var(--beige);
+            border-radius: 12px;
+        }
+        
+        .final-cta-section p {
+            font-size: 15px;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+        }
+        
+        .btn-whatsapp-final {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--whatsapp-green);
+            color: var(--white);
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-whatsapp-final:hover {
+            background: var(--whatsapp-dark);
+        }
+        
+        .btn-whatsapp-final svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+        
+        /* Disclaimer */
+        .page-disclaimer {
+            background: var(--beige);
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .video-modal.active {
+            display: flex;
+        }
+        
+        .video-modal-content {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .video-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .welcome-hero {
+                padding: 40px 0 60px;
+            }
+            
+            .problem-headline {
+                font-size: 36px;
+            }
+            
+            .remote-tagline {
+                font-size: 17px;
+            }
+            
+            .benefits-list-welcome {
+                max-width: 400px;
+            }
+            
+            .benefits-list-welcome li {
+                font-size: 16px;
+            }
+            
+            .cta-main-text {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/anugnya-logo.png" alt="Anugnya Holistic Care">
+                </a>
+                <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav" id="mainNav">
+                    <a href="index.html">Home</a>
+                    <a href="our-story.html">Our Story</a>
+                    <a href="services.html">Services</a>
+                    <a href="faq.html">Treatment Tips</a>
+                    <a href="guides.html">Survivor Stories</a>
+                    <a href="book.html" class="nav-cta">Book Consult</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ABOVE FOLD: Hero with Benefits + CTA -->
+        <section class="welcome-hero">
+            <div class="container">
+                <div class="welcome-content">
+                    <h1 class="problem-headline">Struggling with chemo side effects?</h1>
+                    <p class="remote-tagline">Remote support from cancer survivors • Anywhere in the world</p>
+                    
+                    <!-- Benefits with Hand Icons -->
+                    <ul class="benefits-list-welcome">
+                        <li>
+                            <svg class="hand-icon" viewBox="0 0 50 70" fill="#4C22A6">
+                                <path d="M25 2c-3 0-5.5 2.5-5.5 5.5v28c0 0-6-3-9-3-3 0-5.5 2.5-5.5 5.5 0 3 2 5.5 5 8l6 6c3 3 5 8 5 13v5c0 3 2.5 5 5.5 5h12c3 0 5.5-2 5.5-5V35c0-3-2.5-5.5-5.5-5.5H36V15c0-3-2.5-5.5-5.5-5.5S25 12 25 15v20h5V15c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v17h5.5c1.5 0 2.5 1 2.5 2.5v30c0 1.5-1 2.5-2.5 2.5h-12c-1.5 0-2.5-1-2.5-2.5v-5c0-6-3-12-7-16l-6-6c-2-2-3-3.5-3-5.5 0-1.5 1-2.5 2.5-2.5 3 0 9 3 9 3V7.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v35h5V7.5C30.5 4.5 28 2 25 2z"/>
+                                <ellipse cx="25" cy="25" rx="3" ry="8" fill="none" stroke="#4C22A6" stroke-width="1.5"/>
+                            </svg>
+                            Manage nausea, fatigue & pain
+                        </li>
+                        <li>
+                            <svg class="hand-icon" viewBox="0 0 50 70" fill="#4C22A6">
+                                <path d="M25 2c-3 0-5.5 2.5-5.5 5.5v28c0 0-6-3-9-3-3 0-5.5 2.5-5.5 5.5 0 3 2 5.5 5 8l6 6c3 3 5 8 5 13v5c0 3 2.5 5 5.5 5h12c3 0 5.5-2 5.5-5V35c0-3-2.5-5.5-5.5-5.5H36V15c0-3-2.5-5.5-5.5-5.5S25 12 25 15v20h5V15c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v17h5.5c1.5 0 2.5 1 2.5 2.5v30c0 1.5-1 2.5-2.5 2.5h-12c-1.5 0-2.5-1-2.5-2.5v-5c0-6-3-12-7-16l-6-6c-2-2-3-3.5-3-5.5 0-1.5 1-2.5 2.5-2.5 3 0 9 3 9 3V7.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v35h5V7.5C30.5 4.5 28 2 25 2z"/>
+                                <ellipse cx="25" cy="25" rx="3" ry="8" fill="none" stroke="#4C22A6" stroke-width="1.5"/>
+                            </svg>
+                            Support immunity during treatment
+                        </li>
+                        <li>
+                            <svg class="hand-icon" viewBox="0 0 50 70" fill="#4C22A6">
+                                <path d="M25 2c-3 0-5.5 2.5-5.5 5.5v28c0 0-6-3-9-3-3 0-5.5 2.5-5.5 5.5 0 3 2 5.5 5 8l6 6c3 3 5 8 5 13v5c0 3 2.5 5 5.5 5h12c3 0 5.5-2 5.5-5V35c0-3-2.5-5.5-5.5-5.5H36V15c0-3-2.5-5.5-5.5-5.5S25 12 25 15v20h5V15c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v17h5.5c1.5 0 2.5 1 2.5 2.5v30c0 1.5-1 2.5-2.5 2.5h-12c-1.5 0-2.5-1-2.5-2.5v-5c0-6-3-12-7-16l-6-6c-2-2-3-3.5-3-5.5 0-1.5 1-2.5 2.5-2.5 3 0 9 3 9 3V7.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v35h5V7.5C30.5 4.5 28 2 25 2z"/>
+                                <ellipse cx="25" cy="25" rx="3" ry="8" fill="none" stroke="#4C22A6" stroke-width="1.5"/>
+                            </svg>
+                            Stay strong to complete treatment
+                        </li>
+                        <li>
+                            <svg class="hand-icon" viewBox="0 0 50 70" fill="#4C22A6">
+                                <path d="M25 2c-3 0-5.5 2.5-5.5 5.5v28c0 0-6-3-9-3-3 0-5.5 2.5-5.5 5.5 0 3 2 5.5 5 8l6 6c3 3 5 8 5 13v5c0 3 2.5 5 5.5 5h12c3 0 5.5-2 5.5-5V35c0-3-2.5-5.5-5.5-5.5H36V15c0-3-2.5-5.5-5.5-5.5S25 12 25 15v20h5V15c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v17h5.5c1.5 0 2.5 1 2.5 2.5v30c0 1.5-1 2.5-2.5 2.5h-12c-1.5 0-2.5-1-2.5-2.5v-5c0-6-3-12-7-16l-6-6c-2-2-3-3.5-3-5.5 0-1.5 1-2.5 2.5-2.5 3 0 9 3 9 3V7.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v35h5V7.5C30.5 4.5 28 2 25 2z"/>
+                                <ellipse cx="25" cy="25" rx="3" ry="8" fill="none" stroke="#4C22A6" stroke-width="1.5"/>
+                            </svg>
+                            Emotional support when you need it
+                        </li>
+                    </ul>
+                    
+                    <!-- Primary CTA: Chat with Sangeeta -->
+                    <a href="https://wa.me/919100972190?text=Hi%2C%20I%20watched%20your%20video%20and%20would%20like%20to%20know%20more%20about%20your%20services." class="primary-cta-box" onclick="gtag('event', 'whatsapp_click', {'event_category': 'welcome_page', 'event_label': 'hero_cta'});">
+                        <div class="cta-main-text">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Chat with Sangeeta
+                        </div>
+                        <div class="cta-credentials">Cancer Survivor • Energy Healer • Aromatherapist</div>
+                    </a>
+                    
+                    <a href="book.html" class="secondary-link">Or book a free consultation →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- BELOW FOLD: Video + Doctor + Final CTA -->
+        <section class="below-fold">
+            <div class="container">
+                <div class="below-fold-content">
+                    
+                    <!-- Video Section -->
+                    <div class="video-section">
+                        <h3>Watch Sangeeta's Story</h3>
+                        <div class="video-thumbnail" onclick="openVideoModal()">
+                            <p style="color:#4C22A6;font-size:16px;margin:0;">Click to watch how energy healing helped Sangeeta through cancer treatment</p>
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Doctor Endorsement -->
+                    <div class="doctor-endorsement">
+                        <p class="doctor-quote">"Anugnya equips patients and caregivers with holistic tools to navigate the cancer journey. This complementary approach helps patients tolerate treatment better and maintain quality of life."</p>
+                        <div class="doctor-info">
+                            <span class="doctor-name">Dr. Chinnababu Sunkavalli • Surgical Oncologist (20+ years)</span>
+                            <a href="https://www.drchinnababu.com" target="_blank" rel="noopener" class="doctor-link">View Profile →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Final CTA -->
+                    <div class="final-cta-section">
+                        <p>Ready to feel better during treatment?</p>
+                        <a href="https://wa.me/919100972190?text=Hi%2C%20I%20watched%20your%20video%20and%20would%20like%20to%20know%20more%20about%20your%20services." class="btn-whatsapp-final" onclick="gtag('event', 'whatsapp_click', {'event_category': 'welcome_page', 'event_label': 'final_cta'});">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Chat with Sangeeta
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Disclaimer -->
+        <div class="page-disclaimer">
+            <strong>Important:</strong> Our services complement medical treatment—they never replace it. Always follow your oncologist's guidance.
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
+        <div class="video-modal-content" onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+            <div class="video-wrapper">
+                <iframe id="videoFrame" src="" title="Sangeeta's Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919100972190?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20cancer%20support%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" onclick="gtag('event', 'whatsapp_click', {'event_category': 'welcome_page', 'event_label': 'floating_button'});">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Minimal Footer -->
+    <footer style="background: #1B0564; color: #fff; padding: 20px; text-align: center; font-size: 13px;">
+        <p style="margin-bottom: 5px;">© 2025 Anugnya Holistic Care • Founded by Cancer Survivors, for Cancer Survivors</p>
+        <p style="opacity: 0.7;">care@anugnyaholisticcare.com • +91 9100972190</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Video Modal Functions
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            // Replace ZD-BR9BPqhM with actual YouTube video ID
+            frame.src = 'https://www.youtube.com/embed/ZD-BR9BPqhM?autoplay=1&rel=0&modestbranding=1';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Track video play
+            gtag('event', 'video_play', {'event_category': 'welcome_page', 'event_label': 'sangeeta_story'});
+        }
+        
+        function closeVideoModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            frame.src = '';
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+    </script>
+</body>
+</html>

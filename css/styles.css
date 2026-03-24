@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
 /* ============================================
    ANUGNYA HOLISTIC CARE - SHARED STYLES
    Version: 3.0 Mobile-First with Correct Footer
@@ -36,6 +38,37 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+
+/* ── Hindi / Devanagari font ── */
+html[lang="hi"] body,
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3,
+html[lang="hi"] h4,
+html[lang="hi"] p,
+html[lang="hi"] li,
+html[lang="hi"] a,
+html[lang="hi"] span,
+html[lang="hi"] label,
+html[lang="hi"] button,
+html[lang="hi"] input,
+html[lang="hi"] select,
+html[lang="hi"] textarea,
+html[lang="hi"] cite,
+html[lang="hi"] small {
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.8;
+}
+
+html[lang="hi"] h1 { font-size: 22px; }
+html[lang="hi"] h2 { font-size: 20px; }
+html[lang="hi"] h3 { font-size: 18px; }
+@media (min-width: 768px) {
+    html[lang="hi"] h1 { font-size: 28px; }
+    html[lang="hi"] h2 { font-size: 24px; }
+    html[lang="hi"] h3 { font-size: 20px; }
 }
 
 body {

@@ -1,276 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
-    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EM10412DY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5EM10412DY');
-    </script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5EM10412DY');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Manage chemotherapy side effects like tiredness, nausea, weakness, and anxiety. Energy healing, aromatherapy, and support for cancer patients and caregivers.">
-    <meta name="keywords" content="chemotherapy side effects, cancer fatigue, chemo nausea, energy healing cancer, aromatherapy chemotherapy, cancer support group, caregiver burnout">
     <title>Cancer Treatment Support: Energy Healing, Aromatherapy, Recovery | Anugnya</title>
-    
     <meta property="og:title" content="Our Services | Anugnya Holistic Care">
-    <meta property="og:description" content="6 layers of comprehensive support for cancer patients and caregivers.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anugnyaholisticcare.com/services.html">
-    
+    <link rel="canonical" href="https://anugnyaholisticcare.com/services.html">
     <link rel="icon" type="image/png" href="images/anugnya-logo.png">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .lang-toggle{display:flex;align-items:center;gap:0;border:1.5px solid var(--primary-purple);border-radius:20px;overflow:hidden;flex-shrink:0;position:relative;z-index:10;}
+        .lang-btn{padding:5px 12px;font-size:13px;font-weight:600;background:transparent;color:var(--primary-purple);border:none;cursor:pointer;transition:all 0.2s;line-height:1.4;-webkit-tap-highlight-color:transparent;}
+        .lang-btn.active{background:var(--primary-purple);color:white;}
+        .lang-divider{width:1px;height:20px;background:var(--primary-purple);opacity:0.4;}
+        .services-list{margin-top:30px;}
+        .service-row{margin-bottom:16px;}
+        .service-card{background:var(--white);padding:20px;border-radius:12px;box-shadow:0 4px 20px var(--shadow);cursor:pointer;border-top:4px solid var(--primary-purple);display:flex;align-items:center;gap:16px;transition:background 0.2s;-webkit-tap-highlight-color:transparent;user-select:none;}
+        .service-card:active,.service-card.open{background:#f0ebfc;border-top-color:var(--rose);}
+        .service-icon{width:60px;height:60px;flex-shrink:0;border-radius:50%;background:var(--light-beige);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+        .service-icon img{width:42px;height:42px;object-fit:contain;}
+        .service-card-text{flex:1;}
+        .service-card-text h4{color:var(--primary-purple);font-size:17px;margin:0 0 4px 0;}
+        .service-card-text p{color:var(--dark-purple);font-size:14px;margin:0;line-height:1.5;}
+        .service-chevron{font-size:20px;color:var(--primary-purple);flex-shrink:0;transition:transform 0.3s;line-height:1;}
+        .service-card.open .service-chevron{transform:rotate(180deg);}
+        .service-panel{display:none;background:var(--white);border-radius:0 0 12px 12px;border:1px solid var(--light-beige);border-top:none;overflow:hidden;animation:panelIn 0.2s ease;}
+        @keyframes panelIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
+        .service-panel.open{display:block;}
+        .service-panel-img{width:100%;height:180px;overflow:hidden;}
+        .service-panel-img img{width:100%;height:100%;object-fit:cover;display:block;}
+        .service-panel-body{padding:20px;}
+        .service-panel-body h3{color:var(--primary-purple);font-size:20px;margin:0 0 10px 0;}
+        .service-panel-body p{color:var(--dark-purple);font-size:15px;line-height:1.7;margin-bottom:14px;}
+        .service-panel-body ul{list-style:none;padding:0;margin:0 0 20px 0;}
+        .service-panel-body li{padding:6px 0 6px 24px;position:relative;font-size:14px;color:var(--dark-purple);line-height:1.5;border-bottom:1px solid var(--light-beige);}
+        .service-panel-body li:last-child{border-bottom:none;}
+        .service-panel-body li:before{content:'✓';position:absolute;left:0;color:var(--primary-purple);font-weight:bold;}
+        .panel-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+        .panel-disclaimer{margin-top:14px;padding:10px 12px;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404;}
+        @media(min-width:769px){
+            .services-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 20px;align-items:start;}
+            .service-row{margin-bottom:20px;}
+            .service-card{flex-direction:column;text-align:center;padding:25px;gap:0;}
+            .service-icon{width:70px;height:70px;margin:0 auto 14px;}
+            .service-icon img{width:50px;height:50px;}
+            .service-card-text{text-align:center;}
+            .service-card-text h4{font-size:18px;margin-bottom:8px;}
+            .service-chevron{display:none;}
+            .service-panel{grid-column:1/-1;border-radius:12px;border:1px solid var(--light-beige);}
+            .service-panel-img{height:250px;}
+            .service-panel-inner{display:flex;}
+            .service-panel-img{width:280px;height:auto;flex-shrink:0;}
+            .service-panel-body{padding:30px 35px;}
+            .service-panel-body h3{font-size:22px;}
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">
-                    <img src="images/anugnya-logo.png" alt="Anugnya Holistic Care">
-                </a>
-                <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
-                </button>
+                <a href="index.html" class="logo"><img src="images/anugnya-logo.png" alt="Anugnya Holistic Care"></a>
+                <div class="lang-toggle">
+                    <button type="button" class="lang-btn active" id="btnEN" onclick="setLang('en')" aria-label="English">EN</button>
+                    <div class="lang-divider"></div>
+                    <button type="button" class="lang-btn" id="btnHI" onclick="setLang('hi')" aria-label="हिंदी">हिं</button>
+                </div>
+                <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
                 <nav class="nav" id="mainNav">
-                    <a href="index.html">Home</a>
-                    <a href="our-story.html">Our Story</a>
-                    <a href="services.html" class="active">Services</a>
-                    <a href="faq.html">Treatment Tips</a>
-                    <a href="guides.html">Survivor Stories</a>
-                    <a href="book.html" class="nav-cta">Book Consult</a>
+                    <a href="index.html" data-en="Home" data-hi="होम">Home</a>
+                    <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
+                    <a href="services.html" class="active" data-en="Services" data-hi="सेवाएँ">Services</a>
+                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
+                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <a href="book.html" class="nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="section" style="padding-bottom: 20px;">
+        <section class="section" style="padding-bottom:20px;">
             <div class="container">
-                <h1 class="section-title">Holistic Support for Chemotherapy & Radiation Side Effects</h1>
-                <p class="section-subtitle">6 Layers of Comprehensive Support</p>
-                <p style="max-width: 800px; margin: 20px auto 0; text-align: center; font-size: 17px; line-height: 1.7; color: #2D1B4E;"><strong>We've been where you are.</strong> The exhaustion that no amount of sleep fixes. The nausea that makes eating feel impossible. The fear that creeps in at night. We know—because we've lived it. Energy healing helped us through—and we made it our mission to study it, learn the protocols, and help you.</p>
-            </div>
-        </section>
+                <h1 class="section-title" data-en="Holistic Support for Chemotherapy &amp; Radiation Side Effects" data-hi="कीमोथेरेपी और रेडिएशन के साइड इफेक्ट्स में सपोर्ट के लिए">Holistic Support for Chemotherapy &amp; Radiation Side Effects</h1>
+                <p class="section-subtitle" data-en="6 Layers of Comprehensive Support" data-hi="सपोर्ट के 6 तरीके">6 Layers of Comprehensive Support</p>
+                <p style="max-width:800px;margin:20px auto 0;text-align:center;font-size:16px;line-height:1.7;color:#2D1B4E;"
+                   data-en="We've been where you are. The exhaustion that no amount of sleep fixes. The nausea that makes eating feel impossible. The fear that creeps in at night. We know — because we've lived it."
+                   data-hi="हम वहाँ रहे चुके हैं जहाँ आप अभी हैं। वह थकान जो कितनी भी नींद से ठीक नहीं होती। वह मतली जो खाना मुश्किल बना देती है। वह डर जो रात को चुपके से आता है।">
+                    We've been where you are. The exhaustion that no amount of sleep fixes. The nausea that makes eating feel impossible. The fear that creeps in at night. We know — because we've lived it.
+                </p>
 
-        <section class="section" style="padding-top: 0;">
-            <div class="container">
-                <!-- Service Cards Grid -->
-                <div class="services-grid">
-                    <div class="service-card" onclick="showServiceDetail('energy-healing')">
-                        <div class="service-icon">
-                            <img src="images/service-01-energy-healing.png" alt="Therapeutic Energy Healing">
+                <div class="services-list" id="servicesList">
+
+                    <!-- 1 -->
+                    <div class="service-row">
+                        <div class="service-card" onclick="toggleService('energy-healing')" id="card-energy-healing">
+                            <div class="service-icon"><img src="images/service-01-energy-healing.png" alt=""></div>
+                            <div class="service-card-text">
+                                <h4 data-en="Therapeutic Energy Healing" data-hi="एनर्जी हीलिंग — थेराप्यूटिक">Therapeutic Energy Healing</h4>
+                                <p data-en="Remote healing sessions to aid recovery from surgery, chemotherapy, and radiation." data-hi="सर्जरी, कीमोथेरेपी और रेडिएशन के बाद उबरने में मदद के लिए रिमोट हीलिंग सेशन।">Remote healing sessions to aid recovery from surgery, chemotherapy, and radiation.</p>
+                            </div>
+                            <span class="service-chevron">&#8964;</span>
                         </div>
-                        <h4>1. Therapeutic Energy Healing</h4>
-                        <p>Remote healing sessions to aid your recovery from surgery, chemotherapy, and radiation—enhancing your body's ability to heal.</p>
-                    </div>
-                    
-                    <div class="service-card" onclick="showServiceDetail('aromatherapy')">
-                        <div class="service-icon">
-                            <img src="images/service-02-aromatherapy.png" alt="Energy Aromatherapy">
+                        <div class="service-panel" id="panel-energy-healing">
+                            <div class="service-panel-inner">
+                                <div class="service-panel-img"><img src="images/therapeutic-energy-healing.png" alt=""></div>
+                                <div class="service-panel-body">
+                                    <h3 data-en="Therapeutic Energy Healing" data-hi="एनर्जी हीलिंग — थेराप्यूटिक">Therapeutic Energy Healing</h3>
+                                    <p data-en="Remote healing sessions, delivered through a personalized protocol to aid your recovery — enhancing your body's ability to heal." data-hi="रिमोट हीलिंग सेशन, व्यक्तिगत तरीके से तैयार — ताकि आपका शरीर खुद को ठीक कर सके।">Remote healing sessions, delivered through a personalized protocol to aid your recovery — enhancing your body's ability to heal.</p>
+                                    <ul>
+                                        <li data-en="Works alongside allopathic medicine, speeds up the body's self-healing" data-hi="एलोपैथिक दवाओं के साथ मिलकर शरीर को जल्दी ठीक करता है">Works alongside allopathic medicine, speeds up the body's self-healing</li>
+                                        <li data-en="Manages the impact of chemotherapy and radiation on the body" data-hi="कीमोथेरेपी और रेडिएशन के असर को कम करता है">Manages the impact of chemotherapy and radiation on the body</li>
+                                        <li data-en="Improves immunity and maintains hemoglobin levels" data-hi="इम्युनिटी बढ़ाता है और हीमोग्लोबिन का स्तर बनाए रखता है">Improves immunity and maintains hemoglobin levels</li>
+                                        <li data-en="Remote — no need to be in the same physical space" data-hi="रिमोट — कहीं जाने की ज़रूरत नहीं">Remote — no need to be in the same physical space</li>
+                                        <li data-en="Personalized protocols based on your treatment schedule and symptoms" data-hi="आपके इलाज और तकलीफ के हिसाब से व्यक्तिगत तरीका">Personalized protocols based on your treatment schedule and symptoms</li>
+                                    </ul>
+                                    <div class="panel-actions">
+                                        <a href="book.html" class="btn btn-secondary" data-en="Book This Service" data-hi="यह सेवा बुक करें">Book This Service</a>
+                                        <a href="https://wa.me/918106248800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Therapeutic%20Energy%20Healing." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp" data-hi="💬 व्हाट्सऐप">💬 WhatsApp</a>
+                                    </div>
+                                    <p class="panel-disclaimer" data-en="Individual results may vary. Outcomes depend on many individual factors." data-hi="हर इंसान का अनुभव अलग होता है।">Individual results may vary. Outcomes depend on many individual factors.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4>2. Energy Aromatherapy</h4>
-                        <p>AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress.</p>
                     </div>
-                    
-                    <div class="service-card" onclick="showServiceDetail('psychotherapy')">
-                        <div class="service-icon">
-                            <img src="images/service-03-psychotherapy.png" alt="Energy Psychotherapy">
+
+                    <!-- 2 -->
+                    <div class="service-row">
+                        <div class="service-card" onclick="toggleService('aromatherapy')" id="card-aromatherapy">
+                            <div class="service-icon"><img src="images/service-02-aromatherapy.png" alt=""></div>
+                            <div class="service-card-text">
+                                <h4 data-en="Energy Aromatherapy" data-hi="एनर्जी अरोमाथेरेपी">Energy Aromatherapy</h4>
+                                <p data-en="AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress." data-hi="आयुष-सर्टिफाइड एसेंशियल ऑइल ब्लेंड्स — दर्द कम करने, इम्युनिटी बढ़ाने और तकलीफ से राहत के लिए।">AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress.</p>
+                            </div>
+                            <span class="service-chevron">&#8964;</span>
                         </div>
-                        <h4>3. Energy Psychotherapy</h4>
-                        <p>Remote healing to help you overcome fear, anxiety, loneliness and sadness and build your mental, emotional and spiritual resilience.</p>
-                    </div>
-                    
-                    <div class="service-card" onclick="showServiceDetail('retreat')">
-                        <div class="service-icon">
-                            <img src="images/service-04-healing-offsite.png" alt="Restorative Healing Retreat">
+                        <div class="service-panel" id="panel-aromatherapy">
+                            <div class="service-panel-inner">
+                                <div class="service-panel-img"><img src="images/energy-aromatherapy.png" alt=""></div>
+                                <div class="service-panel-body">
+                                    <h3 data-en="Energy Aromatherapy" data-hi="एनर्जी अरोमाथेरेपी">Energy Aromatherapy</h3>
+                                    <p data-en="AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress during and after cancer treatment." data-hi="आयुष-सर्टिफाइड एसेंशियल ऑइल ब्लेंड्स — कैंसर के इलाज के दौरान और बाद में दर्द कम करने, इम्युनिटी बढ़ाने और तकलीफ से राहत के लिए।">AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress during and after cancer treatment.</p>
+                                    <ul>
+                                        <li data-en="AYUSH-certified blends for pain relief, fatigue, skin and hair care" data-hi="दर्द, थकान, त्वचा और बालों के लिए आयुष-सर्टिफाइड खास ब्लेंड्स">AYUSH-certified blends for pain relief, fatigue, skin and hair care</li>
+                                        <li data-en="Topical oils to improve the immune response of the body" data-hi="इम्युनिटी बेहतर करने के लिए टॉपिकल ऑइल्स">Topical oils to improve the immune response of the body</li>
+                                        <li data-en="Diffusing oils to maintain peace and positivity" data-hi="शांति और सकारात्मकता के लिए डिफ्यूज़र ऑइल्स">Diffusing oils to maintain peace and positivity</li>
+                                        <li data-en="Calming blends for restorative sleep during treatment" data-hi="इलाज के दौरान अच्छी नींद के लिए शांति ब्लेंड्स">Calming blends for restorative sleep during treatment</li>
+                                        <li data-en="Helps overcome weakness and tiredness from cancer treatment" data-hi="कैंसर इलाज की थकान और कमज़ोरी दूर करने में मदद">Helps overcome weakness and tiredness from cancer treatment</li>
+                                    </ul>
+                                    <div class="panel-actions">
+                                        <a href="book.html" class="btn btn-secondary" data-en="Book This Service" data-hi="यह सेवा बुक करें">Book This Service</a>
+                                        <a href="https://wa.me/918106248800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Energy%20Aromatherapy." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp" data-hi="💬 व्हाट्सऐप">💬 WhatsApp</a>
+                                    </div>
+                                    <p class="panel-disclaimer" data-en="Individual results may vary." data-hi="हर इंसान का अनुभव अलग होता है।">Individual results may vary.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4>4. Restorative Healing Retreat</h4>
-                        <p>A 3-day immersion program in the serenity of nature to overcome the burnout from cancer treatment.</p>
                     </div>
-                    
-                    <div class="service-card" onclick="showServiceDetail('community')">
-                        <div class="service-icon">
-                            <img src="images/service-05-cancer-companion.png" alt="Community Support">
+
+                    <!-- 3 -->
+                    <div class="service-row">
+                        <div class="service-card" onclick="toggleService('psychotherapy')" id="card-psychotherapy">
+                            <div class="service-icon"><img src="images/service-03-psychotherapy.png" alt=""></div>
+                            <div class="service-card-text">
+                                <h4 data-en="Energy Psychotherapy" data-hi="एनर्जी साइकोथेरेपी">Energy Psychotherapy</h4>
+                                <p data-en="Remote healing to overcome fear, anxiety, loneliness and build emotional resilience." data-hi="डर, चिंता और अकेलेपन से उबरने और मन को मज़बूत करने के लिए रिमोट हीलिंग।">Remote healing to overcome fear, anxiety, loneliness and build emotional resilience.</p>
+                            </div>
+                            <span class="service-chevron">&#8964;</span>
                         </div>
-                        <h4>5. Community Support & Guidance</h4>
-                        <p>Seek solace, guidance and help from other patients or survivors in a safe and confidential space.</p>
-                    </div>
-                    
-                    <div class="service-card" onclick="showServiceDetail('self-empowerment')">
-                        <div class="service-icon">
-                            <img src="images/service-06-self-empowerment.png" alt="Self-Empowerment">
+                        <div class="service-panel" id="panel-psychotherapy">
+                            <div class="service-panel-inner">
+                                <div class="service-panel-img"><img src="images/energy-psychotherapy.png" alt=""></div>
+                                <div class="service-panel-body">
+                                    <h3 data-en="Energy Psychotherapy" data-hi="एनर्जी साइकोथेरेपी">Energy Psychotherapy</h3>
+                                    <p data-en="Remote healing to maintain your emotional and mental wellbeing in the long, lonely and painful cancer journey." data-hi="कैंसर की लंबी, अकेली और दर्दनाक यात्रा में मन और दिल को संभालने के लिए रिमोट हीलिंग।">Remote healing to maintain your emotional and mental wellbeing in the long, lonely and painful cancer journey.</p>
+                                    <ul>
+                                        <li data-en="Restores vital energy depleted by fear, anxiety, and emotional toll" data-hi="डर और इलाज के बोझ से खोई ऊर्जा वापस लाएँ">Restores vital energy depleted by fear, anxiety, and emotional toll</li>
+                                        <li data-en="Builds resilience to continue treatment without emotional overwhelm" data-hi="मन को मज़बूत करें ताकि आगे बढ़ते रहें">Builds resilience to continue treatment without emotional overwhelm</li>
+                                        <li data-en="Releases sadness, hopelessness, and fear of side effects" data-hi="उदासी, निराशा और साइड इफेक्ट्स के डर को दूर करें">Releases sadness, hopelessness, and fear of side effects</li>
+                                        <li data-en="Supports caregivers facing exhaustion and burnout" data-hi="थकान और टूट जाने की कगार पर खड़े देखभाल करने वालों की मदद">Supports caregivers facing exhaustion and burnout</li>
+                                        <li data-en="Calms the mind for restorative sleep" data-hi="गहरी और आरामदायक नींद के लिए मन को शांत करें">Calms the mind for restorative sleep</li>
+                                    </ul>
+                                    <div class="panel-actions">
+                                        <a href="book.html" class="btn btn-secondary" data-en="Book This Service" data-hi="यह सेवा बुक करें">Book This Service</a>
+                                        <a href="https://wa.me/918106248800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Energy%20Psychotherapy." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp" data-hi="💬 व्हाट्सऐप">💬 WhatsApp</a>
+                                    </div>
+                                    <p class="panel-disclaimer" data-en="Individual results may vary." data-hi="हर इंसान का अनुभव अलग होता है।">Individual results may vary.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4>6. Self-Empowerment</h4>
-                        <p>Learn to activate the healer within yourself and support your loved ones.</p>
                     </div>
+
+                    <!-- 4 -->
+                    <div class="service-row">
+                        <div class="service-card" onclick="toggleService('retreat')" id="card-retreat">
+                            <div class="service-icon"><img src="images/service-04-healing-offsite.png" alt=""></div>
+                            <div class="service-card-text">
+                                <h4 data-en="Restorative Healing Retreat" data-hi="शिफ़ा रिट्रीट">Restorative Healing Retreat</h4>
+                                <p data-en="A 3-day immersion in nature to overcome burnout from cancer treatment." data-hi="प्रकृति में 3 दिन — इलाज से टूट जाने के बाद उबरने के लिए।">A 3-day immersion in nature to overcome burnout from cancer treatment.</p>
+                            </div>
+                            <span class="service-chevron">&#8964;</span>
+                        </div>
+                        <div class="service-panel" id="panel-retreat">
+                            <div class="service-panel-inner">
+                                <div class="service-panel-img"><img src="images/restorative-healing-retreat.png" alt=""></div>
+                                <div class="service-panel-body">
+                                    <h3 data-en="Restorative Healing Retreat" data-hi="शिफ़ा रिट्रीट">Restorative Healing Retreat</h3>
+                                    <p data-en="A 3-day immersion program in the serenity of nature to overcome the burnout from cancer treatment, relook at your life and renew your life's purpose." data-hi="प्रकृति की शांति में 3 दिन — इलाज की थकान से उबरने और आगे की ज़िंदगी नए सिरे से शुरू करने के लिए।">A 3-day immersion program in the serenity of nature to overcome the burnout from cancer treatment, relook at your life and renew your life's purpose.</p>
+                                    <ul>
+                                        <li data-en="A safe space to openly talk about fear, anxiety, tiredness" data-hi="डर, चिंता और थकान की बात खुलकर करने की सुरक्षित जगह">A safe space to openly talk about fear, anxiety, tiredness</li>
+                                        <li data-en="Recover from fatigue and nausea that drained your energy" data-hi="उस थकान और मतली से उबरें जिसने आपको खोखला कर दिया">Recover from fatigue and nausea that drained your energy</li>
+                                        <li data-en="Start your healing journey through meditation, energy healing, and wellness" data-hi="ध्यान और एनर्जी हीलिंग से स्वस्थ होने की राह शुरू करें">Start your healing journey through meditation, energy healing, and wellness</li>
+                                        <li data-en="Brainstorm and chart the journey ahead for a purpose-filled life" data-hi="आगे की ज़िंदगी का उद्देश्यपूर्ण रास्ता तय करें">Brainstorm and chart the journey ahead for a purpose-filled life</li>
+                                    </ul>
+                                    <div class="panel-actions">
+                                        <a href="book.html" class="btn btn-secondary" data-en="Book This Service" data-hi="यह सेवा बुक करें">Book This Service</a>
+                                        <a href="https://wa.me/918106248800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Healing%20Retreat." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp" data-hi="💬 व्हाट्सऐप">💬 WhatsApp</a>
+                                    </div>
+                                    <p class="panel-disclaimer" data-en="Individual results may vary." data-hi="हर इंसान का अनुभव अलग होता है।">Individual results may vary.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="service-row">
+                        <div class="service-card" onclick="toggleService('community')" id="card-community">
+                            <div class="service-icon"><img src="images/service-05-cancer-companion.png" alt=""></div>
+                            <div class="service-card-text">
+                                <h4 data-en="Community Support &amp; Guidance" data-hi="अपनों का साथ">Community Support &amp; Guidance</h4>
+                                <p data-en="Seek solace and guidance from other patients and survivors in a safe, confidential space." data-hi="एक सुरक्षित और गोपनीय जगह में दूसरे मरीज़ों और सर्वाइवर्स से सहारा और मार्गदर्शन लें।">Seek solace and guidance from other patients and survivors in a safe, confidential space.</p>
+                            </div>
+                            <span class="service-chevron">&#8964;</span>
+                        </div>
+                        <div class="service-panel" id="panel-community">
+                            <div class="service-panel-inner">
+                                <div class="service-panel-img"><img src="images/community-support-guidance.png" alt=""></div>
+                                <div class="service-panel-body">
+                                    <h3 data-en="Community Support &amp; Guidance" data-hi="अपनों का साथ">Community Support &amp; Guidance</h3>
+                                    <p data-en="You do not have to do this alone. Our community support group helps you seek solace, guidance and help from other patients or survivors in a safe and confidential space." data-hi="आपको यह अकेले नहीं करना है। हमारा सपोर्ट ग्रुप आपको एक सुरक्षित और गोपनीय जगह में दूसरे मरीज़ों और सर्वाइवर्स से सहारा और मार्गदर्शन लेने में मदद करता है।">You do not have to do this alone. Our community support group helps you seek solace, guidance and help from other patients or survivors in a safe and confidential space.</p>
+                                    <ul>
+                                        <li data-en="Understand practical steps to meet day-to-day challenges" data-hi="रोज़मर्रा की चुनौतियों से निपटने के व्यावहारिक तरीके जानें">Understand practical steps to meet day-to-day challenges</li>
+                                        <li data-en="Talk about fears and anxiety with people who have survived treatment" data-hi="उन लोगों से डर और चिंता की बात करें जो इलाज से गुज़र चुके हैं">Talk about fears and anxiety with people who have survived treatment</li>
+                                        <li data-en="Access guided meditations for tiredness, self-worth, and forgiveness" data-hi="थकान, अपनी कदर और माफ़ करने के लिए मार्गदर्शित ध्यान">Access guided meditations for tiredness, self-worth, and forgiveness</li>
+                                        <li data-en="Meet others dealing with anger, grief, and loneliness" data-hi="गुस्से, दुःख और अकेलेपन से जूझ रहे दूसरों से मिलें">Meet others dealing with anger, grief, and loneliness</li>
+                                        <li data-en="Virtual sessions — join from the comfort of your own home" data-hi="वर्चुअल सेशन — घर बैठे जुड़ें">Virtual sessions — join from the comfort of your own home</li>
+                                    </ul>
+                                    <div class="panel-actions">
+                                        <a href="book.html" class="btn btn-secondary" data-en="Book This Service" data-hi="यह सेवा बुक करें">Book This Service</a>
+                                        <a href="https://wa.me/918106248800?text=Hi%2C%20I%20would%20like%20to%20join%20the%20Cancer%20Support%20Group." class="btn btn-whatsapp" target="_blank" data-en="💬 Join Support Group" data-hi="💬 अपनों का साथ से जुड़ें">💬 Join Support Group</a>
+                                    </div>
+                                    <p class="panel-disclaimer" data-en="Individual results may vary." data-hi="हर इंसान का अनुभव अलग होता है।">Individual results may vary.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="service-row">
+                        <div class="service-card" onclick="toggleService('self')" id="card-self">
+                            <div class="service-icon"><img src="images/service-06-self-empowerment.png" alt=""></div>
+                            <div class="service-card-text">
+                                <h4 data-en="Self-Empowerment" data-hi="खुद को मज़बूत बनाएँ">Self-Empowerment</h4>
+                                <p data-en="Learn to activate the healer within yourself and support your loved ones." data-hi="अपने अंदर की शिफ़ा की ताकत जगाएँ और अपने परिवार का सहारा बनें।">Learn to activate the healer within yourself and support your loved ones.</p>
+                            </div>
+                            <span class="service-chevron">&#8964;</span>
+                        </div>
+                        <div class="service-panel" id="panel-self">
+                            <div class="service-panel-inner">
+                                <div class="service-panel-img"><img src="images/self-empowerment.png" alt=""></div>
+                                <div class="service-panel-body">
+                                    <h3 data-en="Self-Empowerment" data-hi="खुद को मज़बूत बनाएँ">Self-Empowerment</h3>
+                                    <p data-en="Learn to activate the healer within yourself. After experiencing the benefits of energy healing, take the next step — learn the techniques to heal yourself and support your loved ones." data-hi="अपने अंदर की शिफ़ा की ताकत जगाएँ। एनर्जी हीलिंग के फ़ायदे अनुभव करने के बाद अगला कदम उठाएँ — खुद को और अपने परिवार को ठीक करना सीखें।">Learn to activate the healer within yourself. After experiencing the benefits of energy healing, take the next step — learn the techniques to heal yourself and support your loved ones.</p>
+                                    <ul>
+                                        <li data-en="Learn energy healing protocols to manage your own tiredness and fatigue" data-hi="अपनी थकान संभालने का व्यक्तिगत तरीका — एनर्जी हीलिंग">Learn energy healing protocols to manage your own tiredness and fatigue</li>
+                                        <li data-en="Build immunity and resilience through daily self-healing practice" data-hi="रोज़ के अभ्यास से इम्युनिटी और हिम्मत बनाएँ">Build immunity and resilience through daily self-healing practice</li>
+                                        <li data-en="Learn techniques to help your family through their exhaustion" data-hi="परिवार को उनकी थकान में मदद करने के तरीके सीखें">Learn techniques to help your family through their exhaustion</li>
+                                        <li data-en="Reduce dependence on others; take control of your healing journey" data-hi="दूसरों पर निर्भरता कम करें — अपनी शिफ़ा की राह खुद संभालें">Reduce dependence on others; take control of your healing journey</li>
+                                        <li data-en="Continue your recovery long after treatment ends" data-hi="इलाज खत्म होने के बाद भी उबरना जारी रखें">Continue your recovery long after treatment ends</li>
+                                    </ul>
+                                    <div class="panel-actions">
+                                        <a href="book.html" class="btn btn-secondary" data-en="Book This Service" data-hi="यह सेवा बुक करें">Book This Service</a>
+                                        <a href="https://wa.me/918106248800?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Self-Empowerment." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp" data-hi="💬 व्हाट्सऐप">💬 WhatsApp</a>
+                                    </div>
+                                    <p class="panel-disclaimer" data-en="Individual results may vary." data-hi="हर इंसान का अनुभव अलग होता है।">Individual results may vary.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Service Details Container -->
-                <div id="service-details-container">
-                    
-                    <!-- 1. Energy Healing Details -->
-                    <div id="service-energy-healing" class="service-details">
-                        <div class="service-hero">
-                            <img src="images/therapeutic-energy-healing.png" alt="Therapeutic Energy Healing">
-                        </div>
-                        <div class="service-content">
-                            <button class="btn btn-outline" onclick="closeServiceDetail()">← Back to Services</button>
-                            <h3>Therapeutic Energy Healing</h3>
-                            <p>Remote healing sessions, delivered through a personalized protocol to aid your recovery from surgery, chemotherapy, and radiation—enhancing your body's ability to heal.</p>
-                            
-                            <ul>
-                                <li>Complementary protocol-driven system that works with allopathic medicine and speeds up the body's self-healing mechanism</li>
-                                <li>Manage the impact of chemotherapy and radiation on the body</li>
-                                <li>Improve immunity and maintain hemoglobin levels</li>
-                                <li>Remote healing is hassle-free—neither the healer nor the patient needs to be in the same physical space</li>
-                                <li>Personalized protocols based on your treatment schedule and symptoms</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="book.html" class="btn btn-secondary">Book This Service</a>
-                            </div>
-                            
-                            <p class="service-disclaimer">Individual Results May Vary: Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors including condition severity, adherence to protocols, and overall health status.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 2. Aromatherapy Details -->
-                    <div id="service-aromatherapy" class="service-details">
-                        <div class="service-hero">
-                            <img src="images/energy-aromatherapy.png" alt="Energy Aromatherapy">
-                        </div>
-                        <div class="service-content">
-                            <button class="btn btn-outline" onclick="closeServiceDetail()">← Back to Services</button>
-                            <h3>Energy Aromatherapy</h3>
-                            <p>AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress.</p>
-                            
-                            <ul>
-                                <li>AYUSH-certified essential oil blends for pain relief, jitteriness, fatigue, gentle skin and hair care</li>
-                                <li>Topical oils to improve the immune response of the body</li>
-                                <li>Diffusing oils to maintain peace, positivity, and abundance in your surroundings</li>
-                                <li>Calming blends for restorative sleep during treatment</li>
-                                <li>Blends that bring you to balance to overcome the weakness and tiredness from cancer treatment</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="book.html" class="btn btn-secondary">Book This Service</a>
-                            </div>
-                            
-                            <p class="service-disclaimer">Individual Results May Vary: Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors including condition severity, adherence to protocols, and overall health status.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 3. Psychotherapy Details -->
-                    <div id="service-psychotherapy" class="service-details">
-                        <div class="service-hero">
-                            <img src="images/energy-psychotherapy.png" alt="Energy Psychotherapy">
-                        </div>
-                        <div class="service-content">
-                            <button class="btn btn-outline" onclick="closeServiceDetail()">← Back to Services</button>
-                            <h3>Energy Psychotherapy</h3>
-                            <p>Remote healing to maintain your emotional and mental wellbeing in the long, lonely and painful cancer journey. Energy psychotherapy helps return you to balance, focusing on your heart, Agnya and head chakras to build emotional, mental and spiritual strength.</p>
-                            
-                            <ul>
-                                <li>Restore prana (vital energy) depleted by fear, anxiety, and the emotional toll of treatment</li>
-                                <li>Build resilience to continue chemotherapy and radiation without emotional overwhelm</li>
-                                <li>Release sadness, hopelessness, and the fear of treatment side effects</li>
-                                <li>Support caregivers facing exhaustion and burnout from the demands of caregiving</li>
-                                <li>Calm the mind for restorative sleep</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="book.html" class="btn btn-secondary">Book This Service</a>
-                            </div>
-                            
-                            <p class="service-disclaimer">Individual Results May Vary: Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors including condition severity, adherence to protocols, and overall health status.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 4. Retreat Details -->
-                    <div id="service-retreat" class="service-details">
-                        <div class="service-hero">
-                            <img src="images/restorative-healing-retreat.png" alt="Restorative Healing Retreat">
-                        </div>
-                        <div class="service-content">
-                            <button class="btn btn-outline" onclick="closeServiceDetail()">← Back to Services</button>
-                            <h3>Restorative Healing Retreat</h3>
-                            <p>A 3-day immersion program in the serenity of nature to overcome the burnout from cancer treatment, relook at your life and renew your life's purpose.</p>
-                            
-                            <ul>
-                                <li>A place to openly talk about the fear, anxiety, tiredness, and weakness you experience during cancer treatment</li>
-                                <li>Recover from the fatigue and nausea that drained your energy during treatment</li>
-                                <li>Start your own healing journey through meditation, energy healing, and wellness techniques to rebuild your strength</li>
-                                <li>Brainstorming, identifying and charting the journey ahead for a purpose-filled life</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="book.html" class="btn btn-secondary">Book This Service</a>
-                            </div>
-                            
-                            <p class="service-disclaimer">Individual Results May Vary: Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors including condition severity, adherence to protocols, and overall health status.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 5. Community Details -->
-                    <div id="service-community" class="service-details">
-                        <div class="service-hero">
-                            <img src="images/community-support-guidance.png" alt="Community Support & Guidance">
-                        </div>
-                        <div class="service-content">
-                            <button class="btn btn-outline" onclick="closeServiceDetail()">← Back to Services</button>
-                            <h3>Community Support & Guidance</h3>
-                            <p>You do not have to do this alone. Our community support group helps you seek solace, guidance and help from other patients or survivors. Speak about your challenges in a safe and confidential space.</p>
-                            
-                            <ul>
-                                <li>Understand the practical steps to meet the day-to-day challenges of dealing with cancer</li>
-                                <li>Talk about your fears, anxiety, weakness, and side effects with people who have survived cancer treatment</li>
-                                <li>Get access to guided meditations that help you overcome tiredness, increase self-worth, and enhance forgiveness</li>
-                                <li>Meet others dealing with extreme emotions of anger, grief, and loneliness—understand how to overcome this and let it go</li>
-                                <li>Virtual sessions—join from the comfort of your own home</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="book.html" class="btn btn-secondary">Book This Service</a>
-                            </div>
-                            
-                            <p class="service-disclaimer">Individual Results May Vary: Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors including condition severity, adherence to protocols, and overall health status.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 6. Self-Empowerment Details -->
-                    <div id="service-self-empowerment" class="service-details">
-                        <div class="service-hero">
-                            <img src="images/self-empowerment.png" alt="Self-Empowerment">
-                        </div>
-                        <div class="service-content">
-                            <button class="btn btn-outline" onclick="closeServiceDetail()">← Back to Services</button>
-                            <h3>Self-Empowerment</h3>
-                            <p>Learn to activate the healer within yourself. After experiencing the benefits of energy healing, take the next step—learn the techniques to heal yourself and support your loved ones.</p>
-                            
-                            <ul>
-                                <li>Learn energy healing protocols to manage your own tiredness, fatigue, and weakness</li>
-                                <li>Build your immunity and resilience through daily self-healing practice</li>
-                                <li>Support caregivers—learn techniques to help your family through their exhaustion and burnout</li>
-                                <li>Reduce dependence on others; take control of your healing journey</li>
-                                <li>Continue your recovery long after treatment ends</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="book.html" class="btn btn-secondary">Book This Service</a>
-                            </div>
-                            
-                            <p class="service-disclaimer">Individual Results May Vary: Results from our healing services vary from person to person. Your healing journey is unique, and outcomes depend on many individual factors including condition severity, adherence to protocols, and overall health status.</p>
-                        </div>
-                    </div>
+                <div style="text-align:center;margin-top:40px;">
+                    <a href="book.html" class="btn btn-secondary" style="margin-right:12px;" data-en="Book a Free Consultation" data-hi="मुफ़्त बुक करें">Book a Free Consultation</a>
+                    <a href="https://wa.me/918106248800?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20services." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp Us" data-hi="💬 व्हाट्सऐप करें">💬 WhatsApp Us</a>
                 </div>
             </div>
         </section>
     </main>
 
     <a href="https://wa.me/918106248800?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20cancer%20support%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="whatsapp-float-label" data-en="Chat with us" data-hi="हमसे बात करें">Chat with us</span>
     </a>
 
     <footer class="footer">
@@ -278,45 +314,71 @@
             <div class="footer-content">
                 <div class="footer-section footer-brand">
                     <h4>Anugnya Holistic Care</h4>
-                    <p>Founded by Cancer Survivors, for Cancer Survivors</p>
-                    <p class="tagline">Your Partner in Recovering from Cancer Treatment, Naturally.</p>
+                    <p data-en="Founded by Cancer Survivors, for Cancer Survivors" data-hi="कैंसर सर्वाइवर्स की ओर से, कैंसर सर्वाइवर्स के लिए">Founded by Cancer Survivors, for Cancer Survivors</p>
+                    <p data-en="Your Partner in Recovering from Cancer Treatment, Naturally." data-hi="कैंसर के इलाज से उबरने में आपका साथी — नेचुरली।">Your Partner in Recovering from Cancer Treatment, Naturally.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="services.html">Therapeutic Energy Healing</a>
-                    <a href="services.html">Energy Aromatherapy</a>
-                    <a href="services.html">Energy Psychotherapy</a>
-                    <a href="services.html">Community Support & Guidance</a>
-                    <a href="services.html">Restorative Healing Retreat</a>
-                    <a href="services.html">Self-Empowerment</a>
+                    <h4 data-en="Services" data-hi="सेवाएँ">Services</h4>
+                    <a href="services.html" data-en="Therapeutic Energy Healing" data-hi="एनर्जी हीलिंग">Therapeutic Energy Healing</a>
+                    <a href="services.html" data-en="Energy Aromatherapy" data-hi="एनर्जी अरोमाथेरेपी">Energy Aromatherapy</a>
+                    <a href="services.html" data-en="Energy Psychotherapy" data-hi="एनर्जी साइकोथेरेपी">Energy Psychotherapy</a>
+                    <a href="services.html" data-en="Community Support" data-hi="अपनों का साथ">Community Support</a>
+                    <a href="services.html" data-en="Healing Retreat" data-hi="शिफ़ा रिट्रीट">Healing Retreat</a>
+                    <a href="services.html" data-en="Self-Empowerment" data-hi="खुद को मज़बूत बनाएँ">Self-Empowerment</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
+                    <h4 data-en="Contact" data-hi="संपर्क करें">Contact</h4>
                     <p>Email: care@anugnyaholisticcare.com</p>
                     <p>Phone: +918106248800</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Important</h4>
-                    <p>Our services are intended to complement, not replace, medical treatment</p>
-                </div>
             </div>
-            <div class="footer-disclaimers">
-                <div class="footer-disclaimer-box medical">
-                    <h4>⚠️ MEDICAL DISCLAIMER</h4>
-                    <p>The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions regarding a medical condition. Never disregard professional medical advice or delay seeking it because of information provided by our services.</p>
-                    <p><strong>CRITICAL:</strong> Do not stop, modify, or delay your prescribed cancer treatment without consulting your oncologist. Our services are designed to support, not replace, your medical treatment plan.</p>
-                </div>
-                <div class="footer-disclaimer-box emergency">
-                    <h4>🚨 EMERGENCY</h4>
-                    <p>If you are experiencing a medical emergency, please call your local emergency number (108 in India) or visit the nearest emergency room immediately. Our services are not equipped to handle medical emergencies.</p>
-                </div>
+            <div class="footer-disclaimer">
+                <h4 data-en="⚠️ Medical Disclaimer" data-hi="⚠️ ज़रूरी बात">⚠️ Medical Disclaimer</h4>
+                <p data-en="The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice. Do not stop your prescribed cancer treatment without consulting your oncologist." data-hi="हमारी सेवाएँ आपके मेडिकल इलाज की मदद के लिए हैं — इलाज की जगह नहीं। अपने डॉक्टर की सलाह हमेशा मानें।">The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice. Do not stop your prescribed cancer treatment without consulting your oncologist.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Anugnya Holistic Care. All rights reserved.</p>
+            <div class="footer-disclaimer" style="border-left-color:#ff4444;background:rgba(255,68,68,0.08);">
+                <h4 style="color:#ff4444;" data-en="🚨 Emergency" data-hi="🚨 आपातकाल">🚨 Emergency</h4>
+                <p data-en="If you are experiencing a medical emergency, please call 108 in India or visit the nearest emergency room immediately." data-hi="अगर आप किसी मेडिकल इमर्जेंसी में हैं — तुरंत 108 पर कॉल करें।">If you are experiencing a medical emergency, please call 108 in India or visit the nearest emergency room immediately.</p>
             </div>
+            <div class="footer-bottom"><p>&copy; 2025 Anugnya Holistic Care. All rights reserved.</p></div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        const allServices = ['energy-healing','aromatherapy','psychotherapy','retreat','community','self'];
+        function toggleService(id) {
+            const panel = document.getElementById('panel-'+id);
+            const card = document.getElementById('card-'+id);
+            const isOpen = panel.classList.contains('open');
+            allServices.forEach(s => {
+                document.getElementById('panel-'+s).classList.remove('open');
+                document.getElementById('card-'+s).classList.remove('open');
+            });
+            if (!isOpen) { panel.classList.add('open'); card.classList.add('open'); setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),80); }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var LANG_KEY = 'anugnya_lang';
+            function setLang(lang) { localStorage.setItem(LANG_KEY, lang); applyLang(lang); }
+            function applyLang(lang) {
+                var root = document.getElementById('htmlRoot');
+                if (root) root.lang = lang === 'hi' ? 'hi' : 'en';
+                document.querySelectorAll('[data-en][data-hi]').forEach(function(el) {
+                    var text = el.getAttribute('data-' + lang);
+                    if (!text) return;
+                    if (text.indexOf('<br>') !== -1 || el.tagName === 'H1' || el.tagName === 'H2') { el.innerHTML = text; } else { el.textContent = text; }
+                });
+                var en = document.getElementById('btnEN'); var hi = document.getElementById('btnHI');
+                if (en) en.classList.toggle('active', lang === 'en');
+                if (hi) hi.classList.toggle('active', lang === 'hi');
+                if (typeof gtag !== 'undefined') gtag('event', 'language_toggle', {language: lang});
+            }
+            window.setLang = setLang;
+            var saved = localStorage.getItem(LANG_KEY);
+            if (saved === 'hi') applyLang('hi');
+        });
+    </script>
 </body>
 </html>

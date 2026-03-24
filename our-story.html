@@ -1,213 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
-    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EM10412DY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5EM10412DY');
-    </script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5EM10412DY');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Founded by cancer survivors who understand the exhaustion, fear, and side effects of chemotherapy. Sangeeta Bhalla and Viiveck Verma are here to support your healing journey.">
-    <meta name="keywords" content="Sangeeta Bhalla, Viiveck Verma, cancer survivor story, holistic care founders, energy healing India, caregiver burnout">
     <title>Cancer Survivors Supporting Your Recovery Journey | Anugnya</title>
-    
-    <!-- Open Graph -->
     <meta property="og:title" content="Our Story | Anugnya Holistic Care">
-    <meta property="og:description" content="By Cancer Survivors, For Cancer Survivors. Learn about our founders and mission.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anugnyaholisticcare.com/our-story.html">
-    
-    <!-- Favicon -->
+    <link rel="canonical" href="https://anugnyaholisticcare.com/our-story.html">
     <link rel="icon" type="image/png" href="images/anugnya-logo.png">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .lang-toggle { display:flex; align-items:center; gap:0; border:1.5px solid var(--primary-purple); border-radius:20px; overflow:hidden; flex-shrink:0; position:relative; z-index:10; }
+        .lang-btn { padding:5px 12px; font-size:13px; font-weight:600; background:transparent; color:var(--primary-purple); border:none; cursor:pointer; transition:all 0.2s; line-height:1.4; -webkit-tap-highlight-color:transparent; }
+        .lang-btn.active { background:var(--primary-purple); color:white; }
+        .lang-divider { width:1px; height:20px; background:var(--primary-purple); opacity:0.4; }
+        .founders-grid { display:grid; grid-template-columns:1fr; gap:24px; }
+        @media(min-width:768px){ .founders-grid { grid-template-columns:repeat(2,1fr); gap:30px; } }
+        .founder-card { background:var(--white); padding:28px 24px; border-radius:12px; box-shadow:0 4px 20px var(--shadow); text-align:center; }
+        .founder-photo { width:120px; height:120px; border-radius:50%; margin:0 auto 16px; border:3px solid var(--primary-purple); overflow:hidden; background:var(--light-beige); }
+        .founder-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+        .founder-card h3 { color:var(--primary-purple); font-size:22px; margin-bottom:6px; }
+        .founder-card .role { color:var(--rose); font-size:14px; font-style:italic; margin-bottom:18px; display:block; }
+        .credentials { list-style:none; text-align:left; padding:0; margin:0; }
+        .credentials li { padding:9px 0 9px 26px; border-bottom:1px solid var(--light-beige); position:relative; font-size:14px; line-height:1.5; color:var(--dark-purple); }
+        .credentials li:last-child { border-bottom:none; }
+        .credentials li:before { content:'✓'; position:absolute; left:0; color:var(--primary-purple); font-weight:bold; }
+        .stats-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+        @media(min-width:600px){ .stats-grid { grid-template-columns:repeat(3,1fr); } }
+        .stat-card { text-align:center; padding:24px 20px; background:var(--white); border-radius:12px; box-shadow:0 4px 20px var(--shadow); }
+        .stat-number { font-size:36px; font-weight:800; color:var(--primary-purple); margin-bottom:8px; }
+        .stat-label { font-size:15px; font-weight:600; color:var(--rose); margin-bottom:8px; }
+        .stat-description { color:var(--dark-purple); font-size:13px; line-height:1.5; }
+        .about-intro { background:var(--white); padding:25px; border-radius:12px; box-shadow:0 4px 20px var(--shadow); line-height:1.8; color:var(--dark-purple); font-size:15px; }
+        .about-intro p { margin-bottom:12px; }
+        .cta-section { background:linear-gradient(135deg,#d0c3f1 0%,#fdf7f3 100%); text-align:center; padding:50px 20px; }
+        .cta-section .cta-buttons { justify-content:center; }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">
-                    <img src="images/anugnya-logo.png" alt="Anugnya Holistic Care">
-                </a>
-                <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <a href="index.html" class="logo"><img src="images/anugnya-logo.png" alt="Anugnya Holistic Care"></a>
+                <div class="lang-toggle">
+                    <button type="button" class="lang-btn active" id="btnEN" onclick="setLang('en')" aria-label="English">EN</button>
+                    <div class="lang-divider"></div>
+                    <button type="button" class="lang-btn" id="btnHI" onclick="setLang('hi')" aria-label="हिंदी">हिं</button>
+                </div>
+                <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
                 <nav class="nav" id="mainNav">
-                    <a href="index.html">Home</a>
-                    <a href="our-story.html" class="active">Our Story</a>
-                    <a href="services.html">Services</a>
-                    <a href="faq.html">Treatment Tips</a>
-                    <a href="guides.html">Survivor Stories</a>
-                    <a href="book.html" class="nav-cta">Book Consult</a>
+                    <a href="index.html" data-en="Home" data-hi="होम">Home</a>
+                    <a href="our-story.html" class="active" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
+                    <a href="services.html" data-en="Services" data-hi="सेवाएँ">Services</a>
+                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
+                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <a href="book.html" class="nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
         </div>
     </header>
-
     <main>
-        <!-- Page Header -->
-        <section class="section" style="padding-bottom: 20px;">
+        <section class="section" style="padding-bottom:20px;">
             <div class="container">
-                <h1 class="section-title">Our Story: Cancer Survivors Helping You Through Treatment</h1>
-                <p class="section-subtitle">By Cancer Survivors, For Cancer Survivors</p>
+                <h1 class="section-title" data-en="Our Story: Cancer Survivors Helping You Through Treatment" data-hi="हमारी कहानी: कैंसर सर्वाइवर्स जो इलाज में आपके साथ हैं">Our Story: Cancer Survivors Helping You Through Treatment</h1>
+                <p class="section-subtitle" data-en="By Cancer Survivors, For Cancer Survivors" data-hi="कैंसर सर्वाइवर्स की ओर से, कैंसर सर्वाइवर्स के लिए">By Cancer Survivors, For Cancer Survivors</p>
             </div>
         </section>
 
-        <!-- About Intro -->
-        <section class="section" style="padding-top: 0;">
+        <section class="section" style="padding-top:0;">
             <div class="container">
                 <div class="about-intro">
-                    <p>Sangeeta and Viiveck found common ground through a shared belief: Cancer treatment should be holistic, treating an individual at all levels of being— physical, emotional and spiritual.</p>
-                    <p>Energy healing transformed Sangeeta's recovery post radical surgery and her subsequent deep study and practice for over 10 years has given her the tools to heal herself and others. She is now on a mission to make these teachings and experiences accessible to all who need it.</p>
-                    <p>We provide holistic complementary support rooted in ancient wisdom, through remote energy healing and aromatherapy, to work alongside your primary medical treatments (surgery, chemotherapy, radiation) among other supportive practices.</p>
-                    <p>We are also acutely aware of the impact of caring for a loved one and the need for caregiver support. Wherever you are on your cancer journey— from diagnosis to remission— we are committed to supporting you.</p>
+                    <p data-en="Sangeeta and Viiveck found common ground through a shared belief: Cancer treatment should be holistic, treating an individual at all levels of being — physical, emotional and spiritual." data-hi="संगीता और विवेक एक ही सोच से जुड़े: कैंसर का इलाज सिर्फ़ शरीर का नहीं होना चाहिए — मन और आत्मा का भी होना चाहिए।">Sangeeta and Viiveck found common ground through a shared belief: Cancer treatment should be holistic, treating an individual at all levels of being — physical, emotional and spiritual.</p>
+                    <p data-en="Energy healing transformed Sangeeta's recovery post radical surgery and her subsequent deep study and practice for over 10 years has given her the tools to heal herself and others. She is now on a mission to make these teachings and experiences accessible to all who need it." data-hi="सर्जरी के बाद एनर्जी हीलिंग ने संगीता के उबरने का रास्ता बदल दिया। 10 साल की मेहनत के बाद, उनके पास वह ताकत है जो खुद को और दूसरों को शिफ़ा दे सके। अब वे यह सीख उन सभी तक पहुँचाना चाहती हैं जिन्हें इसकी ज़रूरत है।">Energy healing transformed Sangeeta's recovery post radical surgery and her subsequent deep study and practice for over 10 years has given her the tools to heal herself and others. She is now on a mission to make these teachings and experiences accessible to all who need it.</p>
+                    <p data-en="We provide holistic complementary support rooted in ancient wisdom, through remote energy healing and aromatherapy, to work alongside your primary medical treatments (surgery, chemotherapy, radiation) among other supportive practices." data-hi="हम रिमोट एनर्जी हीलिंग और अरोमाथेरेपी के ज़रिए आपके मेडिकल इलाज (सर्जरी, कीमोथेरेपी, रेडिएशन) के साथ-साथ पूरक सहायता देते हैं।">We provide holistic complementary support rooted in ancient wisdom, through remote energy healing and aromatherapy, to work alongside your primary medical treatments (surgery, chemotherapy, radiation) among other supportive practices.</p>
+                    <p data-en="We are also acutely aware of the impact of caring for a loved one and the need for caregiver support. Wherever you are on your cancer journey — from diagnosis to remission — we are committed to supporting you." data-hi="हम यह भी जानते हैं कि किसी अपने की देखभाल करना कितना भारी होता है। आप कहीं भी हों अपनी कैंसर जर्नी में — डायग्नोसिस से रिमिशन तक — हम आपके साथ हैं।">We are also acutely aware of the impact of caring for a loved one and the need for caregiver support. Wherever you are on your cancer journey — from diagnosis to remission — we are committed to supporting you.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Founders Section -->
-        <section class="section" style="background: #f9f5f2; padding-top: 50px;">
+        <section class="section" style="background:#f9f5f2;">
             <div class="container">
-                <h2 class="section-title">Meet Our Founders</h2>
+                <h2 class="section-title" data-en="Meet Our Founders" data-hi="हमारे संस्थापकों से मिलें">Meet Our Founders</h2>
                 <div class="founders-grid">
                     <div class="founder-card">
-                        <div class="founder-photo">
-                            <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
-                        </div>
-                        <h3>Sangeeta Bhalla</h3>
-                        <p class="role">Founder & Chief Healing Officer</p>
+                        <div class="founder-photo"><img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla"></div>
+                        <h3 data-en="Sangeeta Bhalla" data-hi="संगीता भल्ला">Sangeeta Bhalla</h3>
+                        <span class="role" data-en="Founder &amp; Chief Healing Officer" data-hi="संस्थापक और मुख्य शिफ़ा अधिकारी">Founder &amp; Chief Healing Officer</span>
                         <ul class="credentials">
-                            <li>Cancer survivor who overcame the exhaustion and fear of treatment through energy healing</li>
-                            <li>5+ years experience as an Energy Healer & Aromatherapist</li>
-                            <li>Specializes in managing fatigue, anxiety, and emotional recovery during cancer treatment</li>
-                            <li>Founder of 3000 BC Therapeutics, a healing products company</li>
-                            <li>3-decades of professional and creative experience</li>
+                            <li data-en="Cancer survivor who overcame the exhaustion and fear of treatment through energy healing" data-hi="कैंसर सर्वाइवर जिन्होंने एनर्जी हीलिंग से इलाज की थकान और डर को पार किया">Cancer survivor who overcame the exhaustion and fear of treatment through energy healing</li>
+                            <li data-en="5+ years experience as an Energy Healer &amp; Aromatherapist" data-hi="एनर्जी हीलर और अरोमाथेरेपिस्ट के रूप में 5+ साल का अनुभव">5+ years experience as an Energy Healer &amp; Aromatherapist</li>
+                            <li data-en="Specializes in managing fatigue, anxiety, and emotional recovery during cancer treatment" data-hi="कैंसर इलाज में थकान, चिंता और मन के उबरने में महारत">Specializes in managing fatigue, anxiety, and emotional recovery during cancer treatment</li>
+                            <li data-en="Founder of 3000 BC Therapeutics, a healing products company" data-hi="3000 बीसी थेराप्यूटिक्स की संस्थापक — एक शिफ़ा उत्पाद कंपनी">Founder of 3000 BC Therapeutics, a healing products company</li>
+                            <li data-en="3 decades of professional and creative experience" data-hi="3 दशकों का प्रोफेशनल और क्रिएटिव अनुभव">3 decades of professional and creative experience</li>
                         </ul>
                     </div>
-                    
                     <div class="founder-card">
-                        <div class="founder-photo">
-                            <img src="images/viiveck-verma.png" alt="Viiveck Verma">
-                        </div>
-                        <h3>Viiveck Verma</h3>
-                        <p class="role">Co-Founder & Executive Director</p>
+                        <div class="founder-photo"><img src="images/viiveck-verma.png" alt="Viiveck Verma"></div>
+                        <h3 data-en="Viiveck Verma" data-hi="विवेक वर्मा">Viiveck Verma</h3>
+                        <span class="role" data-en="Co-Founder &amp; Executive Director" data-hi="सह-संस्थापक और एग्ज़ीक्यूटिव डायरेक्टर">Co-Founder &amp; Executive Director</span>
                         <ul class="credentials">
-                            <li>Supported his wife through 11 years and 9 cancer reappearances—understands caregiver burnout firsthand</li>
-                            <li>Mentored 300+ startups</li>
-                            <li>Expert in profitability and business continuity</li>
-                            <li>Built digital travel/trade business ecosystem</li>
-                            <li>3-decades of corporate leadership experience</li>
+                            <li data-en="Supported his wife through 11 years and 9 cancer reappearances — understands caregiver burnout firsthand" data-hi="11 साल और कैंसर के 9 बार वापस आने पर पत्नी का साथ दिया — देखभाल करने वाले का टूट जाना खुद जी चुके हैं">Supported his wife through 11 years and 9 cancer reappearances — understands caregiver burnout firsthand</li>
+                            <li data-en="Mentored 300+ startups" data-hi="300+ स्टार्टअप्स को मेंटर किया">Mentored 300+ startups</li>
+                            <li data-en="Expert in profitability and business continuity" data-hi="प्रॉफिटेबिलिटी और बिज़नेस कॉन्टिन्यूटी के एक्सपर्ट">Expert in profitability and business continuity</li>
+                            <li data-en="Built digital travel/trade business ecosystem" data-hi="डिजिटल ट्रैवल और ट्रेड इकोसिस्टम बनाया">Built digital travel/trade business ecosystem</li>
+                            <li data-en="3 decades of corporate leadership experience" data-hi="कॉर्पोरेट लीडरशिप के 3 दशक">3 decades of corporate leadership experience</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Section -->
         <section class="section">
             <div class="container">
-                <h2 class="section-title">The Problem We're Solving</h2>
-                <p class="section-subtitle">Treatment Continuity Crisis</p>
+                <h2 class="section-title" data-en="The Problem We're Solving" data-hi="जो समस्या हम सुलझा रहे हैं">The Problem We're Solving</h2>
+                <p class="section-subtitle" data-en="Treatment Continuity Crisis" data-hi="इलाज बीच में रुक जाने का संकट">Treatment Continuity Crisis</p>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number">30-50%</div>
-                        <div class="stat-label">Treatment Disruption</div>
-                        <p class="stat-description">Cancer patients experience treatment interruptions due to side effects</p>
+                        <div class="stat-number">30–50%</div>
+                        <div class="stat-label" data-en="Treatment Disruption" data-hi="इलाज में रुकावट">Treatment Disruption</div>
+                        <p class="stat-description" data-en="Cancer patients experience treatment interruptions due to side effects" data-hi="कैंसर के मरीज़ साइड इफेक्ट्स की वजह से इलाज के बीच में ही रुकने को मजबूर होते हैं">Cancer patients experience treatment interruptions due to side effects</p>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">87%</div>
-                        <div class="stat-label">Late Detection in India</div>
-                        <p class="stat-description">Cancer detected in Stage 3 or 4</p>
+                        <div class="stat-label" data-en="Late Detection in India" data-hi="देर से पहचान">Late Detection in India</div>
+                        <p class="stat-description" data-en="Cancer detected in Stage 3 or 4" data-hi="भारत में कैंसर स्टेज 3 या 4 में पकड़ में आता है">Cancer detected in Stage 3 or 4</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">6-8%</div>
-                        <div class="stat-label">Mortality Increase</div>
-                        <p class="stat-description">Per treatment delay cycle</p>
+                        <div class="stat-number">6–8%</div>
+                        <div class="stat-label" data-en="Mortality Increase" data-hi="मृत्यु दर में बढ़ोतरी">Mortality Increase</div>
+                        <p class="stat-description" data-en="Per treatment delay cycle" data-hi="हर बार इलाज रुकने पर">Per treatment delay cycle</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="section" style="background: linear-gradient(135deg, #d0c3f1 0%, #fdf7f3 100%); text-align: center;">
+        <section class="cta-section">
             <div class="container">
-                <h2 class="section-title">Ready to Begin Your Healing Journey?</h2>
-                <p class="section-subtitle">Book a free consultation to discuss how we can support you</p>
-                <div class="cta-buttons" style="justify-content: center;">
-                    <a href="book.html" class="btn btn-secondary">Book Consultation</a>
-                    <a href="https://wa.me/918106248800?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20cancer%20support%20services." class="btn btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+                <h2 class="section-title" data-en="Ready to Begin Your Healing Journey?" data-hi="स्वस्थ होने की राह शुरू करने के लिए तैयार हैं?">Ready to Begin Your Healing Journey?</h2>
+                <p class="section-subtitle" data-en="Book a free consultation to discuss how we can support you" data-hi="हमसे बात करें — जानें कि हम आपकी कैसे मदद कर सकते हैं">Book a free consultation to discuss how we can support you</p>
+                <div class="cta-buttons">
+                    <a href="book.html" class="btn btn-secondary" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
+                    <a href="https://wa.me/918106248800?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20cancer%20support%20services." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp Us" data-hi="💬 व्हाट्सऐप करें">💬 WhatsApp Us</a>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/918106248800?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20cancer%20support%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-brand">
                     <h4>Anugnya Holistic Care</h4>
-                    <p>Founded by Cancer Survivors, for Cancer Survivors</p>
-                    <p class="tagline">Your Partner in Recovering from Cancer Treatment, Naturally.</p>
+                    <p data-en="Founded by Cancer Survivors, for Cancer Survivors" data-hi="कैंसर सर्वाइवर्स की ओर से, कैंसर सर्वाइवर्स के लिए">Founded by Cancer Survivors, for Cancer Survivors</p>
+                    <p data-en="Your Partner in Recovering from Cancer Treatment, Naturally." data-hi="कैंसर के इलाज से उबरने में आपका साथी — नेचुरली।">Your Partner in Recovering from Cancer Treatment, Naturally.</p>
                 </div>
-                
                 <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="services.html">Therapeutic Energy Healing</a>
-                    <a href="services.html">Energy Aromatherapy</a>
-                    <a href="services.html">Energy Psychotherapy</a>
-                    <a href="services.html">Community Support & Guidance</a>
-                    <a href="services.html">Restorative Healing Retreat</a>
-                    <a href="services.html">Self-Empowerment</a>
+                    <h4 data-en="Services" data-hi="सेवाएँ">Services</h4>
+                    <a href="services.html" data-en="Therapeutic Energy Healing" data-hi="एनर्जी हीलिंग">Therapeutic Energy Healing</a>
+                    <a href="services.html" data-en="Energy Aromatherapy" data-hi="एनर्जी अरोमाथेरेपी">Energy Aromatherapy</a>
+                    <a href="services.html" data-en="Energy Psychotherapy" data-hi="एनर्जी साइकोथेरेपी">Energy Psychotherapy</a>
+                    <a href="services.html" data-en="Community Support" data-hi="अपनों का साथ">Community Support</a>
+                    <a href="services.html" data-en="Healing Retreat" data-hi="शिफ़ा रिट्रीट">Healing Retreat</a>
+                    <a href="services.html" data-en="Self-Empowerment" data-hi="खुद को मज़बूत बनाएँ">Self-Empowerment</a>
                 </div>
-                
                 <div class="footer-section">
-                    <h4>Contact</h4>
+                    <h4 data-en="Explore" data-hi="और जानें">Explore</h4>
+                    <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
+                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
+                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <a href="book.html" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Contact" data-hi="संपर्क करें">Contact</h4>
                     <p>Email: care@anugnyaholisticcare.com</p>
                     <p>Phone: +918106248800</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Important</h4>
-                    <p>Our services are intended to complement, not replace, medical treatment</p>
+                    <p><a href="https://wa.me/918106248800" style="color:#25D366;" data-en="💬 WhatsApp Us" data-hi="💬 व्हाट्सऐप करें">💬 WhatsApp Us</a></p>
                 </div>
             </div>
-            
-            <div class="footer-disclaimers">
-                <div class="footer-disclaimer-box medical">
-                    <h4>⚠️ MEDICAL DISCLAIMER</h4>
-                    <p>The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions regarding a medical condition. Never disregard professional medical advice or delay seeking it because of information provided by our services.</p>
-                    <p><strong>CRITICAL:</strong> Do not stop, modify, or delay your prescribed cancer treatment without consulting your oncologist. Our services are designed to support, not replace, your medical treatment plan.</p>
-                </div>
-                
-                <div class="footer-disclaimer-box emergency">
-                    <h4>🚨 EMERGENCY</h4>
-                    <p>If you are experiencing a medical emergency, please call your local emergency number (108 in India) or visit the nearest emergency room immediately. Our services are not equipped to handle medical emergencies.</p>
-                </div>
+            <div class="footer-disclaimer">
+                <h4 data-en="⚠️ Medical Disclaimer" data-hi="⚠️ ज़रूरी बात">⚠️ Medical Disclaimer</h4>
+                <p data-en="The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice. Do not stop, modify, or delay your prescribed cancer treatment without consulting your oncologist." data-hi="हमारी सेवाएँ आपके मेडिकल इलाज की मदद के लिए हैं — इलाज की जगह नहीं। अपने डॉक्टर की सलाह हमेशा मानें।">The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice. Do not stop, modify, or delay your prescribed cancer treatment without consulting your oncologist.</p>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Anugnya Holistic Care. All rights reserved.</p>
+            <div class="footer-disclaimer" style="border-left-color:#ff4444;background:rgba(255,68,68,0.08);">
+                <h4 style="color:#ff4444;" data-en="🚨 Emergency" data-hi="🚨 आपातकाल">🚨 Emergency</h4>
+                <p data-en="If you are experiencing a medical emergency, please call 108 in India or visit the nearest emergency room immediately." data-hi="अगर आप किसी मेडिकल इमर्जेंसी में हैं — तुरंत 108 पर कॉल करें या नज़दीकी एमर्जेंसी रूम जाएँ।">If you are experiencing a medical emergency, please call 108 in India or visit the nearest emergency room immediately.</p>
             </div>
+            <div class="footer-bottom"><p>&copy; 2025 Anugnya Holistic Care. All rights reserved.</p></div>
         </div>
     </footer>
-
-    <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var LANG_KEY = 'anugnya_lang';
+            function setLang(lang) {
+                localStorage.setItem(LANG_KEY, lang);
+                applyLang(lang);
+            }
+            function applyLang(lang) {
+                var root = document.getElementById('htmlRoot');
+                if (root) root.lang = lang === 'hi' ? 'hi' : 'en';
+                document.querySelectorAll('[data-en][data-hi]').forEach(function(el) {
+                    var text = el.getAttribute('data-' + lang);
+                    if (!text) return;
+                    if (text.indexOf('<br>') !== -1 || el.tagName === 'H1' || el.tagName === 'H2') {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                });
+                var en = document.getElementById('btnEN');
+                var hi = document.getElementById('btnHI');
+                if (en) en.classList.toggle('active', lang === 'en');
+                if (hi) hi.classList.toggle('active', lang === 'hi');
+                if (typeof gtag !== 'undefined') gtag('event', 'language_toggle', {language: lang});
+            }
+            window.setLang = setLang;
+            var saved = localStorage.getItem(LANG_KEY);
+            if (saved === 'hi') applyLang('hi');
+        });
+    </script>
 </body>
 </html>

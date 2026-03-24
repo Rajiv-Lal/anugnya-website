@@ -1,673 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
-    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EM10412DY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5EM10412DY');
-    </script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5EM10412DY');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Healing stories, guided meditations, and insights from cancer survivors and caregivers. Watch videos and read articles from people who understand your journey.">
-    <meta name="keywords" content="cancer survivor stories, healing meditation, caregiver support, cancer recovery stories, energy healing videos">
-    <title>Survivor Stories - Healing Journeys | Anugnya Holistic Care</title>
-    
-    <meta property="og:title" content="Healing Stories & Insights | Anugnya Holistic Care">
-    <meta property="og:description" content="Stories and insights from cancer survivors who have been where you are.">
+    <meta name="description" content="Healing stories and insights from cancer survivors and caregivers. Read articles and watch videos from people who understand your journey.">
+    <title>Survivor Stories — Healing Journeys | Anugnya Holistic Care</title>
+    <meta property="og:title" content="Survivor Stories | Anugnya Holistic Care">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anugnyaholisticcare.com/guides.html">
-    
+    <link rel="canonical" href="https://anugnyaholisticcare.com/guides.html">
     <link rel="icon" type="image/png" href="images/anugnya-logo.png">
     <link rel="stylesheet" href="css/styles.css">
-    
     <style>
-        /* Page Hero - matches Services page */
-        .page-hero {
-            background: var(--beige);
-            padding: 100px 0 40px;
-            text-align: center;
-        }
-        
-        .page-hero h1 {
-            color: var(--primary-purple);
-            font-size: 36px;
-            margin-bottom: 15px;
-            font-family: 'Georgia', 'Times New Roman', serif;
-        }
-        
-        .page-hero .subtitle {
-            color: var(--dark-purple);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Category Boxes */
-        .category-section {
-            padding: 30px 0;
-            background: var(--beige);
-        }
-        
-        .category-boxes {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .category-box {
-            background: white;
-            padding: 30px 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(76, 34, 166, 0.1);
-            transition: all 0.3s;
-            text-decoration: none;
-            border: 2px solid transparent;
-        }
-        
-        .category-box:hover {
-            border-color: var(--primary-purple);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(76, 34, 166, 0.15);
-        }
-        
-        .category-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 15px;
-            background: var(--light-purple);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .category-icon svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--primary-purple);
-        }
-        
-        .category-box h3 {
-            color: var(--primary-purple);
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-        
-        .category-box p {
-            color: var(--dark-purple);
-            font-size: 14px;
-        }
-
-        /* Content Sections */
-        .content-section {
-            padding: 50px 0;
-        }
-        
-        .content-section.alt-bg {
-            background: #f9f5f2;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-        
-        .section-header h2 {
-            color: var(--primary-purple);
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        .section-header p {
-            color: var(--dark-purple);
-            font-size: 16px;
-        }
-
-        /* Article Cards */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .article-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(76, 34, 166, 0.08);
-            transition: all 0.3s;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(76, 34, 166, 0.15);
-        }
-        
-        .article-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: var(--light-beige);
-        }
-        
-        .article-card-content {
-            padding: 20px;
-        }
-        
-        .article-card-category {
-            display: inline-block;
-            background: var(--light-purple);
-            color: var(--primary-purple);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        
-        .article-card h3 {
-            color: var(--dark-purple);
-            font-size: 18px;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            font-family: 'Georgia', 'Times New Roman', serif;
-        }
-        
-        .article-card p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-        
-        .article-card-meta {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            color: #888;
-        }
-        
-        .article-card-meta img {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* Video Cards */
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .video-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(76, 34, 166, 0.08);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(76, 34, 166, 0.15);
-        }
-        
-        .video-thumbnail {
-            position: relative;
-            width: 100%;
-            height: 160px;
-            background: var(--light-beige);
-        }
-        
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(76, 34, 166, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .play-button svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-            margin-left: 3px;
-        }
-        
-        .video-card:hover .play-button {
-            background: var(--primary-purple);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        
-        .video-card-content {
-            padding: 15px 20px;
-        }
-        
-        .video-card h3 {
-            color: var(--dark-purple);
-            font-size: 15px;
-            line-height: 1.4;
-            margin-bottom: 8px;
-        }
-        
-        .video-duration {
-            color: #888;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Video Modal */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .video-modal.active {
-            display: flex;
-        }
-        
-        .video-modal-content {
-            width: 90%;
-            max-width: 800px;
-            position: relative;
-        }
-        
-        .video-modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        
-        .video-modal iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border: none;
-            border-radius: 8px;
-        }
-
-        /* Footer Disclaimers */
-        .footer-disclaimers {
-            margin-top: 30px;
-        }
-        
-        .footer-disclaimer-box {
-            padding: 20px 25px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-disclaimer-box.medical {
-            background: rgba(255, 193, 7, 0.15);
-            border-left: 4px solid #ffc107;
-        }
-        
-        .footer-disclaimer-box.emergency {
-            background: rgba(255, 68, 68, 0.15);
-            border-left: 4px solid #ff4444;
-        }
-        
-        .footer-disclaimer-box h4 {
-            color: #856404;
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        
-        .footer-disclaimer-box.emergency h4 {
-            color: #cc0000;
-        }
-        
-        .footer-disclaimer-box p {
-            font-size: 13px;
-            line-height: 1.6;
-            color: #ccc;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .category-boxes {
-                grid-template-columns: 1fr;
-                max-width: 350px;
-            }
-            
-            .page-hero h1 {
-                font-size: 28px;
-            }
-            
-            .articles-grid,
-            .videos-grid {
-                grid-template-columns: 1fr;
-                padding: 0 15px;
-            }
-        }
+        .lang-toggle{display:flex;align-items:center;gap:0;border:1.5px solid var(--primary-purple);border-radius:20px;overflow:hidden;flex-shrink:0;position:relative;z-index:10;}
+        .lang-btn{padding:5px 12px;font-size:13px;font-weight:600;background:transparent;color:var(--primary-purple);border:none;cursor:pointer;transition:all 0.2s;line-height:1.4;-webkit-tap-highlight-color:transparent;}
+        .lang-btn.active{background:var(--primary-purple);color:white;}
+        .lang-divider{width:1px;height:20px;background:var(--primary-purple);opacity:0.4;}
+        .page-hero{background:var(--beige);padding:100px 0 40px;text-align:center;}
+        .page-hero h1{color:var(--primary-purple);font-size:36px;margin-bottom:15px;}
+        .page-hero .subtitle{color:var(--dark-purple);font-size:18px;max-width:600px;margin:0 auto;}
+        @media(max-width:768px){.page-hero h1{font-size:26px;}}
+        .category-section{padding:28px 0;background:var(--beige);border-bottom:2px solid var(--light-beige);}
+        .category-boxes{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:600px;margin:0 auto;}
+        @media(max-width:400px){.category-boxes{grid-template-columns:1fr;max-width:280px;}}
+        .category-box{background:white;padding:24px 16px;border-radius:12px;text-align:center;box-shadow:0 4px 20px rgba(76,34,166,0.1);text-decoration:none;border:2px solid transparent;transition:all 0.2s;display:block;}
+        .category-box:hover{border-color:var(--primary-purple);transform:translateY(-3px);}
+        .category-icon{width:52px;height:52px;margin:0 auto 12px;background:var(--light-beige);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+        .category-icon svg{width:26px;height:26px;fill:var(--primary-purple);}
+        .category-box h3{color:var(--primary-purple);font-size:16px;margin:0 0 4px 0;}
+        .category-box p{color:var(--dark-purple);font-size:13px;margin:0;}
+        .content-section{padding:40px 0;}
+        .section-header{text-align:center;margin-bottom:28px;}
+        .section-header h2{color:var(--primary-purple);font-size:24px;margin-bottom:8px;}
+        .section-header p{color:var(--dark-purple);font-size:15px;}
+        .articles-grid{display:flex;flex-direction:column;gap:20px;}
+        @media(min-width:640px){.articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}}
+        .article-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(76,34,166,0.1);text-decoration:none;transition:all 0.2s;display:block;}
+        .article-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(76,34,166,0.18);}
+        .article-card>img{width:100%;height:180px;object-fit:cover;display:block;}
+        .article-card-content{padding:18px;}
+        .article-card-category{display:inline-block;background:var(--light-beige);color:var(--rose);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:3px 8px;border-radius:4px;margin-bottom:8px;}
+        .article-card-content h3{color:var(--primary-purple);font-size:15px;line-height:1.4;margin:0 0 8px 0;}
+        .article-card-content p{color:var(--dark-purple);font-size:13px;line-height:1.5;margin:0 0 12px 0;}
+        .article-card-meta{display:flex;align-items:center;gap:8px;}
+        .article-card-meta img{width:28px;height:28px;border-radius:50%;object-fit:cover;object-position:top center;}
+        .article-card-meta span{font-size:12px;color:var(--dark-purple);font-weight:500;}
+        .videos-section{padding:40px 0;background:#f9f5f2;}
+        .videos-grid{display:flex;flex-direction:column;gap:20px;}
+        @media(min-width:640px){.videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}}
+        @media(min-width:1024px){.videos-grid{grid-template-columns:repeat(3,1fr);}}
+        .video-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(76,34,166,0.1);}
+        .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+        .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+        .video-card-content{padding:16px;}
+        .video-card-content h3{color:var(--primary-purple);font-size:14px;line-height:1.4;margin:0 0 6px 0;}
+        .video-card-content p{color:var(--dark-purple);font-size:13px;line-height:1.5;margin:0;}
+        .guides-cta{background:var(--light-purple);padding:40px 20px;text-align:center;}
+        .guides-cta h3{color:var(--primary-purple);font-size:22px;margin-bottom:10px;}
+        .guides-cta p{color:var(--dark-purple);margin-bottom:20px;font-size:15px;}
+        .guides-cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">
-                    <img src="images/anugnya-logo.png" alt="Anugnya Holistic Care">
-                </a>
-                <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <a href="index.html" class="logo"><img src="images/anugnya-logo.png" alt="Anugnya Holistic Care"></a>
+                <div class="lang-toggle">
+                    <button type="button" class="lang-btn active" id="btnEN" onclick="setLang('en')" aria-label="English">EN</button>
+                    <div class="lang-divider"></div>
+                    <button type="button" class="lang-btn" id="btnHI" onclick="setLang('hi')" aria-label="हिंदी">हिं</button>
+                </div>
+                <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
                 <nav class="nav" id="mainNav">
-                    <a href="index.html">Home</a>
-                    <a href="our-story.html">Our Story</a>
-                    <a href="services.html">Services</a>
-                    <a href="faq.html">Treatment Tips</a>
-                    <a href="guides.html" class="active">Survivor Stories</a>
-                    <a href="book.html" class="nav-cta">Book Consult</a>
+                    <a href="index.html" data-en="Home" data-hi="होम">Home</a>
+                    <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
+                    <a href="services.html" data-en="Services" data-hi="सेवाएँ">Services</a>
+                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
+                    <a href="guides.html" class="active" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <a href="book.html" class="nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Page Hero -->
         <section class="page-hero">
             <div class="container">
-                <h1>Healing Stories & Insights</h1>
-                <p class="subtitle">From survivors who have been where you are</p>
+                <h1 data-en="Survivor Stories &amp; Insights" data-hi="सर्वाइवर्स की कहानियाँ और अनुभव">Survivor Stories &amp; Insights</h1>
+                <p class="subtitle" data-en="From survivors who have been where you are" data-hi="उन लोगों से जो वहाँ रहे चुके हैं जहाँ आप हैं">From survivors who have been where you are</p>
             </div>
         </section>
 
-        <!-- Category Boxes -->
         <section class="category-section">
             <div class="container">
                 <div class="category-boxes">
                     <a href="#videos" class="category-box">
-                        <div class="category-icon">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        <h3>Watch Our Videos</h3>
-                        <p>5 videos</p>
+                        <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        <h3 data-en="Watch Videos" data-hi="वीडियो देखें">Watch Videos</h3>
+                        <p data-en="5 videos" data-hi="5 वीडियो">5 videos</p>
                     </a>
                     <a href="#stories" class="category-box">
-                        <div class="category-icon">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
-                        </div>
-                        <h3>Read Our Stories</h3>
-                        <p>4 articles</p>
+                        <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div>
+                        <h3 data-en="Read Stories" data-hi="कहानियाँ पढ़ें">Read Stories</h3>
+                        <p data-en="4 articles" data-hi="4 लेख">4 articles</p>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Articles Section -->
         <section id="stories" class="content-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Read Our Stories</h2>
-                    <p>In-depth articles from survivors and caregivers</p>
+                    <h2 data-en="Read Our Stories" data-hi="हमारी कहानियाँ पढ़ें">Read Our Stories</h2>
+                    <p data-en="In-depth stories from survivors and caregivers" data-hi="सर्वाइवर्स और देखभाल करने वालों की गहरी कहानियाँ">In-depth stories from survivors and caregivers</p>
                 </div>
-                
                 <div class="articles-grid">
+
                     <a href="guides/essential-oil-remedy.html" class="article-card">
                         <img src="images/thumbnail-1.png" alt="Essential Oil Remedy">
                         <div class="article-card-content">
-                            <span class="article-card-category">Aromatherapy</span>
-                            <h3>Essential Oil Remedy: Anugnya's Answer to Radiation and Chemo Side Effects</h3>
-                            <p>How proprietary essential oil blends help maintain patients' physical, energy and emotional strength during treatment.</p>
+                            <span class="article-card-category" data-en="Aromatherapy" data-hi="अरोमाथेरेपी">Aromatherapy</span>
+                            <h3 data-en="Essential Oil Remedy: Anugnya&#39;s Answer to Radiation and Chemo Side Effects" data-hi="एसेंशियल ऑइल से राहत: रेडिएशन और कीमो के साइड इफेक्ट्स का अनुज्ञा का जवाब">Essential Oil Remedy: Anugnya's Answer to Radiation and Chemo Side Effects</h3>
+                            <p data-en="How essential oil blends help maintain patients&#39; physical, energy and emotional strength during treatment." data-hi="कैसे एसेंशियल ऑइल ब्लेंड्स इलाज के दौरान मरीज़ की शारीरिक, ऊर्जा और मन की ताकत बनाए रखते हैं।">How essential oil blends help maintain patients' physical, energy and emotional strength during treatment.</p>
                             <div class="article-card-meta">
                                 <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
-                                <span>Sangeeta Bhalla</span>
+                                <span data-en="Rajiv Lal · Interview: Sangeeta Bhalla" data-hi="राजीव लाल · इंटरव्यू: संगीता भल्ला">Rajiv Lal · Interview: Sangeeta Bhalla</span>
                             </div>
                         </div>
                     </a>
-                    
+
                     <a href="guides/caregivers-journey.html" class="article-card">
                         <img src="images/thumbnail-2.png" alt="Caregiver's Journey">
                         <div class="article-card-content">
-                            <span class="article-card-category">Caregiver Stories</span>
-                            <h3>Viiveck Verma: A Caregiver's Journey (The Caregiver Needs Care Too)</h3>
-                            <p>Viiveck took care of Prernaa through an 11-year journey with 9 reappearances of cancer. A profile in courage.</p>
+                            <span class="article-card-category" data-en="Caregiver Stories" data-hi="देखभाल करने वाले की कहानी">Caregiver Stories</span>
+                            <h3 data-en="Viiveck Verma: A Caregiver&#39;s Journey — The Caregiver Needs Care Too" data-hi="विवेक वर्मा: एक देखभाल करने वाले की कहानी — देखभाल करने वाले को भी देखभाल चाहिए">Viiveck Verma: A Caregiver's Journey — The Caregiver Needs Care Too</h3>
+                            <p data-en="11 years caring for his wife through 9 reappearances of cancer. A profile in courage." data-hi="कैंसर के 9 बार वापस आने पर 11 साल अपनी पत्नी का साथ देना। हिम्मत की एक मिसाल।">11 years caring for his wife through 9 reappearances of cancer. A profile in courage.</p>
                             <div class="article-card-meta">
                                 <img src="images/viiveck-verma.png" alt="Viiveck Verma">
-                                <span>Viiveck Verma</span>
+                                <span data-en="Rajiv Lal · Interview: Viiveck Verma" data-hi="राजीव लाल · इंटरव्यू: विवेक वर्मा">Rajiv Lal · Interview: Viiveck Verma</span>
                             </div>
                         </div>
                     </a>
-                    
-                    <a href="guides/sangeeta-cancer-recovery.html" class="article-card">
-                        <img src="images/thumbnail-3.png" alt="Sangeeta's Recovery">
-                        <div class="article-card-content">
-                            <span class="article-card-category">Survivor Stories</span>
-                            <h3>Sangeeta's Cancer Recovery Journey: From Patient to Healer to Entrepreneur</h3>
-                            <p>A 10-year journey following cancer diagnosis, transition from patient to healer, and establishment of Anugnya.</p>
-                            <div class="article-card-meta">
-                                <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
-                                <span>Sangeeta Bhalla</span>
-                            </div>
-                        </div>
-                    </a>
-                    
+
                     <a href="guides/neerad-journey.html" class="article-card">
                         <img src="images/thumbnail-4.png" alt="Neerad's Journey">
                         <div class="article-card-content">
-                            <span class="article-card-category">Survivor Stories</span>
-                            <h3>Neerad's Journey Through Cancer: Brave, Honest, Resilient</h3>
-                            <p>Neerad emerged from his bout with Leukemia braver and stronger. His story of taking care of the guest, then letting it go.</p>
+                            <span class="article-card-category" data-en="Survivor Stories" data-hi="सर्वाइवर की कहानी">Survivor Stories</span>
+                            <h3 data-en="Neerad&#39;s Journey Through Cancer: Brave, Honest, Resilient" data-hi="नीरद की कैंसर जर्नी: हिम्मतवाले, सच्चे, अडिग">Neerad's Journey Through Cancer: Brave, Honest, Resilient</h3>
+                            <p data-en="Neerad emerged from his bout with Leukaemia braver, better, and stronger. His story of taking care of the guest, and then letting it go." data-hi="नीरद ल्यूकेमिया से उबरकर पहले से बेहतर और मज़बूत निकले। मेहमान को विदा करने की उनकी कहानी।">Neerad emerged from his bout with Leukaemia braver, better, and stronger. His story of taking care of the guest, and then letting it go.</p>
                             <div class="article-card-meta">
                                 <img src="images/anugnya-logo.png" alt="Anugnya">
-                                <span>Anugnya Team</span>
+                                <span data-en="Rajiv Lal · Interview: Neerad" data-hi="राजीव लाल · इंटरव्यू: नीरद">Rajiv Lal · Interview: Neerad</span>
                             </div>
                         </div>
                     </a>
+
+                    <a href="guides/sangeeta-cancer-recovery.html" class="article-card">
+                        <img src="images/thumbnail-3.png" alt="Sangeeta's Recovery">
+                        <div class="article-card-content">
+                            <span class="article-card-category" data-en="Survivor Stories" data-hi="सर्वाइवर की कहानी">Survivor Stories</span>
+                            <h3 data-en="Sangeeta&#39;s Cancer Recovery Journey: From Patient to Healer" data-hi="संगीता की कैंसर से उबरने की कहानी: मरीज़ से हीलर तक">Sangeeta's Cancer Recovery Journey: From Patient to Healer</h3>
+                            <p data-en="After radical surgery, Sangeeta couldn&#39;t walk to her balcony. Energy healing transformed her recovery — and her life&#39;s mission." data-hi="रेडिकल सर्जरी के बाद संगीता बालकनी तक भी नहीं चल पाती थीं। एनर्जी हीलिंग ने उनकी ज़िंदगी का रास्ता बदल दिया।">After radical surgery, Sangeeta couldn't walk to her balcony. Energy healing transformed her recovery — and her life's mission.</p>
+                            <div class="article-card-meta">
+                                <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
+                                <span data-en="Rajiv Lal · Interview: Sangeeta Bhalla" data-hi="राजीव लाल · इंटरव्यू: संगीता भल्ला">Rajiv Lal · Interview: Sangeeta Bhalla</span>
+                            </div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </section>
 
-        <!-- Videos Section -->
-        <section id="videos" class="content-section alt-bg">
+        <section id="videos" class="videos-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Watch Our Videos</h2>
-                    <p>Guided meditations and healing insights</p>
+                    <h2 data-en="Watch Our Videos" data-hi="हमारे वीडियो देखें">Watch Our Videos</h2>
+                    <p data-en="Hear directly from survivors, caregivers, and healers" data-hi="सर्वाइवर्स, देखभाल करने वालों और हीलर्स से सीधे सुनें">Hear directly from survivors, caregivers, and healers</p>
                 </div>
-                
                 <div class="videos-grid">
-                    <div class="video-card" onclick="openVideoModal('gOhj9zPp_aQ')">
-                        <div class="video-thumbnail">
-                            <img src="images/thumbnail-5.png" alt="Remote Energy Healing">
-                            <div class="play-button">
-                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
+
+                    <div class="video-card">
+                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/hzLK8OGSvO8" title="Neerad's Cancer Journey" allowfullscreen loading="lazy"></iframe></div>
                         <div class="video-card-content">
-                            <h3>Remote Energy Healing: The Support I Found After Cancer Treatment</h3>
-                            <span class="video-duration">▶ 2:21</span>
+                            <h3 data-en="Neerad&#39;s Journey — Leukaemia, Bone Marrow Transplant, and Recovery" data-hi="नीरद की जर्नी — ल्यूकेमिया, बोन मैरो ट्रांसप्लांट और उबरना">Neerad's Journey — Leukaemia, Bone Marrow Transplant, and Recovery</h3>
+                            <p data-en="An honest account of what it feels like to go through cancer treatment and come out stronger." data-hi="कैंसर इलाज से गुज़रने और मज़बूत होकर निकलने का एक ईमानदार बयान।">An honest account of what it feels like to go through cancer treatment and come out stronger.</p>
                         </div>
                     </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('ZD-BR9BPqhM')">
-                        <div class="video-thumbnail">
-                            <img src="images/thumbnail-6.png" alt="Cancer Survivor's Journey">
-                            <div class="play-button">
-                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
+
+                    <div class="video-card">
+                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/O_OkFdBHi_E" title="Sangeeta's Healing Journey" allowfullscreen loading="lazy"></iframe></div>
                         <div class="video-card-content">
-                            <h3>A Cancer Survivor's Journey: Learning to Heal Others</h3>
-                            <span class="video-duration">▶ 4:52</span>
+                            <h3 data-en="Sangeeta&#39;s Healing Journey — From Surgery to Energy Healer" data-hi="संगीता की शिफ़ा की यात्रा — सर्जरी से एनर्जी हीलर तक">Sangeeta's Healing Journey — From Surgery to Energy Healer</h3>
+                            <p data-en="How energy healing transformed Sangeeta&#39;s recovery after radical cancer surgery." data-hi="कैसे एनर्जी हीलिंग ने रेडिकल कैंसर सर्जरी के बाद संगीता के उबरने को बदल दिया।">How energy healing transformed Sangeeta's recovery after radical cancer surgery.</p>
                         </div>
                     </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('T4UQtmLLQic')">
-                        <div class="video-thumbnail">
-                            <img src="images/thumbnail-7.png" alt="Cancer Loss and New Beginnings">
-                            <div class="play-button">
-                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
+
+                    <div class="video-card">
+                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/mhHlFE09-Sk" title="Rajiv on Cancer Support" allowfullscreen loading="lazy"></iframe></div>
                         <div class="video-card-content">
-                            <h3>Cancer, Loss, and New Beginnings: When Friends Become Your Foundation</h3>
-                            <span class="video-duration">▶ 4:18</span>
+                            <h3 data-en="Rajiv — Why Marrying Modern Medicine with Ancient Wisdom Works" data-hi="राजीव — आधुनिक मेडिसिन को प्राचीन ज्ञान से मिलाना क्यों काम करता है">Rajiv — Why Marrying Modern Medicine with Ancient Wisdom Works</h3>
+                            <p data-en="The case for a complementary approach to cancer treatment and recovery." data-hi="कैंसर इलाज और उबरने के लिए पूरक एप्रोच का तर्क।">The case for a complementary approach to cancer treatment and recovery.</p>
                         </div>
                     </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('SKkE8w0bYZU')">
-                        <div class="video-thumbnail">
-                            <img src="images/thumbnail-8.png" alt="Navigating Cancer as a Couple">
-                            <div class="play-button">
-                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
+
+                    <div class="video-card">
+                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/v1z-K2M3fC4" title="Caregiver Burnout" allowfullscreen loading="lazy"></iframe></div>
                         <div class="video-card-content">
-                            <h3>Navigating Cancer as a Couple: Finding Patience, Acceptance, and Grace</h3>
-                            <span class="video-duration">▶ 4:35</span>
+                            <h3 data-en="The Caregiver Needs Care Too — Viiveck on 11 Years of Caregiving" data-hi="देखभाल करने वाले को भी देखभाल चाहिए — विवेक की 11 साल की कहानी">The Caregiver Needs Care Too — Viiveck on 11 Years of Caregiving</h3>
+                            <p data-en="What caregivers go through that nobody talks about, and how to survive it." data-hi="देखभाल करने वालों के साथ जो होता है जिसके बारे में कोई बात नहीं करता।">What caregivers go through that nobody talks about, and how to survive it.</p>
                         </div>
                     </div>
-                    
-                    <div class="video-card" onclick="openVideoModal('QlfABw0jdUk')">
-                        <div class="video-thumbnail">
-                            <img src="images/thumbnail-9.png" alt="Learning Energy Healing">
-                            <div class="play-button">
-                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </div>
+
+                    <div class="video-card">
+                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/QGI-XCRL3QQ" title="Energy Healing for Cancer" allowfullscreen loading="lazy"></iframe></div>
                         <div class="video-card-content">
-                            <h3>Learning Energy Healing: From Basic Techniques to Psychotherapy</h3>
-                            <span class="video-duration">▶ 1:06</span>
+                            <h3 data-en="What Is Energy Healing and How Does It Help Cancer Patients?" data-hi="एनर्जी हीलिंग क्या है और यह कैंसर मरीज़ों की कैसे मदद करती है?">What Is Energy Healing and How Does It Help Cancer Patients?</h3>
+                            <p data-en="Sangeeta explains the science and practice behind therapeutic energy healing." data-hi="संगीता थेराप्यूटिक एनर्जी हीलिंग के पीछे का विज्ञान और अभ्यास समझाती हैं।">Sangeeta explains the science and practice behind therapeutic energy healing.</p>
                         </div>
                     </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="guides-cta">
+            <div class="container">
+                <h3 data-en="Ready to Begin Your Healing Journey?" data-hi="स्वस्थ होने की राह शुरू करने के लिए तैयार हैं?">Ready to Begin Your Healing Journey?</h3>
+                <p data-en="Book a free consultation to discuss how we can support you" data-hi="हमसे बात करें — जानें कि हम कैसे मदद कर सकते हैं">Book a free consultation to discuss how we can support you</p>
+                <div class="guides-cta-buttons">
+                    <a href="book.html" class="btn btn-secondary" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
+                    <a href="https://wa.me/918106248800?text=Hi%2C%20I%20read%20your%20survivor%20stories%20and%20would%20like%20to%20know%20more." class="btn btn-whatsapp" target="_blank" data-en="💬 WhatsApp Us" data-hi="💬 व्हाट्सऐप करें">💬 WhatsApp Us</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
-        <div class="video-modal-content" onclick="event.stopPropagation()">
-            <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
-            <iframe id="videoFrame" src="" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp -->
     <a href="https://wa.me/918106248800?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20to%20know%20more%20about%20your%20cancer%20support%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-brand">
                     <h4>Anugnya Holistic Care</h4>
-                    <p>Founded by Cancer Survivors, for Cancer Survivors</p>
-                    <p class="tagline">Your Partner in Recovering from Cancer Treatment, Naturally.</p>
+                    <p data-en="Founded by Cancer Survivors, for Cancer Survivors" data-hi="कैंसर सर्वाइवर्स की ओर से, कैंसर सर्वाइवर्स के लिए">Founded by Cancer Survivors, for Cancer Survivors</p>
+                    <p data-en="Your Partner in Recovering from Cancer Treatment, Naturally." data-hi="कैंसर के इलाज से उबरने में आपका साथी — नेचुरली।">Your Partner in Recovering from Cancer Treatment, Naturally.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="services.html">Therapeutic Energy Healing</a>
-                    <a href="services.html">Energy Aromatherapy</a>
-                    <a href="services.html">Energy Psychotherapy</a>
-                    <a href="services.html">Community Support & Guidance</a>
-                    <a href="services.html">Restorative Healing Retreat</a>
-                    <a href="services.html">Self-Empowerment</a>
+                    <h4 data-en="Services" data-hi="सेवाएँ">Services</h4>
+                    <a href="services.html" data-en="Therapeutic Energy Healing" data-hi="एनर्जी हीलिंग">Therapeutic Energy Healing</a>
+                    <a href="services.html" data-en="Energy Aromatherapy" data-hi="एनर्जी अरोमाथेरेपी">Energy Aromatherapy</a>
+                    <a href="services.html" data-en="Energy Psychotherapy" data-hi="एनर्जी साइकोथेरेपी">Energy Psychotherapy</a>
+                    <a href="services.html" data-en="Community Support" data-hi="अपनों का साथ">Community Support</a>
+                    <a href="services.html" data-en="Healing Retreat" data-hi="शिफ़ा रिट्रीट">Healing Retreat</a>
+                    <a href="services.html" data-en="Self-Empowerment" data-hi="खुद को मज़बूत बनाएँ">Self-Empowerment</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
+                    <h4 data-en="Explore" data-hi="और जानें">Explore</h4>
+                    <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
+                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
+                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <a href="book.html" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Contact" data-hi="संपर्क करें">Contact</h4>
                     <p>Email: care@anugnyaholisticcare.com</p>
                     <p>Phone: +918106248800</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Important</h4>
-                    <p>Our services are intended to complement, not replace, medical treatment</p>
+                    <p><a href="https://wa.me/918106248800" style="color:#25D366;" data-en="💬 WhatsApp Us" data-hi="💬 व्हाट्सऐप करें">💬 WhatsApp Us</a></p>
                 </div>
             </div>
-            <div class="footer-disclaimers">
-                <div class="footer-disclaimer-box medical">
-                    <h4>⚠️ MEDICAL DISCLAIMER</h4>
-                    <p>The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions regarding a medical condition. Never disregard professional medical advice or delay seeking it because of information provided by our services.</p>
-                    <p><strong>CRITICAL:</strong> Do not stop, modify, or delay your prescribed cancer treatment without consulting your oncologist. Our services are designed to support, not replace, your medical treatment plan.</p>
-                </div>
-                <div class="footer-disclaimer-box emergency">
-                    <h4>🚨 EMERGENCY</h4>
-                    <p>If you are experiencing a medical emergency, please call your local emergency number (108 in India) or visit the nearest emergency room immediately. Our services are not equipped to handle medical emergencies.</p>
-                </div>
+            <div class="footer-disclaimer">
+                <h4 data-en="⚠️ Medical Disclaimer" data-hi="⚠️ ज़रूरी बात">⚠️ Medical Disclaimer</h4>
+                <p data-en="The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice. Do not stop your prescribed cancer treatment without consulting your oncologist." data-hi="हमारी सेवाएँ आपके मेडिकल इलाज की मदद के लिए हैं — इलाज की जगह नहीं। अपने डॉक्टर की सलाह हमेशा मानें।">The services offered by Anugnya Holistic Care are complementary wellness services and are NOT a substitute for professional medical advice. Do not stop your prescribed cancer treatment without consulting your oncologist.</p>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 Anugnya Holistic Care. All rights reserved.</p>
+            <div class="footer-disclaimer" style="border-left-color:#ff4444;background:rgba(255,68,68,0.08);">
+                <h4 style="color:#ff4444;" data-en="🚨 Emergency" data-hi="🚨 आपातकाल">🚨 Emergency</h4>
+                <p data-en="If you are experiencing a medical emergency, please call 108 in India or visit the nearest emergency room immediately." data-hi="अगर आप किसी मेडिकल इमर्जेंसी में हैं — तुरंत 108 पर कॉल करें।">If you are experiencing a medical emergency, please call 108 in India or visit the nearest emergency room immediately.</p>
             </div>
+            <div class="footer-bottom"><p>&copy; 2025 Anugnya Holistic Care. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- Main JS -->
     <script src="js/main.js"></script>
-    
     <script>
-        // Video Modal
-        function openVideoModal(videoId) {
-            const modal = document.getElementById('videoModal');
-            const frame = document.getElementById('videoFrame');
-            frame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeVideoModal(event) {
-            if (event && event.target !== event.currentTarget) return;
-            const modal = document.getElementById('videoModal');
-            const frame = document.getElementById('videoFrame');
-            frame.src = '';
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeVideoModal();
+        document.addEventListener('DOMContentLoaded', function() {
+            var LANG_KEY = 'anugnya_lang';
+            function setLang(lang) { localStorage.setItem(LANG_KEY, lang); applyLang(lang); }
+            function applyLang(lang) {
+                var root = document.getElementById('htmlRoot');
+                if (root) root.lang = lang === 'hi' ? 'hi' : 'en';
+                document.querySelectorAll('[data-en][data-hi]').forEach(function(el) {
+                    var text = el.getAttribute('data-' + lang);
+                    if (!text) return;
+                    if (text.indexOf('<br>') !== -1 || el.tagName === 'H1' || el.tagName === 'H2') { el.innerHTML = text; } else { el.textContent = text; }
+                });
+                var en = document.getElementById('btnEN'); var hi = document.getElementById('btnHI');
+                if (en) en.classList.toggle('active', lang === 'en');
+                if (hi) hi.classList.toggle('active', lang === 'hi');
+                if (typeof gtag !== 'undefined') gtag('event', 'language_toggle', {language: lang});
+            }
+            window.setLang = setLang;
+            var saved = localStorage.getItem(LANG_KEY);
+            if (saved === 'hi') applyLang('hi');
         });
     </script>
 </body>

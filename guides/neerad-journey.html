@@ -43,11 +43,18 @@
                 <a href="../index.html" class="logo"><img src="../images/anugnya-logo.png" alt="Anugnya Holistic Care"></a>
                 <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
                 <nav class="nav" id="mainNav">
-                    <a href="../index.html">Home</a>
                     <a href="../our-story.html">Our Story</a>
                     <a href="../services.html">Services</a>
-                    <a href="../faq.html">Treatment Tips</a>
-                    <a href="../guides.html" class="active">Survivor Stories</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="active" onclick="return false;">Resources</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                            <a href="../faq.html">Tips</a>
+                            <a href="../guides.html" class="active">Videos</a>
+                            <a href="../case-studies.html">Patient Stories</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="../book.html" class="nav-cta">Book Consult</a>
                 </nav>
             </div>

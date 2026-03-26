@@ -73,11 +73,18 @@
                 </div>
                 <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
                 <nav class="nav" id="mainNav">
-                    <a href="index.html" data-en="Home" data-hi="होम">Home</a>
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
                     <a href="services.html" class="active" data-en="Services" data-hi="सेवाएँ">Services</a>
-                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
-                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <div class="nav-dropdown">
+                        <a href="#" data-en="Resources" data-hi="संसाधन" onclick="return false;">Resources</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                            <a href="faq.html" data-en="Tips" data-hi="टिप्स">Tips</a>
+                            <a href="guides.html" data-en="Videos" data-hi="वीडियो">Videos</a>
+                            <a href="case-studies.html" data-en="Patient Stories" data-hi="मरीज़ों की कहानियाँ">Patient Stories</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="book.html" class="nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
@@ -107,6 +114,7 @@
                             </div>
                             <span class="service-chevron">&#8964;</span>
                         </div>
+                        </div>
                         <div class="service-panel" id="panel-energy-healing">
                             <div class="service-panel-inner">
                                 <div class="service-panel-img"><img src="images/therapeutic-energy-healing.png" alt=""></div>
@@ -128,7 +136,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <!-- 2 -->
                     <div class="service-row">
@@ -139,6 +146,7 @@
                                 <p data-en="AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress." data-hi="आयुष-सर्टिफाइड एसेंशियल ऑइल ब्लेंड्स — दर्द कम करने, इम्युनिटी बढ़ाने और तकलीफ से राहत के लिए।">AYUSH-certified essential oil blends to reduce pain, boost immunity, and tackle emotional distress.</p>
                             </div>
                             <span class="service-chevron">&#8964;</span>
+                        </div>
                         </div>
                         <div class="service-panel" id="panel-aromatherapy">
                             <div class="service-panel-inner">
@@ -161,7 +169,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <!-- 3 -->
                     <div class="service-row">
@@ -172,6 +179,7 @@
                                 <p data-en="Remote healing to overcome fear, anxiety, loneliness and build emotional resilience." data-hi="डर, चिंता और अकेलेपन से उबरने और मन को मज़बूत करने के लिए रिमोट हीलिंग।">Remote healing to overcome fear, anxiety, loneliness and build emotional resilience.</p>
                             </div>
                             <span class="service-chevron">&#8964;</span>
+                        </div>
                         </div>
                         <div class="service-panel" id="panel-psychotherapy">
                             <div class="service-panel-inner">
@@ -194,7 +202,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <!-- 4 -->
                     <div class="service-row">
@@ -205,6 +212,7 @@
                                 <p data-en="A 3-day immersion in nature to overcome burnout from cancer treatment." data-hi="प्रकृति में 3 दिन — इलाज से टूट जाने के बाद उबरने के लिए।">A 3-day immersion in nature to overcome burnout from cancer treatment.</p>
                             </div>
                             <span class="service-chevron">&#8964;</span>
+                        </div>
                         </div>
                         <div class="service-panel" id="panel-retreat">
                             <div class="service-panel-inner">
@@ -226,7 +234,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <!-- 5 -->
                     <div class="service-row">
@@ -237,6 +244,7 @@
                                 <p data-en="Seek solace and guidance from other patients and survivors in a safe, confidential space." data-hi="एक सुरक्षित और गोपनीय जगह में दूसरे मरीज़ों और सर्वाइवर्स से सहारा और मार्गदर्शन लें।">Seek solace and guidance from other patients and survivors in a safe, confidential space.</p>
                             </div>
                             <span class="service-chevron">&#8964;</span>
+                        </div>
                         </div>
                         <div class="service-panel" id="panel-community">
                             <div class="service-panel-inner">
@@ -259,7 +267,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <!-- 6 -->
                     <div class="service-row">
@@ -270,6 +277,7 @@
                                 <p data-en="Learn to activate the healer within yourself and support your loved ones." data-hi="अपने अंदर की शिफ़ा की ताकत जगाएँ और अपने परिवार का सहारा बनें।">Learn to activate the healer within yourself and support your loved ones.</p>
                             </div>
                             <span class="service-chevron">&#8964;</span>
+                        </div>
                         </div>
                         <div class="service-panel" id="panel-self">
                             <div class="service-panel-inner">
@@ -292,7 +300,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                 </div>
 
@@ -328,7 +335,7 @@
                 </div>
                 <div class="footer-section">
                     <h4 data-en="Contact" data-hi="संपर्क करें">Contact</h4>
-                    <p>Email: care@anugnyaholisticcare.com</p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7a4a6b5a287a6a9b2a0a9bea6afa8abaeb4b3aea4a4a6b5a2e9a4a8aa">[email&#160;protected]</a></p>
                     <p>Phone: +918106248800</p>
                 </div>
             </div>
@@ -344,7 +351,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
     <script>
         const allServices = ['energy-healing','aromatherapy','psychotherapy','retreat','community','self'];
         function toggleService(id) {

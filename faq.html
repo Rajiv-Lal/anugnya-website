@@ -46,6 +46,12 @@
         .faq-answer li { padding: 8px 0 8px 24px; position: relative; font-size: 14px; color: var(--dark-purple); line-height: 1.5; border-bottom: 1px solid var(--light-beige); }
         .faq-answer li:last-child { border-bottom: none; }
         .faq-answer li::before { content: '✓'; position: absolute; left: 0; color: var(--primary-purple); font-weight: bold; }
+    
+        /* ── Nav alignment fix ── */
+        @media (min-width: 992px) {
+            .nav { align-items: center; }
+            .nav a { white-space: nowrap !important; max-width: none !important; line-height: 1.4 !important; }
+        }
     </style>
 </head>
 <body>
@@ -59,12 +65,18 @@
                     <button type="button" class="lang-btn" id="btnHI" onclick="setLang('hi')" aria-label="हिंदी">हिं</button>
                 </div>
                 <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-                <nav class="nav" id="mainNav">
-                    <a href="index.html" data-en="Home" data-hi="होम">Home</a>
+                                <nav class="nav" id="mainNav">
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
                     <a href="services.html" data-en="Services" data-hi="सेवाएँ">Services</a>
-                    <a href="faq.html" class="active" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
-                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="active" data-en="Resources" data-hi="संसाधन" onclick="return false;">Resources</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                            <a href="faq.html" class="active" data-en="Tips" data-hi="टिप्स">Tips</a>
+                            <a href="guides.html" data-en="Videos" data-hi="वीडियो">Videos</a>
+                            <a href="case-studies.html" data-en="Patient Stories" data-hi="मरीज़ों की कहानियाँ">Patient Stories</a>
+                        </div>
+                    </div>
                     <a href="book.html" class="nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
@@ -362,13 +374,13 @@
                 <div class="footer-section">
                     <h4 data-en="Explore" data-hi="और जानें">Explore</h4>
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
-                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
-                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <a href="faq.html" data-en="Tips" data-hi="टिप्स">Tips</a>
+                    <a href="guides.html" data-en="Videos" data-hi="वीडियो">Videos</a>
                     <a href="book.html" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
                 </div>
                 <div class="footer-section">
                     <h4 data-en="Contact" data-hi="संपर्क करें">Contact</h4>
-                    <p>Email: care@anugnyaholisticcare.com</p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f596948790b5949b80929b8c949d9a999c86819c9696948790db969a98">[email&#160;protected]</a></p>
                     <p>Phone: +918106248800</p>
                     <p><a href="https://wa.me/918106248800" style="color:#25D366;" data-en="💬 WhatsApp Us" data-hi="💬 व्हाट्सऐप करें">💬 WhatsApp Us</a></p>
                 </div>
@@ -385,7 +397,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
     <script>
         // FAQ accordion handled by js/main.js initFaqAccordion()
         function scrollToSection(id) {

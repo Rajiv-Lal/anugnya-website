@@ -489,6 +489,69 @@
         .form-secondary .sg { background: var(--primary-purple); color: white; }
         .form-secondary .sg:hover { background: var(--dark-purple); }
 
+
+        /* ── Thank-you overlay after booking ── */
+        .booking-thankyou {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(76,34,166,0.92);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .booking-thankyou.active { display: flex; }
+        .booking-thankyou-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .booking-thankyou-card .ty-icon {
+            font-size: 52px;
+            margin-bottom: 16px;
+        }
+        .booking-thankyou-card h2 {
+            color: var(--primary-purple);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .booking-thankyou-card p {
+            color: var(--dark-purple);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .booking-thankyou-card .ty-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .booking-thankyou-card .ty-btn-primary {
+            background: var(--primary-purple);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+        .booking-thankyou-card .ty-btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+
         /* Calendly overlay */
         .calendly-loading-overlay {
             position: fixed;
@@ -550,6 +613,15 @@
             background: var(--primary-purple);
             opacity: 0.4;
         }
+
+        /* ── Case study accordions inside booking forms ── */
+
+    
+        /* ── Nav alignment fix ── */
+        @media (min-width: 992px) {
+            .nav { align-items: center; }
+            .nav a { white-space: nowrap !important; max-width: none !important; line-height: 1.4 !important; }
+        }
     </style>
 </head>
 <body>
@@ -569,13 +641,19 @@
                 <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
-                <nav class="nav" id="mainNav">
-                    <a href="index.html" data-en="Home" data-hi="होम">Home</a>
+                                <nav class="nav" id="mainNav">
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
                     <a href="services.html" data-en="Services" data-hi="सेवाएँ">Services</a>
-                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
-                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
-                    <a href="book.html" class="nav-cta active" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
+                    <div class="nav-dropdown">
+                        <a href="#" data-en="Resources" data-hi="संसाधन" onclick="return false;">Resources</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                            <a href="faq.html" data-en="Tips" data-hi="टिप्स">Tips</a>
+                            <a href="guides.html" data-en="Videos" data-hi="वीडियो">Videos</a>
+                            <a href="case-studies.html" data-en="Patient Stories" data-hi="मरीज़ों की कहानियाँ">Patient Stories</a>
+                        </div>
+                    </div>
+                    <a href="book.html" class="active nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
         </div>
@@ -642,7 +720,7 @@
                     <h3 data-en="Treatment Support" data-hi="इलाज के दौरान सपोर्ट">Treatment Support</h3>
 
                     <div class="inner-quote">
-                        <p data-en="I couldn't even walk to my balcony. That was a milestone. That was victory." data-hi="बालकनी तक चलना भी मुश्किल था। जब चल पाई — वह उपलब्धि थी। वह जीत थी।">"I couldn't even walk to my balcony. When I finally could, that was a milestone. That was victory."</p>
+                        <p data-en="&quot;I couldn&apos;t even walk to my balcony. When I finally could, that was a milestone. That was victory.&quot;" data-hi="&quot;बालकनी तक चलना भी मुश्किल था। जब चल पाई — वह उपलब्धि थी। वह जीत थी।&quot;">"I couldn't even walk to my balcony. When I finally could, that was a milestone. That was victory."</p>
                         <span class="attr" data-en="— Sangeeta, Founder &amp; Survivor" data-hi="— संगीता, संस्थापक और सर्वाइवर">— Sangeeta, Founder &amp; Survivor</span>
                     </div>
 
@@ -700,11 +778,6 @@
 
                     <h3 data-en="Recovery Support" data-hi="उबरने में सपोर्ट">Recovery Support</h3>
 
-                    <div class="inner-quote">
-                        <p>"It was a magical experience going through the meditation session today. I will encourage people in the group to join and take blessings."</p>
-                        <span class="attr" data-en="— Himanshu Gauba, Survivor" data-hi="— हिमांशु गौबा, सर्वाइवर">— Himanshu Gauba, Survivor</span>
-                    </div>
-
                     <p class="section-label" data-en="Choose a service:" data-hi="कौन सी सेवा चाहिए?">Choose a service:</p>
 
                     <div class="recovery-services">
@@ -729,6 +802,11 @@
 
                     <h3 id="recovery-form-title">Register for Service</h3>
                     <input type="hidden" id="recovery-service-selected" name="serviceSelected">
+
+                    <div class="inner-quote">
+                        <p data-en="&quot;It was a magical experience going through the meditation session today. I will encourage people in the group to join and take blessings.&quot;" data-hi="&quot;आज का ध्यान सेशन एक जादुई अनुभव था। मैं ग्रुप के सभी लोगों को इसमें शामिल होने के लिए प्रोत्साहित करूँगा।&quot;">"It was a magical experience going through the meditation session today. I will encourage people in the group to join and take blessings."</p>
+                        <span class="attr" data-en="— Survivor, Meditation Programme" data-hi="— सर्वाइवर, ध्यान प्रोग्राम">— Survivor, Meditation Programme</span>
+                    </div>
 
                     <form onsubmit="submitWithCalendly(event, 'recovery')">
                         <div class="form-group">
@@ -769,8 +847,8 @@
                     <h3 data-en="Caregiver Support" data-hi="देखभाल करने वालों के लिए सपोर्ट">Caregiver Support</h3>
 
                     <div class="inner-quote">
-                        <p>"The caregiver can't say 'give me two days off, I need a break.' There's nobody around. You need a neutral space... or it becomes overwhelming."</p>
-                        <span class="attr" data-en="— Neerad, Caregiver" data-hi="— नीरद, देखभाल करने वाले">— Neerad, Caregiver</span>
+                        <p data-en="&quot;The caregiver can&apos;t say &apos;give me two days off, I need a break.&apos; There&apos;s nobody around. You need a neutral space... or it becomes overwhelming.&quot;" data-hi="&quot;देखभाल करने वाला नहीं कह सकता कि &apos;मुझे ब्रेक दो।&apos; आस-पास कोई नहीं होता। एक तटस्थ जगह चाहिए — वरना सब बहुत भारी हो जाता है।&quot;">"The caregiver can't say 'give me two days off, I need a break.' There's nobody around. You need a neutral space... or it becomes overwhelming."</p>
+                        <span class="attr" data-en="— Neerad, Leukaemia Survivor &amp; Caregiver" data-hi="— नीरद, ल्यूकेमिया सर्वाइवर और देखभाल करने वाले">— Neerad, Leukaemia Survivor &amp; Caregiver</span>
                     </div>
 
                     <form onsubmit="submitWithCalendly(event, 'caregiver')">
@@ -902,7 +980,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: care@anugnyaholisticcare.com</p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cba8aab9ae8baaa5beaca5b2aaa3a4a7a2b8bfa2a8a8aab9aee5a8a4a6">[email&#160;protected]</a></p>
                     <p>Phone: +918106248800</p>
                 </div>
             </div>
@@ -918,7 +996,7 @@
         </div>
     </footer>
 
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="js/main.js"></script>
     <script>
         const CALENDLY_URL = 'https://calendly.com/anugnyaholisticcare/welcome';
@@ -970,7 +1048,6 @@
             document.getElementById('main-quote').style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
         function submitWithCalendly(event, formType) {
             event.preventDefault();
             gtag('event', 'booking_form_submit', { path_type: formType });
@@ -1077,5 +1154,42 @@
             if (saved === 'hi') applyLang('hi');
         });
     </script>
+
+    <!-- Thank-you overlay after Calendly booking -->
+    <div class="booking-thankyou" id="bookingThankyou">
+        <div class="booking-thankyou-card">
+            <div class="ty-icon">✅</div>
+            <h2 data-en="You're Booked!" data-hi="आपकी बुकिंग हो गई!">You're Booked!</h2>
+            <p data-en="Your consultation is confirmed. Check your email for the calendar invite. We look forward to supporting you." data-hi="आपकी बुकिंग कन्फर्म हो गई। कैलेंडर इनवाइट ईमेल पर देखें। हम आपसे बात करने के लिए तैयार हैं।">Your consultation is confirmed. Check your email for the calendar invite. We look forward to supporting you.</p>
+            <div class="ty-buttons">
+                <a href="index.html" class="ty-btn-primary" data-en="← Back to Anugnya" data-hi="← अनुज्ञा पर वापस जाएं">← Back to Anugnya</a>
+                <a href="https://wa.me/918106248800?text=Hi%2C%20I%20just%20booked%20a%20consultation%20and%20wanted%20to%20say%20hello!" class="ty-btn-whatsapp" target="_blank" data-en="💬 Say hi on WhatsApp" data-hi="💬 WhatsApp पर हाय करें">💬 Say hi on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Detect Calendly booking completion and show thank-you overlay
+        window.addEventListener('message', function(e) {
+            if (e.data && e.data.event && e.data.event === 'calendly.event_scheduled') {
+                // Close any Calendly popup
+                var closeBtn = document.querySelector('.calendly-popup-close');
+                if (closeBtn) closeBtn.click();
+                // Show thank-you overlay
+                var overlay = document.getElementById('bookingThankyou');
+                if (overlay) {
+                    overlay.classList.add('active');
+                    // Re-apply language if Hindi
+                    var lang = localStorage.getItem('anugnya_lang');
+                    if (lang === 'hi' && window.setLang) window.setLang('hi');
+                }
+                // GA4 conversion event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'booking_complete', { event_category: 'conversion' });
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>

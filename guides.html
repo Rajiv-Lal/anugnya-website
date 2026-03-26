@@ -5,9 +5,9 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5EM10412DY');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Healing stories and insights from cancer survivors and caregivers. Read articles and watch videos from people who understand your journey.">
-    <title>Survivor Stories — Healing Journeys | Anugnya Holistic Care</title>
-    <meta property="og:title" content="Survivor Stories | Anugnya Holistic Care">
+    <meta name="description" content="Watch energy healing videos from Anugnya Holistic Care. See how remote energy healing helps cancer patients manage chemotherapy side effects.">
+    <title>Energy Healing Videos | Anugnya Holistic Care</title>
+    <meta property="og:title" content="Energy Healing | Anugnya Holistic Care">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anugnyaholisticcare.com/guides.html">
     <link rel="canonical" href="https://anugnyaholisticcare.com/guides.html">
@@ -35,18 +35,7 @@
         .section-header{text-align:center;margin-bottom:28px;}
         .section-header h2{color:var(--primary-purple);font-size:24px;margin-bottom:8px;}
         .section-header p{color:var(--dark-purple);font-size:15px;}
-        .articles-grid{display:flex;flex-direction:column;gap:20px;}
-        @media(min-width:640px){.articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}}
-        .article-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(76,34,166,0.1);text-decoration:none;transition:all 0.2s;display:block;}
-        .article-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(76,34,166,0.18);}
-        .article-card>img{width:100%;height:180px;object-fit:cover;display:block;}
-        .article-card-content{padding:18px;}
-        .article-card-category{display:inline-block;background:var(--light-beige);color:var(--rose);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:3px 8px;border-radius:4px;margin-bottom:8px;}
-        .article-card-content h3{color:var(--primary-purple);font-size:15px;line-height:1.4;margin:0 0 8px 0;}
-        .article-card-content p{color:var(--dark-purple);font-size:13px;line-height:1.5;margin:0 0 12px 0;}
-        .article-card-meta{display:flex;align-items:center;gap:8px;}
-        .article-card-meta img{width:28px;height:28px;border-radius:50%;object-fit:cover;object-position:top center;}
-        .article-card-meta span{font-size:12px;color:var(--dark-purple);font-weight:500;}
+        @media(min-width:640px){}
         .videos-section{padding:40px 0;background:#f9f5f2;}
         .videos-grid{display:flex;flex-direction:column;gap:20px;}
         @media(min-width:640px){.videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}}
@@ -57,10 +46,17 @@
         .video-card-content{padding:16px;}
         .video-card-content h3{color:var(--primary-purple);font-size:14px;line-height:1.4;margin:0 0 6px 0;}
         .video-card-content p{color:var(--dark-purple);font-size:13px;line-height:1.5;margin:0;}
+        .video-loading{text-align:center;padding:40px;color:var(--dark-purple);opacity:0.5;grid-column:1/-1;}
         .guides-cta{background:var(--light-purple);padding:40px 20px;text-align:center;}
         .guides-cta h3{color:var(--primary-purple);font-size:22px;margin-bottom:10px;}
         .guides-cta p{color:var(--dark-purple);margin-bottom:20px;font-size:15px;}
         .guides-cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    
+        /* ── Nav alignment fix ── */
+        @media (min-width: 992px) {
+            .nav { align-items: center; }
+            .nav a { white-space: nowrap !important; max-width: none !important; line-height: 1.4 !important; }
+        }
     </style>
 </head>
 <body>
@@ -74,12 +70,18 @@
                     <button type="button" class="lang-btn" id="btnHI" onclick="setLang('hi')" aria-label="हिंदी">हिं</button>
                 </div>
                 <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-                <nav class="nav" id="mainNav">
-                    <a href="index.html" data-en="Home" data-hi="होम">Home</a>
+                                <nav class="nav" id="mainNav">
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
                     <a href="services.html" data-en="Services" data-hi="सेवाएँ">Services</a>
-                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
-                    <a href="guides.html" class="active" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="active" data-en="Resources" data-hi="संसाधन" onclick="return false;">Resources</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                            <a href="faq.html" data-en="Tips" data-hi="टिप्स">Tips</a>
+                            <a href="guides.html" class="active" data-en="Videos" data-hi="वीडियो">Videos</a>
+                            <a href="case-studies.html" data-en="Patient Stories" data-hi="मरीज़ों की कहानियाँ">Patient Stories</a>
+                        </div>
+                    </div>
                     <a href="book.html" class="nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
@@ -89,147 +91,108 @@
     <main>
         <section class="page-hero">
             <div class="container">
-                <h1 data-en="Survivor Stories &amp; Insights" data-hi="सर्वाइवर्स की कहानियाँ और अनुभव">Survivor Stories &amp; Insights</h1>
-                <p class="subtitle" data-en="From survivors who have been where you are" data-hi="उन लोगों से जो वहाँ रहे चुके हैं जहाँ आप हैं">From survivors who have been where you are</p>
+                <h1 data-en="Energy Healing" data-hi="एनर्जी हीलिंग">Energy Healing</h1>
+                <p class="subtitle" data-en="Watch our videos — energy healing in practice, patient stories, and the science behind it." data-hi="हमारे वीडियो देखें — एनर्जी हीलिंग, मरीज़ों की कहानियाँ, और इसके पीछे का विज्ञान।">Watch our videos — energy healing in practice, patient stories, and the science behind it.</p>
             </div>
         </section>
 
-        <section class="category-section">
-            <div class="container">
-                <div class="category-boxes">
-                    <a href="#videos" class="category-box">
-                        <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-                        <h3 data-en="Watch Videos" data-hi="वीडियो देखें">Watch Videos</h3>
-                        <p data-en="5 videos" data-hi="5 वीडियो">5 videos</p>
-                    </a>
-                    <a href="#stories" class="category-box">
-                        <div class="category-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div>
-                        <h3 data-en="Read Stories" data-hi="कहानियाँ पढ़ें">Read Stories</h3>
-                        <p data-en="4 articles" data-hi="4 लेख">4 articles</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="stories" class="content-section">
+        <section class="videos-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 data-en="Read Our Stories" data-hi="हमारी कहानियाँ पढ़ें">Read Our Stories</h2>
-                    <p data-en="In-depth stories from survivors and caregivers" data-hi="सर्वाइवर्स और देखभाल करने वालों की गहरी कहानियाँ">In-depth stories from survivors and caregivers</p>
+                    <h2 data-en="Energy Healing Videos" data-hi="एनर्जी हीलिंग वीडियो">Energy Healing Videos</h2>
+                    <p data-en="Energy healing in practice — patient journeys, the science, and how it works." data-hi="एनर्जी हीलिंग व्यवहार में — मरीज़ों की राह, विज्ञान, और यह कैसे काम करता है।">Energy healing in practice — patient journeys, the science, and how it works.</p>
                 </div>
-                <div class="articles-grid">
-
-                    <a href="guides/essential-oil-remedy.html" class="article-card">
-                        <img src="images/thumbnail-1.png" alt="Essential Oil Remedy">
-                        <div class="article-card-content">
-                            <span class="article-card-category" data-en="Aromatherapy" data-hi="अरोमाथेरेपी">Aromatherapy</span>
-                            <h3 data-en="Essential Oil Remedy: Anugnya&#39;s Answer to Radiation and Chemo Side Effects" data-hi="एसेंशियल ऑइल से राहत: रेडिएशन और कीमो के साइड इफेक्ट्स का अनुज्ञा का जवाब">Essential Oil Remedy: Anugnya's Answer to Radiation and Chemo Side Effects</h3>
-                            <p data-en="How essential oil blends help maintain patients&#39; physical, energy and emotional strength during treatment." data-hi="कैसे एसेंशियल ऑइल ब्लेंड्स इलाज के दौरान मरीज़ की शारीरिक, ऊर्जा और मन की ताकत बनाए रखते हैं।">How essential oil blends help maintain patients' physical, energy and emotional strength during treatment.</p>
-                            <div class="article-card-meta">
-                                <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
-                                <span data-en="Rajiv Lal · Interview: Sangeeta Bhalla" data-hi="राजीव लाल · इंटरव्यू: संगीता भल्ला">Rajiv Lal · Interview: Sangeeta Bhalla</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="guides/caregivers-journey.html" class="article-card">
-                        <img src="images/thumbnail-2.png" alt="Caregiver's Journey">
-                        <div class="article-card-content">
-                            <span class="article-card-category" data-en="Caregiver Stories" data-hi="देखभाल करने वाले की कहानी">Caregiver Stories</span>
-                            <h3 data-en="Viiveck Verma: A Caregiver&#39;s Journey — The Caregiver Needs Care Too" data-hi="विवेक वर्मा: एक देखभाल करने वाले की कहानी — देखभाल करने वाले को भी देखभाल चाहिए">Viiveck Verma: A Caregiver's Journey — The Caregiver Needs Care Too</h3>
-                            <p data-en="11 years caring for his wife through 9 reappearances of cancer. A profile in courage." data-hi="कैंसर के 9 बार वापस आने पर 11 साल अपनी पत्नी का साथ देना। हिम्मत की एक मिसाल।">11 years caring for his wife through 9 reappearances of cancer. A profile in courage.</p>
-                            <div class="article-card-meta">
-                                <img src="images/viiveck-verma.png" alt="Viiveck Verma">
-                                <span data-en="Rajiv Lal · Interview: Viiveck Verma" data-hi="राजीव लाल · इंटरव्यू: विवेक वर्मा">Rajiv Lal · Interview: Viiveck Verma</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="guides/neerad-journey.html" class="article-card">
-                        <img src="images/thumbnail-4.png" alt="Neerad's Journey">
-                        <div class="article-card-content">
-                            <span class="article-card-category" data-en="Survivor Stories" data-hi="सर्वाइवर की कहानी">Survivor Stories</span>
-                            <h3 data-en="Neerad&#39;s Journey Through Cancer: Brave, Honest, Resilient" data-hi="नीरद की कैंसर जर्नी: हिम्मतवाले, सच्चे, अडिग">Neerad's Journey Through Cancer: Brave, Honest, Resilient</h3>
-                            <p data-en="Neerad emerged from his bout with Leukaemia braver, better, and stronger. His story of taking care of the guest, and then letting it go." data-hi="नीरद ल्यूकेमिया से उबरकर पहले से बेहतर और मज़बूत निकले। मेहमान को विदा करने की उनकी कहानी।">Neerad emerged from his bout with Leukaemia braver, better, and stronger. His story of taking care of the guest, and then letting it go.</p>
-                            <div class="article-card-meta">
-                                <img src="images/anugnya-logo.png" alt="Anugnya">
-                                <span data-en="Rajiv Lal · Interview: Neerad" data-hi="राजीव लाल · इंटरव्यू: नीरद">Rajiv Lal · Interview: Neerad</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="guides/sangeeta-cancer-recovery.html" class="article-card">
-                        <img src="images/thumbnail-3.png" alt="Sangeeta's Recovery">
-                        <div class="article-card-content">
-                            <span class="article-card-category" data-en="Survivor Stories" data-hi="सर्वाइवर की कहानी">Survivor Stories</span>
-                            <h3 data-en="Sangeeta&#39;s Cancer Recovery Journey: From Patient to Healer" data-hi="संगीता की कैंसर से उबरने की कहानी: मरीज़ से हीलर तक">Sangeeta's Cancer Recovery Journey: From Patient to Healer</h3>
-                            <p data-en="After radical surgery, Sangeeta couldn&#39;t walk to her balcony. Energy healing transformed her recovery — and her life&#39;s mission." data-hi="रेडिकल सर्जरी के बाद संगीता बालकनी तक भी नहीं चल पाती थीं। एनर्जी हीलिंग ने उनकी ज़िंदगी का रास्ता बदल दिया।">After radical surgery, Sangeeta couldn't walk to her balcony. Energy healing transformed her recovery — and her life's mission.</p>
-                            <div class="article-card-meta">
-                                <img src="images/sangeeta-bhalla.jpg" alt="Sangeeta Bhalla">
-                                <span data-en="Rajiv Lal · Interview: Sangeeta Bhalla" data-hi="राजीव लाल · इंटरव्यू: संगीता भल्ला">Rajiv Lal · Interview: Sangeeta Bhalla</span>
-                            </div>
-                        </div>
-                    </a>
-
+                <div class="videos-grid" id="videos-grid">
+                    <!-- Loaded via YouTube API -->
+                    <div class="video-loading">Loading videos...</div>
                 </div>
             </div>
         </section>
 
-        <section id="videos" class="videos-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="Watch Our Videos" data-hi="हमारे वीडियो देखें">Watch Our Videos</h2>
-                    <p data-en="Hear directly from survivors, caregivers, and healers" data-hi="सर्वाइवर्स, देखभाल करने वालों और हीलर्स से सीधे सुनें">Hear directly from survivors, caregivers, and healers</p>
-                </div>
-                <div class="videos-grid">
+        <script>
+        (function() {
+            var API_KEY = 'AIzaSyCb1CqBM7yI1lU0uGae3O4hTIIn-cbPSck';
+            var VIDEO_IDS = [
+                'gOhj9zPp_aQ',
+                'ZD-BR9BPqhM',
+                'SKkE8w0bYZU',
+                'T4UQtmLLQic',
+                'QlfABw0jdUk'
+            ];
 
-                    <div class="video-card">
-                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/gOhj9zPp_aQ" title="Neerad's Cancer Journey" allowfullscreen loading="lazy"></iframe></div>
-                        <div class="video-card-content">
-                            <h3 data-en="Neerad&#39;s Journey — Leukaemia, Bone Marrow Transplant, and Recovery" data-hi="नीरद की जर्नी — ल्यूकेमिया, बोन मैरो ट्रांसप्लांट और उबरना">Neerad's Journey — Leukaemia, Bone Marrow Transplant, and Recovery</h3>
-                            <p data-en="An honest account of what it feels like to go through cancer treatment and come out stronger." data-hi="कैंसर इलाज से गुज़रने और मज़बूत होकर निकलने का एक ईमानदार बयान।">An honest account of what it feels like to go through cancer treatment and come out stronger.</p>
-                        </div>
-                    </div>
+            function truncate(str, n) {
+                if (!str) return '';
+                var clean = str.replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+                var first = clean.split(/[.!?]/)[0].trim();
+                if (first.length > 10) return first + '.';
+                // first sentence too short — use raw truncation
+                return clean.substring(0, n).trim() + '…';
+            }
 
-                    <div class="video-card">
-                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/ZD-BR9BPqhM" title="Sangeeta's Healing Journey" allowfullscreen loading="lazy"></iframe></div>
-                        <div class="video-card-content">
-                            <h3 data-en="Sangeeta&#39;s Healing Journey — From Surgery to Energy Healer" data-hi="संगीता की शिफ़ा की यात्रा — सर्जरी से एनर्जी हीलर तक">Sangeeta's Healing Journey — From Surgery to Energy Healer</h3>
-                            <p data-en="How energy healing transformed Sangeeta&#39;s recovery after radical cancer surgery." data-hi="कैसे एनर्जी हीलिंग ने रेडिकल कैंसर सर्जरी के बाद संगीता के उबरने को बदल दिया।">How energy healing transformed Sangeeta's recovery after radical cancer surgery.</p>
-                        </div>
-                    </div>
+            function buildGrid(items) {
+                var grid = document.getElementById('videos-grid');
+                if (!grid) return;
+                grid.innerHTML = '';
+                items.forEach(function(item) {
+                    var id = item.id.videoId || item.id;
+                    var title = item.snippet.title;
+                    var desc = truncate(item.snippet.description, 120);
+                    var card = document.createElement('div');
+                    card.className = 'video-card';
+                    card.innerHTML =
+                        '<div class="video-embed">' +
+                            '<iframe src="https://www.youtube.com/embed/' + id + '" ' +
+                            'title="' + title.replace(/"/g, '&quot;') + '" ' +
+                            'allowfullscreen loading="lazy"></iframe>' +
+                        '</div>' +
+                        '<div class="video-card-content">' +
+                            '<h3>' + title + '</h3>' +
+                            '<p>' + desc + '</p>' +
+                        '</div>';
+                    grid.appendChild(card);
+                });
+            }
 
-                    <div class="video-card">
-                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/SKkE8w0bYZU" title="Rajiv on Cancer Support" allowfullscreen loading="lazy"></iframe></div>
-                        <div class="video-card-content">
-                            <h3 data-en="Rajiv — Why Marrying Modern Medicine with Ancient Wisdom Works" data-hi="राजीव — आधुनिक मेडिसिन को प्राचीन ज्ञान से मिलाना क्यों काम करता है">Rajiv — Why Marrying Modern Medicine with Ancient Wisdom Works</h3>
-                            <p data-en="The case for a complementary approach to cancer treatment and recovery." data-hi="कैंसर इलाज और उबरने के लिए पूरक एप्रोच का तर्क।">The case for a complementary approach to cancer treatment and recovery.</p>
-                        </div>
-                    </div>
+            function fallback() {
+                // If API fails, render with known IDs and no descriptions
+                var grid = document.getElementById('videos-grid');
+                if (!grid) return;
+                grid.innerHTML = '';
+                VIDEO_IDS.forEach(function(id) {
+                    var card = document.createElement('div');
+                    card.className = 'video-card';
+                    card.innerHTML =
+                        '<div class="video-embed">' +
+                            '<iframe src="https://www.youtube.com/embed/' + id + '" ' +
+                            'allowfullscreen loading="lazy"></iframe>' +
+                        '</div>' +
+                        '<div class="video-card-content"><h3>&nbsp;</h3></div>';
+                    grid.appendChild(card);
+                });
+            }
 
-                    <div class="video-card">
-                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/T4UQtmLLQic" title="Caregiver Burnout" allowfullscreen loading="lazy"></iframe></div>
-                        <div class="video-card-content">
-                            <h3 data-en="The Caregiver Needs Care Too — Viiveck on 11 Years of Caregiving" data-hi="देखभाल करने वाले को भी देखभाल चाहिए — विवेक की 11 साल की कहानी">The Caregiver Needs Care Too — Viiveck on 11 Years of Caregiving</h3>
-                            <p data-en="What caregivers go through that nobody talks about, and how to survive it." data-hi="देखभाल करने वालों के साथ जो होता है जिसके बारे में कोई बात नहीं करता।">What caregivers go through that nobody talks about, and how to survive it.</p>
-                        </div>
-                    </div>
+            var url = 'https://www.googleapis.com/youtube/v3/videos' +
+                '?id=' + VIDEO_IDS.join(',') +
+                '&part=snippet' +
+                '&key=' + API_KEY;
 
-                    <div class="video-card">
-                        <div class="video-embed"><iframe src="https://www.youtube.com/embed/QlfABw0jdUk" title="Energy Healing for Cancer" allowfullscreen loading="lazy"></iframe></div>
-                        <div class="video-card-content">
-                            <h3 data-en="What Is Energy Healing and How Does It Help Cancer Patients?" data-hi="एनर्जी हीलिंग क्या है और यह कैंसर मरीज़ों की कैसे मदद करती है?">What Is Energy Healing and How Does It Help Cancer Patients?</h3>
-                            <p data-en="Sangeeta explains the science and practice behind therapeutic energy healing." data-hi="संगीता थेराप्यूटिक एनर्जी हीलिंग के पीछे का विज्ञान और अभ्यास समझाती हैं।">Sangeeta explains the science and practice behind therapeutic energy healing.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+            fetch(url)
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (!data.items || data.items.length === 0) { fallback(); return; }
+                    // Preserve original order from VIDEO_IDS array
+                    var ordered = VIDEO_IDS.map(function(id) {
+                        return data.items.find(function(item) { return item.id === id; });
+                    }).filter(Boolean);
+                    buildGrid(ordered);
+                })
+                .catch(function() { fallback(); });
+        })();
+        </script>
 
         <section class="guides-cta">
             <div class="container">
-                <h3 data-en="Ready to Begin Your Healing Journey?" data-hi="स्वस्थ होने की राह शुरू करने के लिए तैयार हैं?">Ready to Begin Your Healing Journey?</h3>
+                <h3 data-en="Ready to Experience Energy Healing?" data-hi="एनर्जी हीलिंग अनुभव करने के लिए तैयार हैं?">Ready to Experience Energy Healing?</h3>
                 <p data-en="Book a free consultation to discuss how we can support you" data-hi="हमसे बात करें — जानें कि हम कैसे मदद कर सकते हैं">Book a free consultation to discuss how we can support you</p>
                 <div class="guides-cta-buttons">
                     <a href="book.html" class="btn btn-secondary" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
@@ -263,13 +226,13 @@
                 <div class="footer-section">
                     <h4 data-en="Explore" data-hi="और जानें">Explore</h4>
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
-                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
+                    <a href="faq.html" data-en="Tips" data-hi="टिप्स">Tips</a>
                     <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
                     <a href="book.html" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
                 </div>
                 <div class="footer-section">
                     <h4 data-en="Contact" data-hi="संपर्क करें">Contact</h4>
-                    <p>Email: care@anugnyaholisticcare.com</p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8deeecffe8cdece3f8eae3f4ece5e2e1e4fef9e4eeeeecffe8a3eee2e0">[email&#160;protected]</a></p>
                     <p>Phone: +918106248800</p>
                     <p><a href="https://wa.me/918106248800" style="color:#25D366;" data-en="💬 WhatsApp Us" data-hi="💬 व्हाट्सऐप करें">💬 WhatsApp Us</a></p>
                 </div>
@@ -286,7 +249,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var LANG_KEY = 'anugnya_lang';

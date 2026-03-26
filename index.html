@@ -124,6 +124,31 @@
         }
         }
 
+        /* Mobile — flat list inside hamburger */
+        @media (max-width: 991px) {
+            .nav-dropdown { display: block; width: 100%; }
+            .nav-dropdown > a { display: block; padding: 12px 15px; border-radius: 8px; }
+            .nav-dropdown > a::after { display: none; }
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                background: transparent;
+                display: block;
+                margin: 0;
+            }
+            .dropdown-menu a {
+                padding: 9px 15px 9px 30px !important;
+                font-size: 13px !important;
+                background: transparent !important;
+                color: var(--primary-purple) !important;
+                border: none;
+                opacity: 0.85;
+            }
+        }
+
         /* ── WhatsApp label on desktop ── */
         .whatsapp-float span { display: none; }
         @media (min-width: 768px) {
@@ -141,6 +166,23 @@
                 white-space: nowrap;
             }
         }
+    
+        /* ── Nav alignment fix ── */
+        @media (min-width: 992px) {
+            .header-content { align-items: center; }
+            .nav { align-items: center; gap: 2px; }
+            .nav a { 
+                white-space: nowrap !important; 
+                max-width: none !important; 
+                line-height: 1 !important;
+                font-size: 13px !important;
+                padding: 8px 9px !important;
+            }
+            .nav .nav-cta {
+                font-size: 13px !important;
+                padding: 8px 16px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -152,7 +194,6 @@
                 <a href="index.html" class="logo">
                     <img src="images/anugnya-logo.png" alt="Anugnya Holistic Care">
                 </a>
-                <!-- Language Toggle — centred between logo and nav -->
                 <div class="lang-toggle">
                     <button type="button" class="lang-btn active" id="btnEN" onclick="setLang('en')" aria-label="English">EN</button>
                     <div class="lang-divider"></div>
@@ -161,12 +202,18 @@
                 <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
-                <nav class="nav" id="mainNav">
-                    <a href="index.html" class="active" data-en="Home" data-hi="होम">Home</a>
+                                <nav class="nav" id="mainNav">
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
                     <a href="services.html" data-en="Services" data-hi="सेवाएँ">Services</a>
-                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
-                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <div class="nav-dropdown">
+                        <a href="#" data-en="Resources" data-hi="संसाधन" onclick="return false;">Resources</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                            <a href="faq.html" data-en="Tips" data-hi="टिप्स">Tips</a>
+                            <a href="guides.html" data-en="Videos" data-hi="वीडियो">Videos</a>
+                            <a href="case-studies.html" data-en="Patient Stories" data-hi="मरीज़ों की कहानियाँ">Patient Stories</a>
+                        </div>
+                    </div>
                     <a href="book.html" class="nav-cta" data-en="Book Consult" data-hi="बुक करें">Book Consult</a>
                 </nav>
             </div>
@@ -295,8 +342,8 @@
                 <div class="footer-section">
                     <h4 data-en="Explore" data-hi="और जानें">Explore</h4>
                     <a href="our-story.html" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
-                    <a href="faq.html" data-en="Treatment Tips" data-hi="इलाज के दौरान मदद">Treatment Tips</a>
-                    <a href="guides.html" data-en="Survivor Stories" data-hi="सर्वाइवर्स की कहानियाँ">Survivor Stories</a>
+                    <a href="faq.html" data-en="Tips" data-hi="टिप्स">Tips</a>
+                    <a href="guides.html" data-en="Videos" data-hi="वीडियो">Videos</a>
                     <a href="book.html" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</a>
                 </div>
                 <div class="footer-section">

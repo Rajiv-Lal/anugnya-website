@@ -39,8 +39,8 @@
         .faq-question:hover { background: #f8f5ff; }
         .faq-question::after { content: '+'; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 24px; color: var(--primary-purple); font-weight: 300; transition: transform 0.25s; }
         .faq-item.active .faq-question::after { transform: translateY(-50%) rotate(45deg); }
-        .faq-answer { display: none; padding: 0 20px 20px; background: var(--white); }
-        .faq-item.active .faq-answer { display: block; }
+        .faq-answer { max-height: 0; overflow: hidden; padding: 0 20px 20px; background: var(--white); }
+        .faq-item.active .faq-answer { max-height: 3000px; overflow: visible; }
         .faq-answer p { color: var(--dark-purple); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
         .faq-answer ul { list-style: none; padding: 0; margin: 8px 0 16px; }
         .faq-answer li { padding: 8px 0 8px 24px; position: relative; font-size: 14px; color: var(--dark-purple); line-height: 1.5; border-bottom: 1px solid var(--light-beige); }

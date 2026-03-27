@@ -365,39 +365,7 @@
             border-color: var(--primary-purple);
         }
 
-        /* Scale rating */
-        .scale-group { margin-bottom: 22px; }
-        .scale-group > label {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--dark-purple);
-            font-weight: 600;
-            font-size: 14px;
-        }
-        .scale-options {
-            display: flex;
-            justify-content: space-between;
-            gap: 6px;
-        }
-        .scale-option { flex: 1; text-align: center; }
-        .scale-option input[type="radio"] { display: none; }
-        .scale-option label {
-            display: block;
-            padding: 10px 4px;
-            background: #f5f0eb;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            color: var(--dark-purple);
-            font-weight: normal;
-            transition: all 0.2s;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .scale-option input:checked + label {
-            background: var(--primary-purple);
-            color: white;
-        }
-        .scale-option label small { display: block; font-size: 10px; margin-top: 2px; }
+
 
         /* Checkbox group */
         .checkbox-group {
@@ -617,6 +585,20 @@
         /* ── Case study accordions inside booking forms ── */
 
     
+        /* ── What to expect block ── */
+        .what-to-expect {
+            background: #f8f5ff;
+            border-left: 3px solid var(--primary-purple);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .what-to-expect p {
+            color: var(--dark-purple);
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
         /* ── Nav alignment fix ── */
         @media (min-width: 992px) {
             .nav { align-items: center; }
@@ -719,9 +701,8 @@
 
                     <h3 data-en="Treatment Support" data-hi="इलाज के दौरान सपोर्ट">Treatment Support</h3>
 
-                    <div class="inner-quote">
-                        <p data-en="&quot;I couldn&apos;t even walk to my balcony. When I finally could, that was a milestone. That was victory.&quot;" data-hi="&quot;बालकनी तक चलना भी मुश्किल था। जब चल पाई — वह उपलब्धि थी। वह जीत थी।&quot;">"I couldn't even walk to my balcony. When I finally could, that was a milestone. That was victory."</p>
-                        <span class="attr" data-en="— Sangeeta, Founder &amp; Survivor" data-hi="— संगीता, संस्थापक और सर्वाइवर">— Sangeeta, Founder &amp; Survivor</span>
+                    <div class="what-to-expect">
+                        <p data-en="A real conversation with Sangeeta — a cancer survivor who has been through treatment herself. She will listen, share what has helped others, and tell you honestly how energy healing helps with managing side effects. This is a free call." data-hi="संगीता से एक सच्ची बातचीत — जो खुद इलाज से गुज़री हैं। वे सुनेंगी, दूसरों के अनुभव साझा करेंगी, और ईमानदारी से बताएँगी कि एनर्जी हीलिंग साइड इफेक्ट्स को कैसे कम करती है। यह मुफ़्त कॉल है।">A real conversation with Sangeeta — a cancer survivor who has been through treatment herself. She will listen, share what has helped others, and tell you honestly how energy healing helps with managing side effects. This is a free call.</p>
                     </div>
 
                     <form onsubmit="submitWithCalendly(event, 'treatment')">
@@ -765,9 +746,7 @@
                         </div>
                         <button type="submit" class="btn-submit" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</button>
                         <div class="form-secondary">
-                            <p data-en="Not ready to book?" data-hi="अभी बुक नहीं करना?">Not ready to book?</p>
-                            <a href="https://wa.me/918106248800?text=Hi%2C%20I%27m%20currently%20undergoing%20cancer%20treatment%20and%20would%20like%20to%20learn%20about%20your%20support%20services." class="wa" target="_blank" data-en="💬 Chat on WhatsApp" data-hi="💬 व्हाट्सऐप पर बात करें">💬 Chat on WhatsApp</a>
-                            <a href="https://forms.gle/jd4PS8xX5hjLWxjj8" class="sg" target="_blank">👥 Join Support Group</a>
+                            <a href="https://wa.me/918106248800?text=Hi%2C%20I%27m%20currently%20undergoing%20cancer%20treatment%20and%20would%20like%20to%20learn%20about%20your%20support%20services." class="wa" target="_blank" data-en="💬 Prefer to chat on WhatsApp?" data-hi="💬 व्हाट्सऐप पर बात करें?">💬 Prefer to chat on WhatsApp?</a>
                         </div>
                     </form>
                 </div>
@@ -803,9 +782,8 @@
                     <h3 id="recovery-form-title">Register for Service</h3>
                     <input type="hidden" id="recovery-service-selected" name="serviceSelected">
 
-                    <div class="inner-quote">
-                        <p data-en="&quot;It was a magical experience going through the meditation session today. I will encourage people in the group to join and take blessings.&quot;" data-hi="&quot;आज का ध्यान सेशन एक जादुई अनुभव था। मैं ग्रुप के सभी लोगों को इसमें शामिल होने के लिए प्रोत्साहित करूँगा।&quot;">"It was a magical experience going through the meditation session today. I will encourage people in the group to join and take blessings."</p>
-                        <span class="attr" data-en="— Survivor, Meditation Programme" data-hi="— सर्वाइवर, ध्यान प्रोग्राम">— Survivor, Meditation Programme</span>
+                    <div class="what-to-expect">
+                        <p data-en="A real conversation with Sangeeta — who rebuilt her own strength after treatment. She will listen, share what has helped others in recovery, and tell you honestly how energy healing helps get your energy and life back. This is a free call." data-hi="संगीता से एक सच्ची बातचीत — जिन्होंने इलाज के बाद खुद अपनी ताकत वापस बनाई। वे सुनेंगी, उबरने में दूसरों की मदद के अनुभव बताएँगी, और ईमानदारी से बताएँगी कि एनर्जी हीलिंग आपकी ऊर्जा और ज़िंदगी वापस लाने में कैसे मदद करती है। यह मुफ़्त कॉल है।">A real conversation with Sangeeta — who rebuilt her own strength after treatment. She will listen, share what has helped others in recovery, and tell you honestly how energy healing helps get your energy and life back. This is a free call.</p>
                     </div>
 
                     <form onsubmit="submitWithCalendly(event, 'recovery')">
@@ -833,9 +811,7 @@
                         </div>
                         <button type="submit" class="btn-submit">Book Consultation</button>
                         <div class="form-secondary">
-                            <p data-en="Not ready to book?" data-hi="अभी बुक नहीं करना?">Not ready to book?</p>
-                            <a href="https://wa.me/918106248800?text=Hi%2C%20I%27ve%20completed%20my%20cancer%20treatment%20and%20am%20looking%20for%20recovery%20support." class="wa" target="_blank">💬 Chat on WhatsApp</a>
-                            <a href="https://forms.gle/jd4PS8xX5hjLWxjj8" class="sg" target="_blank">👥 Join Support Group</a>
+                            <a href="https://wa.me/918106248800?text=Hi%2C%20I%27ve%20completed%20my%20cancer%20treatment%20and%20am%20looking%20for%20recovery%20support." class="wa" target="_blank" data-en="💬 Prefer to chat on WhatsApp?" data-hi="💬 व्हाट्सऐप पर बात करें?">💬 Prefer to chat on WhatsApp?</a>
                         </div>
                     </form>
                 </div>
@@ -846,104 +822,33 @@
 
                     <h3 data-en="Caregiver Support" data-hi="देखभाल करने वालों के लिए सपोर्ट">Caregiver Support</h3>
 
-                    <div class="inner-quote">
-                        <p data-en="&quot;The caregiver can&apos;t say &apos;give me two days off, I need a break.&apos; There&apos;s nobody around. You need a neutral space... or it becomes overwhelming.&quot;" data-hi="&quot;देखभाल करने वाला नहीं कह सकता कि &apos;मुझे ब्रेक दो।&apos; आस-पास कोई नहीं होता। एक तटस्थ जगह चाहिए — वरना सब बहुत भारी हो जाता है।&quot;">"The caregiver can't say 'give me two days off, I need a break.' There's nobody around. You need a neutral space... or it becomes overwhelming."</p>
-                        <span class="attr" data-en="— Neerad, Leukaemia Survivor &amp; Caregiver" data-hi="— नीरद, ल्यूकेमिया सर्वाइवर और देखभाल करने वाले">— Neerad, Leukaemia Survivor &amp; Caregiver</span>
+                    <div class="what-to-expect">
+                        <p data-en="Rajiv supported Sangeeta through treatment. He knows what caregiving costs. This call is for you — not the patient. Thirty minutes to talk about what you are carrying. Free." data-hi="राजीव ने संगीता का इलाज के दौरान साथ दिया। वे जानते हैं कि देखभाल करना क्या माँगता है। यह कॉल आपके लिए है — मरीज़ के लिए नहीं। जो बोझ आप उठा रहे हैं उसके बारे में बात करने के लिए तीस मिनट। मुफ़्त।">Rajiv supported Sangeeta through treatment. He knows what caregiving costs. This call is for you — not the patient. Thirty minutes to talk about what you are carrying. Free.</p>
                     </div>
 
                     <form onsubmit="submitWithCalendly(event, 'caregiver')">
-                        <p style="margin-bottom:20px;color:var(--dark-purple);font-size:14px;" data-en="Rate how you're feeling on a scale of 1–5." data-hi="1–5 में बताएँ — आप कैसा महसूस कर रहे/रही हैं।">Rate how you're feeling on a scale of 1–5. This helps us provide the right support.</p>
-
-                        <div class="scale-group">
-                            <label data-en="Physical Tiredness" data-hi="शरीर की थकान">Physical Tiredness</label>
-                            <div class="scale-options">
-                                <div class="scale-option"><input type="radio" name="tiredness" id="t1" value="1" required><label for="t1">1<small data-en="Not at all" data-hi="बिल्कुल नहीं">Not at all</small></label></div>
-                                <div class="scale-option"><input type="radio" name="tiredness" id="t2" value="2"><label for="t2">2<small data-en="A little" data-hi="थोड़ा">A little</small></label></div>
-                                <div class="scale-option"><input type="radio" name="tiredness" id="t3" value="3"><label for="t3">3<small data-en="Moderate" data-hi="ठीक-ठाक">Moderate</small></label></div>
-                                <div class="scale-option"><input type="radio" name="tiredness" id="t4" value="4"><label for="t4">4<small data-en="Quite a bit" data-hi="काफ़ी">Quite a bit</small></label></div>
-                                <div class="scale-option"><input type="radio" name="tiredness" id="t5" value="5"><label for="t5">5<small data-en="Extremely" data-hi="बहुत ज़्यादा">Extremely</small></label></div>
-                            </div>
-                        </div>
-
-                        <div class="scale-group">
-                            <label data-en="Emotional Exhaustion" data-hi="मन की थकान">Emotional Exhaustion</label>
-                            <div class="scale-options">
-                                <div class="scale-option"><input type="radio" name="exhaustion" id="e1" value="1" required><label for="e1">1</label></div>
-                                <div class="scale-option"><input type="radio" name="exhaustion" id="e2" value="2"><label for="e2">2</label></div>
-                                <div class="scale-option"><input type="radio" name="exhaustion" id="e3" value="3"><label for="e3">3</label></div>
-                                <div class="scale-option"><input type="radio" name="exhaustion" id="e4" value="4"><label for="e4">4</label></div>
-                                <div class="scale-option"><input type="radio" name="exhaustion" id="e5" value="5"><label for="e5">5</label></div>
-                            </div>
-                        </div>
-
-                        <div class="scale-group">
-                            <label data-en="Anxiety Level" data-hi="चिंता कितनी है">Anxiety Level</label>
-                            <div class="scale-options">
-                                <div class="scale-option"><input type="radio" name="anxiety" id="a1" value="1" required><label for="a1">1</label></div>
-                                <div class="scale-option"><input type="radio" name="anxiety" id="a2" value="2"><label for="a2">2</label></div>
-                                <div class="scale-option"><input type="radio" name="anxiety" id="a3" value="3"><label for="a3">3</label></div>
-                                <div class="scale-option"><input type="radio" name="anxiety" id="a4" value="4"><label for="a4">4</label></div>
-                                <div class="scale-option"><input type="radio" name="anxiety" id="a5" value="5"><label for="a5">5</label></div>
-                            </div>
-                        </div>
-
-                        <div class="scale-group">
-                            <label data-en="Feeling Overwhelmed" data-hi="सब बहुत भारी लग रहा है">Feeling Overwhelmed</label>
-                            <div class="scale-options">
-                                <div class="scale-option"><input type="radio" name="overwhelmed" id="o1" value="1" required><label for="o1">1</label></div>
-                                <div class="scale-option"><input type="radio" name="overwhelmed" id="o2" value="2"><label for="o2">2</label></div>
-                                <div class="scale-option"><input type="radio" name="overwhelmed" id="o3" value="3"><label for="o3">3</label></div>
-                                <div class="scale-option"><input type="radio" name="overwhelmed" id="o4" value="4"><label for="o4">4</label></div>
-                                <div class="scale-option"><input type="radio" name="overwhelmed" id="o5" value="5"><label for="o5">5</label></div>
-                            </div>
-                        </div>
-
-                        <div class="scale-group">
-                            <label data-en="Sadness" data-hi="उदासी">Sadness</label>
-                            <div class="scale-options">
-                                <div class="scale-option"><input type="radio" name="sadness" id="s1" value="1" required><label for="s1">1</label></div>
-                                <div class="scale-option"><input type="radio" name="sadness" id="s2" value="2"><label for="s2">2</label></div>
-                                <div class="scale-option"><input type="radio" name="sadness" id="s3" value="3"><label for="s3">3</label></div>
-                                <div class="scale-option"><input type="radio" name="sadness" id="s4" value="4"><label for="s4">4</label></div>
-                                <div class="scale-option"><input type="radio" name="sadness" id="s5" value="5"><label for="s5">5</label></div>
-                            </div>
-                        </div>
-
                         <div class="form-group">
-                            <label data-en="Who are you caring for?" data-hi="आप किसकी देखभाल कर रहे/रही हैं?">Who are you caring for?</label>
-                            <select name="caringFor">
-                                <option value="" data-en="Select..." data-hi="चुनें...">Select...</option>
-                                <option value="spouse" data-en="Spouse/Partner" data-hi="पति/पत्नी">Spouse/Partner</option>
-                                <option value="parent" data-en="Parent" data-hi="माता/पिता">Parent</option>
-                                <option value="child" data-en="Child" data-hi="बच्चा">Child</option>
-                                <option value="sibling" data-en="Sibling" data-hi="भाई/बहन">Sibling</option>
-                                <option value="friend" data-en="Friend" data-hi="दोस्त">Friend</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Name *</label>
+                            <label data-en="Name *" data-hi="नाम *">Name *</label>
                             <input type="text" required name="name" placeholder="Your full name">
                         </div>
                         <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" required name="email" placeholder="your@email.com">
+                            <label data-en="Phone *" data-hi="फ़ोन नंबर *">Phone *</label>
+                            <input type="tel" required name="phone" placeholder="+91 XXXXX XXXXX">
                         </div>
                         <div class="form-group">
-                            <label>Phone *</label>
-                            <input type="tel" required name="phone" placeholder="+91 XXXXX XXXXX">
+                            <label data-en="What's making this hardest right now? (optional)" data-hi="अभी सबसे मुश्किल क्या है? (वैकल्पिक)">What's making this hardest right now? (optional)</label>
+                            <textarea name="hardest" rows="3" placeholder="Share anything you'd like Rajiv to know before your call..."></textarea>
                         </div>
                         <div class="disclaimer-box">
                             <label>
                                 <input type="checkbox" required name="disclaimer">
-                                <span>I understand that Anugnya Holistic Care services are complementary wellness services and NOT a substitute for medical treatment. Results vary from person to person.</span>
+                                <span data-en="I understand that Anugnya Holistic Care services are complementary wellness services and NOT a substitute for medical treatment." data-hi="मैं समझता/समझती हूँ कि ये सेवाएँ मेडिकल इलाज की मदद के लिए हैं — इलाज की जगह नहीं।">I understand that Anugnya Holistic Care services are complementary wellness services and NOT a substitute for medical treatment.</span>
                             </label>
                         </div>
-                        <button type="submit" class="btn-submit">Book Consultation</button>
+                        <button type="submit" class="btn-submit" data-en="Book Consultation" data-hi="बुक करें">Book Consultation</button>
                         <div class="form-secondary">
                             <p data-en="Not ready to book?" data-hi="अभी बुक नहीं करना?">Not ready to book?</p>
-                            <a href="https://wa.me/918106248800?text=Hi%2C%20I%27m%20a%20caregiver%20for%20someone%20with%20cancer%20and%20would%20like%20support." class="wa" target="_blank">💬 Chat on WhatsApp</a>
-                            <a href="https://forms.gle/jd4PS8xX5hjLWxjj8" class="sg" target="_blank">👥 Join Support Group</a>
+                            <a href="https://wa.me/918106248800?text=Hi%2C%20I%27m%20a%20caregiver%20for%20someone%20with%20cancer%20and%20would%20like%20support." class="wa" target="_blank" data-en="💬 Chat on WhatsApp" data-hi="💬 व्हाट्सऐप पर बात करें">💬 Chat on WhatsApp</a>
                         </div>
                     </form>
                 </div>
@@ -1076,13 +981,8 @@
 
             } else if (formType === 'caregiver') {
                 context  = 'Path: Caregiver';
-                context += '\nCaring for: '           + (formData.get('caringFor')   || '');
-                context += '\n\nWellbeing Scores (1-5):';
-                context += '\n- Physical Tiredness: '  + (formData.get('tiredness')   || '');
-                context += '\n- Emotional Exhaustion: '+ (formData.get('exhaustion')  || '');
-                context += '\n- Anxiety: '             + (formData.get('anxiety')     || '');
-                context += '\n- Overwhelmed: '         + (formData.get('overwhelmed') || '');
-                context += '\n- Sadness: '             + (formData.get('sadness')     || '');
+                var hardest = formData.get('hardest') || '';
+                if (hardest) context += '\nWhat is hardest: ' + hardest;
             }
 
             // Show loading overlay

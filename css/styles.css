@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Hind:wght@400;500;600;700&display=swap');
 
 /* ============================================
    ANUGNYA HOLISTIC CARE - SHARED STYLES
@@ -58,7 +58,7 @@ html[lang="hi"] select,
 html[lang="hi"] textarea,
 html[lang="hi"] cite,
 html[lang="hi"] small {
-    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Hind', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.8;
 }
 
@@ -72,7 +72,7 @@ html[lang="hi"] h3 { font-size: 18px; }
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--dark-purple);
     background-color: var(--beige);

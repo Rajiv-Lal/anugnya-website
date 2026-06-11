@@ -259,7 +259,7 @@ anugnya-website/
 ## 📞 Contact Information
 
 - **Email**: care@anugnyaholistic.com
-- **Phone**: +918106248800
+- **Phone**: +919100972190
 - **Calendly**: https://calendly.com/rajivlalkl/30min
 
 ## 🔐 Security & Privacy

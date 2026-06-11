@@ -8,7 +8,7 @@
 // ==================================================
 
 const CONFIG = {
-    whatsappNumber: '918106248800',
+    whatsappNumber: '919100972190',
     whatsappMessage: 'Hi, I found you online and would like to know more about your cancer support services.',
     googleScriptUrl: 'https://script.google.com/macros/s/AKfycbwqQsPq-7yDEww-D14LCb1g4k-vOauWjfLVLllQdSRVFweiQqM4EI3Nam2ew97Wsdf5/exec',
     calendlyUrl: 'https://calendly.com/anugnyaholisticcare/welcome'

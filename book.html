@@ -924,6 +924,18 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // ANUGNYA_DEEPLINK_HANDLER
+        // Deep-link: book.html#treatment | #recovery | #caregiver
+        // auto-opens the matching path. No hash => normal chooser.
+        function anugnyaOpenFromHash() {
+            var h = (window.location.hash || '').replace('#','').toLowerCase();
+            if (h === 'treatment' || h === 'recovery' || h === 'caregiver') {
+                selectCustomerType(h);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', anugnyaOpenFromHash);
+        window.addEventListener('hashchange', anugnyaOpenFromHash);
+
         function selectRecoveryService(service) {
             gtag('event', 'recovery_service_select', { service: service });
             var titles = {
